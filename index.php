@@ -175,7 +175,7 @@ $app_name = idx($app_info, 'name', '');
                                      function (response) {
                                      // If response is null the user canceled the dialog
                                      if (response != null) {
-                                     //alert("error lislog");
+                                     alert("error lislog");
                                      //alert(response);
                                      logResponse(response);
                                      }
