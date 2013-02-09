@@ -161,6 +161,47 @@ $app_name = idx($app_info, 'name', '');
             }
           );
         });
+        // start
+  $(function(){
+    $('#publishAction_fumou').click(function() {
+                              FB.api('/me/lislogapp:tune_in','POST',
+                                     {
+                                     //2013-01-12 banz-ghb change url
+                                     radio_program   : 'https://lislog.herokuapp.com/radio/jp/co/tbs/fumou.html'
+                                     //NG radio_program   : 'radio/jp/co/tbs/elekata.html'
+                                     //NG radio_program   : 'http://lislog.herokuapp.com/radio/jp/co/tbs/elekata.html'
+                                     //   radio_program : 'http://samples.ogp.me/558973837449053'
+                                     },
+                                     function (response) {
+                                     // If response is null the user canceled the dialog
+                                     if (response != null) {
+                                     //alert("error lislog");
+                                     //alert(response);
+                                     logResponse(response);
+                                     }
+                                     }
+                                     );
+                              });
+    $('#publishAction_elekata').click(function() {
+                              FB.api('/me/lislogapp:tune_in','POST',
+                                     {
+                                     //2013-01-12 banz-ghb change url
+                                          radio_program   : 'https://lislog.herokuapp.com/radio/jp/co/tbs/elekata.html'
+                                     //NG radio_program   : 'radio/jp/co/tbs/elekata.html'
+                                     //NG radio_program   : 'http://lislog.herokuapp.com/radio/jp/co/tbs/elekata.html'
+                                     //   radio_program : 'http://samples.ogp.me/558973837449053'
+                                     },
+                                     function (response) {
+                                     // If response is null the user canceled the dialog
+                                     if (response != null) {
+                                     //alert("error lislog");
+                                     //alert(response);
+                                     logResponse(response);
+                                     }
+                                     }
+                                     );
+                              });
+        // end
       });
     </script>
 
@@ -222,6 +263,18 @@ $app_name = idx($app_info, 'name', '');
         <div id="share-app">
           <p>Share your app:</p>
           <ul>
+          // start
+			<li>
+			<a href="#" class="facebook-button" id="publishAction_fumou" data-url="<?php echo AppInfo::getUrl(); ?>">
+			<span class="plus">Fumou</span>
+			</a>
+			</li>
+			<li>
+			<a href="#" class="facebook-button" id="publishAction_elekata" data-url="<?php echo AppInfo::getUrl(); ?>">
+			<span class="plus">Elekata</span>
+			</a>
+			</li>
+          // end
             <li>
               <a href="#" class="facebook-button" id="postToWall" data-url="<?php echo AppInfo::getUrl(); ?>">
                 <span class="plus">Post to Wall</span>
@@ -353,6 +406,12 @@ $app_name = idx($app_info, 'name', '');
       }
     ?>
 
+    // start
+	<section id="activity" class="clearfix">
+	<div class="fb-activity" data-app-id="554694347877002" data-width="300" data-height="300" data-header="true" data-recommendations="false"></div>’
+	<!-- div class="fb-activity" data-site="https://lislog.herokuapp.com/radio/jp/co/tbs/fumou.html" data-app-id="554694347877002" data-width="300" data-height="300" data-header="true" data-recommendations="false" --><!-- /div-->
+	</section>
+	// end
     <section id="guides" class="clearfix">
       <h1>Learn More About Heroku &amp; Facebook Apps</h1>
       <ul>
