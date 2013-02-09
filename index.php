@@ -162,7 +162,6 @@ $app_name = idx($app_info, 'name', '');
           );
         });
         // start
-  $(function(){
     $('#publishAction_fumou').click(function() {
                               FB.api('/me/lislogapp:tune_in','POST',
                                      {
