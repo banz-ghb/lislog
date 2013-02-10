@@ -123,35 +123,6 @@ $app_name = idx($app_info, 'name', '');
 
       $(function(){ //define function 1 start
         // Set up so we handle click on the buttons
-        $('#postToWall').click(function() {
-          FB.ui(
-            {
-              method : 'feed',
-              link   : $(this).attr('data-url')
-            },
-            function (response) {
-              // If response is null the user canceled the dialog
-              if (response != null) {
-                logResponse(response);
-              }
-            }
-          );
-        });
-
-        $('#sendToFriends').click(function() {
-          FB.ui(
-            {
-              method : 'send',
-              link   : $(this).attr('data-url')
-            },
-            function (response) {
-              // If response is null the user canceled the dialog
-              if (response != null) {
-                logResponse(response);
-              }
-            }
-          );
-        });
 
         $('#sendRequest').click(function() {
           FB.ui(
@@ -328,16 +299,6 @@ $app_name = idx($app_info, 'name', '');
       <div class="list">
         <h3>Wall,Mwssage,Request</h3>
         <ul class="things">
-          <li>
-            <a href="#" class="facebook-button" id="postToWall" data-url="<?php echo AppInfo::getUrl(); ?>">
-              <span class="plus">Post to Wall</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="facebook-button speech-bubble" id="sendToFriends" data-url="<?php echo AppInfo::getUrl(); ?>">
-              <span class="speech-bubble">Send Message</span>
-            </a>
-          </li>
           <li>
             <a href="#" class="facebook-button apprequests" id="sendRequest" data-message="Test this awesome app">
               <span class="apprequests">Send Requests</span>
