@@ -323,7 +323,18 @@ $app_name = idx($app_info, 'name', '');
         </ul>
       </div>
 
-    </section>
+      <div class="list">
+        <h3>Recent activities</h3>
+        <ul class="things">
+          <li>
+            <a>
+              <span>TEMP</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+</section>
 
     <?php
       }
