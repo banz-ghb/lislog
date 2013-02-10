@@ -8,6 +8,12 @@
  * to learn more about the resources available to you
  */
 
+//2012-01-13 banz-ghb start keep session in IE
+if (strstr($_SERVER["HTTP_USER_AGENT"], "MSIE")) {
+	header('p3p: CP="ALL DSP COR PSAa PSDa OUR NOR ONL UNI COM NAV"');
+}
+//2012-01-13 banz-ghb end   keep session in IE
+
 // Provides access to app specific values such as your app id and app secret.
 // Defined in 'AppInfo.php'
 require_once('AppInfo.php');
