@@ -160,7 +160,7 @@ $app_name = idx($app_info, 'name', '');
                   //2013-02-10 banz-ghb start get recent activities
                   FB.api('/me/lislogapp:tune_in?limit=5','GET', //FB.api 2
                     {
-                      limit : 5
+                      limit : 4
                     },
                     function (response) {
                       //alert(response.data[0].publish_time);
@@ -291,6 +291,17 @@ $app_name = idx($app_info, 'name', '');
     <section id="samples" class="clearfix">
       <h1>Social Graph</h1>
 
+      <div id="recent-activities" class="list">
+        <h3>Recent activities</h3>
+        <ul class="things">
+          <li>
+            <a>
+              <span>TEMP</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
       <div class="list">
         <h3>Friends using this app</h3>
         <ul class="friends">
@@ -318,17 +329,6 @@ $app_name = idx($app_info, 'name', '');
           <li>
             <a href="#" class="facebook-button apprequests" id="sendRequest" data-message="Test this awesome app">
               <span class="apprequests">Send Requests</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="list">
-        <h3>Recent activities</h3>
-        <ul class="things">
-          <li>
-            <a>
-              <span>TEMP</span>
             </a>
           </li>
         </ul>
