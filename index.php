@@ -163,7 +163,11 @@ $app_name = idx($app_info, 'name', '');
                       limit : 5
                     },
                     function (response) {
-                      alert(response.data[0].publish_time);
+                      //alert(response.data[0].publish_time);
+                      for (var i = 0; i < response.data.length; i++){
+                         //alert(li[i].innerHTML);
+                         alert(response.data[i].publish_time);
+                      }
                     }
                   ); //FB.api 2
                   //2013-02-10 banz-ghb end   get recent activities
