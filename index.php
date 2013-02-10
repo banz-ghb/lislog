@@ -121,7 +121,7 @@ $app_name = idx($app_info, 'name', '');
         }
       }
 
-      $(function(){
+      $(function(){ //define function 1 start
         // Set up so we handle click on the buttons
         $('#postToWall').click(function() {
           FB.ui(
@@ -168,47 +168,47 @@ $app_name = idx($app_info, 'name', '');
           );
         });
         // start
-    $('#publishAction_fumou').click(function() {
-                              FB.api('/me/lislogapp:tune_in','POST',
-                                     {
-                                     //2013-01-12 banz-ghb change url
-                                     radio_program   : 'https://lislog.herokuapp.com/radio/jp/co/tbs/fumou.html'
-                                     //NG radio_program   : 'radio/jp/co/tbs/elekata.html'
-                                     //NG radio_program   : 'http://lislog.herokuapp.com/radio/jp/co/tbs/elekata.html'
-                                     //   radio_program : 'http://samples.ogp.me/558973837449053'
-                                     },
-                                     function (response) {
-                                     // If response is null the user canceled the dialog
-                                     alert("error lislog 1");
-                                     if (response != null) {
-                                     alert("error lislog");
-                                     //alert(response);
-                                     logResponse(response);
-                                     }
-                                     }
-                                     );
-                              });
-    $('#publishAction_elekata').click(function() {
-                              FB.api('/me/lislogapp:tune_in','POST',
-                                     {
-                                     //2013-01-12 banz-ghb change url
-                                          radio_program   : 'https://lislog.herokuapp.com/radio/jp/co/tbs/elekata.html'
-                                     //NG radio_program   : 'radio/jp/co/tbs/elekata.html'
-                                     //NG radio_program   : 'http://lislog.herokuapp.com/radio/jp/co/tbs/elekata.html'
-                                     //   radio_program : 'http://samples.ogp.me/558973837449053'
-                                     },
-                                     function (response) {
-                                     // If response is null the user canceled the dialog
-                                     if (response != null) {
-                                     //alert("error lislog");
-                                     //alert(response);
-                                     logResponse(response);
-                                     }
-                                     }
-                                     );
-                              });
+        $('#publishAction_fumou').click(function() {
+          FB.api('/me/lislogapp:tune_in','POST',
+            {
+              //2013-01-12 banz-ghb change url
+              radio_program   : 'https://lislog.herokuapp.com/radio/jp/co/tbs/fumou.html'
+              //NG radio_program   : 'radio/jp/co/tbs/elekata.html'
+              //NG radio_program   : 'http://lislog.herokuapp.com/radio/jp/co/tbs/elekata.html'
+              //   radio_program : 'http://samples.ogp.me/558973837449053'
+              },
+              function (response) {
+                // If response is null the user canceled the dialog
+                //alert("error lislog 1");
+                if (response != null) {
+                  //alert("error lislog");
+                  //alert(response);
+                  logResponse(response);
+                }
+              }
+          );
+        });
+        $('#publishAction_elekata').click(function() {
+          FB.api('/me/lislogapp:tune_in','POST',
+            {
+              //2013-01-12 banz-ghb change url
+                   radio_program   : 'https://lislog.herokuapp.com/radio/jp/co/tbs/elekata.html'
+              //NG radio_program   : 'radio/jp/co/tbs/elekata.html'
+              //NG radio_program   : 'http://lislog.herokuapp.com/radio/jp/co/tbs/elekata.html'
+              //   radio_program : 'http://samples.ogp.me/558973837449053'
+            },
+            function (response) {
+              // If response is null the user canceled the dialog
+              if (response != null) {
+                //alert("error lislog");
+                //alert(response);
+                logResponse(response);
+              }
+            }
+          );
+        });
         // end
-      });
+      }); //define function 2 end
     </script>
 
     <!--[if IE]>
