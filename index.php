@@ -281,21 +281,6 @@ $app_name = idx($app_info, 'name', '');
               </a>
             </li>
             <!-- end   -->
-            <li>
-              <a href="#" class="facebook-button" id="postToWall" data-url="<?php echo AppInfo::getUrl(); ?>">
-                <span class="plus">Post to Wall</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="facebook-button speech-bubble" id="sendToFriends" data-url="<?php echo AppInfo::getUrl(); ?>">
-                <span class="speech-bubble">Send Message</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="facebook-button apprequests" id="sendRequest" data-message="Test this awesome app">
-                <span class="apprequests">Send Requests</span>
-              </a>
-            </li>
           </ul>
         </div>
       </div>
@@ -339,7 +324,29 @@ $app_name = idx($app_info, 'name', '');
           ?>
         </ul>
       </div>
-    </section>
+
+      <div class="list">
+        <h3>Wall,Mwssage,Request</h3>
+        <ul class="things">
+          <li>
+            <a href="#" class="facebook-button" id="postToWall" data-url="<?php echo AppInfo::getUrl(); ?>">
+              <span class="plus">Post to Wall</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="facebook-button speech-bubble" id="sendToFriends" data-url="<?php echo AppInfo::getUrl(); ?>">
+              <span class="speech-bubble">Send Message</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="facebook-button apprequests" id="sendRequest" data-message="Test this awesome app">
+              <span class="apprequests">Send Requests</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+</section>
 
     <?php
       }
