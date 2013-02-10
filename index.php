@@ -63,6 +63,7 @@ if ($user_id) {
   // This fetches some things that you like . 'limit=*" only returns * values.
   // To see the format of the data you are retrieving, use the "Graph API
   // Explorer" which is at https://developers.facebook.com/tools/explorer/
+  //2013-02-10 banz-ghb comment out candidate
   $likes = idx($facebook->api('/me/likes?limit=4'), 'data', array());
 
   // This fetches 4 of your friends.
@@ -140,7 +141,7 @@ $app_name = idx($app_info, 'name', '');
         });
         // start
         $('#publishAction_fumou').click(function() {
-          FB.api('/me/lislogapp:tune_in','POST',
+          FB.api('/me/lislogapp:tune_in','POST', //FB.api 1
             {
               //2013-01-12 banz-ghb change url
               radio_program   : 'https://lislog.herokuapp.com/radio/jp/co/tbs/fumou.html'
@@ -155,9 +156,20 @@ $app_name = idx($app_info, 'name', '');
                   //alert("error lislog");
                   //alert(response);
                   logResponse(response);
-                }
+
+                  //2013-02-10 banz-ghb start get recent activities
+                  FB.api('/me/lislogapp:tune_in?limit=5','GET', //FB.api 2
+                    {
+                      limit : 5
+                    },
+                    function (response) {
+
+                    }
+                  ); //FB.api 2
+                  //2013-02-10 banz-ghb end   get recent activities
+                  }
               }
-          );
+          ); //FB.api 1
         });
         $('#publishAction_elekata').click(function() {
           FB.api('/me/lislogapp:tune_in','POST',
