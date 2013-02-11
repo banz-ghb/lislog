@@ -164,7 +164,7 @@ $app_name = idx($app_info, 'name', '');
                       limit : 4
                     },
                     function (response) {
-                      updateMostRecentActivity(data);
+                      updateMostRecentActivity(response.data);
                       addRowToBottom(response.data);
                       /*
                       //alert(response.data[0].publish_time);
