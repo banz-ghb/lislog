@@ -139,6 +139,7 @@ $app_name = idx($app_info, 'name', '');
             }
           );
         });
+
         // start
         $('#publishAction_fumou').click(function() {
           FB.api('/me/lislogapp:tune_in','POST', //FB.api 1
@@ -158,16 +159,19 @@ $app_name = idx($app_info, 'name', '');
                   logResponse(response);
 
                   //2013-02-10 banz-ghb start get recent activities
-                  FB.api('/me/lislogapp:tune_in?limit=5','GET', //FB.api 2
+                  FB.api('/me/lislogapp:tune_in','GET', //FB.api 2
                     {
                       limit : 4
                     },
                     function (response) {
+                      addRowToBottom(response.data);
+                      /*
                       //alert(response.data[0].publish_time);
                       for (var i = 0; i < response.data.length; i++){
                          //alert(li[i].innerHTML);
                          alert(response.data[i].publish_time);
                       }
+                      */
                     }
                   ); //FB.api 2
                   //2013-02-10 banz-ghb end   get recent activities
@@ -196,18 +200,20 @@ $app_name = idx($app_info, 'name', '');
         });
         // end
       }); //define function 1 end
+
+      //View functions
       //2013-02-10 banz-ghb start get recent activities
       //http://d.hatena.ne.jp/okahiro_p/20120525/1337918243
-      //recent-activities li
-      function addRowToBottom() {
-        $('#tableData tr').remove();
+      function addRowToBottom(array_activities) {
+        $('#recent-activities li').remove();
 
-        for(i = 0; i < array.length; i++) {
-          var data = array[i];
-          var tr = $('<tr/>');
-          $('<td/>').text(data.no).appendTo(tr);
-          $('<td/>').text(data.name).appendTo(tr);
-          $('#tableData').append(tr);
+        //array_activities[i].publish_time
+        for(i = 0; i < array_activities.length; i++) {
+          //var data = array[i];
+          //var li = $('<li/>');
+          var li = $('<li/>').text(array_activities[i].publish_time); //.appendTo(tr);
+          //$('<td/>').text(data.name).appendTo(tr);
+          $('#recent-activities').append(li);
         }
       }
       //2013-02-10 banz-ghb end   get recent activities
