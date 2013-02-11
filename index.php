@@ -212,7 +212,9 @@ $app_name = idx($app_info, 'name', '');
           //var data = array[i];
           //var li = $('<li/>');
           $('#most-recent-activity-title').text(array_activities[i].data.radio_program.title);
-          $('#most-recent-activity-publish_time').text(array_activities[i].publish_time);
+          //new Date().toLocaleString();
+          $('#most-recent-activity-publish_time').text(new Date().toLocaleString(array_activities[i].publish_time));
+          //$('#most-recent-activity-publish_time').text(array_activities[i].publish_time);
           //$('<td/>').text(data.name).appendTo(tr);
           //$('#recent-activities').append(li);
         }
@@ -321,8 +323,8 @@ $app_name = idx($app_info, 'name', '');
     </section>
     <!-- 2013-02-11 banz-ghb end -->
     <section id="get-started">
-      <p>How to use <span>lislog</span>!</p>
-      <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">Learn How to Edit This App</a>
+      <p>Guide</p>
+      <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">Learn How to use lislog</a>
     </section>
 
     <?php
