@@ -317,7 +317,7 @@ $app_name = idx($app_info, 'name', '');
     <section id="most-recent-activity" class="clearfix">
       <div>
         <h1>Most Recent Activity:</h1>
-        <p id="most-recent-activity-title">Empty</p>
+        <p id="most-recent-activity-title">Empty</p><p>Your ranking: Heavy Listener (or Listner)</p>
         <p id="most-recent-activity-publish_time">Empty</p>
         </div>
     </section>
@@ -390,11 +390,11 @@ $app_name = idx($app_info, 'name', '');
     <!--/section-->
 	<!-- end -->
     <section id="guides" class="clearfix">
-      <h1>Learn More About Heroku &amp; Facebook Apps</h1>
+      <h1>Check Your Facebook Timeline</h1>
       <ul>
         <li>
           <a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="icon heroku">Heroku</a>
-          <p>Learn more about <a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top">Heroku</a>, or read developer docs in the Heroku <a href="https://devcenter.heroku.com/" target="_top">Dev Center</a>.</p>
+          <p>View the activity logs of lislog in your facebook timeline.</p>
         </li>
       </ul>
     </section>
