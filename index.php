@@ -322,7 +322,7 @@ $app_name = idx($app_info, 'name', '');
     <!-- 2013-02-11 banz-ghb end -->
     <section id="get-started">
       <p>How to use <span>lislog</span>!</p>
-      <a href="https://devcenter.heroku.com/articles/facebook" target="_top" class="button">Learn How to Edit This App</a>
+      <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">Learn How to Edit This App</a>
     </section>
 
     <?php
