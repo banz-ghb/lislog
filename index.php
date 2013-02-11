@@ -164,6 +164,7 @@ $app_name = idx($app_info, 'name', '');
                       limit : 4
                     },
                     function (response) {
+                      updateMostRecentActivity(data);
                       addRowToBottom(response.data);
                       /*
                       //alert(response.data[0].publish_time);
@@ -203,6 +204,19 @@ $app_name = idx($app_info, 'name', '');
 
       //View functions
       //2013-02-10 banz-ghb start get recent activities
+      function updateMostRecentActivity(array_activities) {
+        //$('#most-recent-activity p').remove();
+
+        //array_activities[i].publish_time
+        for(i = 0; i < 1; i++) {
+          //var data = array[i];
+          //var li = $('<li/>');
+          $('#most-recent-activity-title').text(array_activities[i].data.radio_program.title);
+          $('#most-recent-activity-publish_time').text(array_activities[i].publish_time);
+          //$('<td/>').text(data.name).appendTo(tr);
+          //$('#recent-activities').append(li);
+        }
+      }
       //http://d.hatena.ne.jp/okahiro_p/20120525/1337918243
       function addRowToBottom(array_activities) {
         $('#recent-activities li').remove();
@@ -304,9 +318,10 @@ $app_name = idx($app_info, 'name', '');
     <!-- 2013-02-11 banz-ghb start -->
     <section id="most-recent-activity" class="clearfix">
       <div>
-        <p>Most Recent Activity:</p>
-        <p>Empty</p>
-      </div>
+        <h1>Most Recent Activity:</h1>
+        <p id="most-recent-activity-title">Empty</p>
+        <p id="most-recent-activity-publish_time">Empty</p>
+        </div>
     </section>
     <!-- 2013-02-11 banz-ghb end -->
     <section id="get-started">
