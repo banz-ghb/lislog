@@ -302,7 +302,7 @@ $app_name = idx($app_info, 'name', '');
     </header>
 
     <!-- 2013-02-11 banz-ghb start -->
-    <section id="most-recent-activity">
+    <section id="most-recent-activity" class="clearfix">
       <div>
         <p>Most Recent Activity:</p>
         <p>Empty</p>
