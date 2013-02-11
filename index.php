@@ -292,10 +292,6 @@ $app_name = idx($app_info, 'name', '');
           </ul>
         </div>
 
-        <div>
-          <p>Most Recent Activity:</p>
-          <p>Empty</p>
-        </div>
       </div>
       <?php } else { ?>
       <div>
@@ -305,6 +301,14 @@ $app_name = idx($app_info, 'name', '');
       <?php } ?>
     </header>
 
+    <!-- 2013-02-11 banz-ghb start -->
+    <section id="most-recent-activity">
+      <div>
+        <p>Most Recent Activity:</p>
+        <p>Empty</p>
+      </div>
+    </section>
+    <!-- 2013-02-11 banz-ghb end -->
     <section id="get-started">
       <p>Welcome to <span>lislog</span>!</p>
       <a href="https://devcenter.heroku.com/articles/facebook" target="_top" class="button">Learn How to Edit This App</a>
