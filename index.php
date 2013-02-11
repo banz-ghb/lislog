@@ -291,6 +291,11 @@ $app_name = idx($app_info, 'name', '');
             <!-- end   -->
           </ul>
         </div>
+
+        <div>
+          <p>Most Recent Activity:</p>
+          <p>Empty</p>
+        </div>
       </div>
       <?php } else { ?>
       <div>
