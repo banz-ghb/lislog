@@ -195,8 +195,23 @@ $app_name = idx($app_info, 'name', '');
           );
         });
         // end
-      }); //define function 2 end
-    </script>
+      }); //define function 1 end
+      //2013-02-10 banz-ghb start get recent activities
+      //http://d.hatena.ne.jp/okahiro_p/20120525/1337918243
+      //recent-activities li
+      function addRowToBottom() {
+        $('#tableData tr').remove();
+
+        for(i = 0; i < array.length; i++) {
+          var data = array[i];
+          var tr = $('<tr/>');
+          $('<td/>').text(data.no).appendTo(tr);
+          $('<td/>').text(data.name).appendTo(tr);
+          $('#tableData').append(tr);
+        }
+      }
+      //2013-02-10 banz-ghb end   get recent activities
+      </script>
 
     <!--[if IE]>
       <script type="text/javascript">
@@ -291,12 +306,12 @@ $app_name = idx($app_info, 'name', '');
     <section id="samples" class="clearfix">
       <h1>Social Graph</h1>
 
-      <div id="recent-activities" class="list">
+      <div class="list">
         <h3>Recent activities</h3>
-        <ul class="things">
+        <ul id="recent-activities" class="things">
           <li>
             <a>
-              <span>TEMP</span>
+              <span>empty</span>
             </a>
           </li>
         </ul>
@@ -324,7 +339,7 @@ $app_name = idx($app_info, 'name', '');
       </div>
 
       <div class="list">
-        <h3>Wall,Mwssage,Request</h3>
+        <h3>Send Request</h3>
         <ul class="things">
           <li>
             <a href="#" class="facebook-button apprequests" id="sendRequest" data-message="Test this awesome app">
