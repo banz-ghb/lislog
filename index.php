@@ -393,7 +393,7 @@ $app_name = idx($app_info, 'name', '');
       <h1>Check Your Facebook Timeline</h1>
       <ul>
         <li>
-          <a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="icon heroku">Heroku</a>
+          <a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="icon">Timeline</a>
           <p>View the activity logs of lislog in your facebook timeline.</p>
         </li>
       </ul>
