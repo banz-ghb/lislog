@@ -213,7 +213,7 @@ $app_name = idx($app_info, 'name', '');
           //var li = $('<li/>');
           $('#most-recent-activity-title').text(array_activities[i].data.radio_program.title);
           //new Date().toLocaleString();
-          $('#most-recent-activity-publish_time').text(new Date().toLocaleString(array_activities[i].publish_time));
+          $('#most-recent-activity-publish_time').text(new Date().slice(0,-5).toLocaleString(array_activities[i].publish_time));
           //$('#most-recent-activity-publish_time').text(array_activities[i].publish_time);
           //$('<td/>').text(data.name).appendTo(tr);
           //$('#recent-activities').append(li);
