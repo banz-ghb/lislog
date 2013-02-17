@@ -145,7 +145,7 @@ $app_name = idx($app_info, 'name', '');
         //for (var p in anchors){
         // console.log(p);
         //}
-        var radio_programs = ["fumou", "elekata"];
+        var radio_programs = ["fumou", "megane", "elekata"];
 
       //for each (var var_radio_program in radio_programs){ //loop 1 start
         for (var i = 0; i < radio_programs.length; i++){
@@ -271,6 +271,11 @@ $app_name = idx($app_info, 'name', '');
             <li>
               <a href="#" class="facebook-button" id="publishAction_fumou" data-url="<?php echo AppInfo::getUrl(); ?>">
                 <span class="plus">Fumou</span>
+              </a>
+            </li>
+            <li>
+            <a href="#" class="facebook-button" id="publishAction_megane" data-url="<?php echo AppInfo::getUrl(); ?>">
+                <span class="plus">Megane</span>
               </a>
             </li>
             <li>
