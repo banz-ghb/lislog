@@ -209,7 +209,7 @@ $app_name = idx($app_info, 'name', '');
             }
         ); //FB.api 1
       });
-      }); //define function 1 end
+      }); //define function 1  end
 
     /////////////////////////
       //View functions
