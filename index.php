@@ -167,7 +167,7 @@ $app_name = idx($app_info, 'name', '');
           });  //bind function 10 end
         } //loop 1 end
         // end
-      }); //define function 1 end
+//      }); //define function 1 end
 
     //************************************************************
       $('#publishAction_fumou').click(function() {
@@ -209,6 +209,8 @@ $app_name = idx($app_info, 'name', '');
             }
         ); //FB.api 1
       });
+      }); //define function 1 end
+
     /////////////////////////
       //View functions
       //2013-02-10 banz-ghb start get recent activities
