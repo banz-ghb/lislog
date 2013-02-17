@@ -145,7 +145,7 @@ $app_name = idx($app_info, 'name', '');
         //for (var p in anchors){
         // console.log(p);
         //}
-        radio_programs = ["fumou", "elekata"];
+        radio_programs = [/*"fumou",*/ "elekata"];
 
         for (var var_radio_program : radio_programs){ //loop 1 start
           var_radio_program_button_name = '#publishAction_'+var_radio_program;
