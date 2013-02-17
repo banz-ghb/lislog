@@ -150,10 +150,16 @@ $app_name = idx($app_info, 'name', '');
       //for each (var var_radio_program in radio_programs){ //loop 1 start
         for (var i = 0; i < radio_programs.length; i++){
           var_radio_program_button_name = '#publishAction_'+radio_programs[i];
-          var_radio_program_button_url  = 'https://lislog.herokuapp.com/radio/jp/co/tbs/'+radio_programs[i]+'.html';
-          alert(var_radio_program_button_name);
-          alert(radio_programs);
+          //var_radio_program_button_url  = 'https://lislog.herokuapp.com/radio/jp/co/tbs/'+radio_programs[i]+'.html';
+          //alert(var_radio_program_button_name);
+          //alert(radio_programs);
+          $(this).find
           $(var_radio_program_button_name).click(function() { //bind function 10 start
+            //$(this).find("a").attr("href")
+            //FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
+            var var_radio_program_button_url =
+              'https://lislog.herokuapp.com/radio/jp/co/tbs/'+$(this).attr("id").replace("publishAction_","")+'.html';
+            alert(var_radio_program_button_url);
             FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
               function (response) {
                 if (response != null) { //if start
