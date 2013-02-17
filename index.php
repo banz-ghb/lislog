@@ -169,6 +169,47 @@ $app_name = idx($app_info, 'name', '');
         // end
       }); //define function 1 end
 
+    //************************************************************
+      $('#publishAction_fumou').click(function() {
+        FB.api('/me/lislogapp:tune_in','POST', //FB.api 1
+          {
+            //2013-01-12 banz-ghb change url
+            radio_program   : 'https://lislog.herokuapp.com/radio/jp/co/tbs/fumou.html'
+            //NG radio_program   : 'radio/jp/co/tbs/elekata.html'
+            //NG radio_program   : 'http://lislog.herokuapp.com/radio/jp/co/tbs/elekata.html'
+            //   radio_program : 'http://samples.ogp.me/558973837449053'
+            },
+            function (response) {
+              // If response is null the user canceled the dialog
+              //alert("error lislog 1");
+              if (response != null) {
+                //alert("error lislog");
+                //alert(response);
+                logResponse(response);
+
+                //2013-02-10 banz-ghb start get recent activities
+                FB.api('/me/lislogapp:tune_in','GET', //FB.api 2
+                  {
+                    limit : 4
+                  },
+                  function (response) {
+                    updateMostRecentActivity(response.data);
+                    addRowToBottom(response.data);
+                    /*
+                    //alert(response.data[0].publish_time);
+                    for (var i = 0; i < response.data.length; i++){
+                       //alert(li[i].innerHTML);
+                       alert(response.data[i].publish_time);
+                    }
+                    */
+                  }
+                ); //FB.api 2
+                //2013-02-10 banz-ghb end   get recent activities
+                }
+            }
+        ); //FB.api 1
+      });
+    /////////////////////////
       //View functions
       //2013-02-10 banz-ghb start get recent activities
       function updateMostRecentActivity(array_activities) {
