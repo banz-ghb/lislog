@@ -150,6 +150,7 @@ $app_name = idx($app_info, 'name', '');
         for (var var_radio_program in radio_programs){ //loop 1 start
           var_radio_program_button_name = '#publishAction_'+var_radio_program;
           var_radio_program_button_url  = 'https://lislog.herokuapp.com/radio/jp/co/tbs/'+var_radio_program+'.html';
+          alert(var_radio_program_button_name);
           $(var_radio_program_button_name).click(function() { //bind function 10 start
             FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
               function (response) {
