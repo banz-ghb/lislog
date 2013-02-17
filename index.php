@@ -393,6 +393,9 @@ $app_name = idx($app_info, 'name', '');
       <h1>Check Your Facebook Timeline</h1>
       <ul>
         <li>
+          <!-- response.username -->
+          <!-- https://www.facebook.com/akinori.kohno.5/allactivity?privacy_source=activity_log&log_filter=app_554694347877002 -->
+          <!-- https://www.facebook.com/${RESPONSE.USERNAME}/allactivity?privacy_source=activity_log&log_filter=app_${APPID} -->
           <a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="icon apps-on-facebook">Timeline</a>
           <p>View the activity logs of lislog in your facebook timeline.</p>
         </li>
