@@ -147,7 +147,7 @@ $app_name = idx($app_info, 'name', '');
         //}
         radio_programs = ["fumou", "elekata"];
 
-        for (var var_radio_program in radio_programs){ //loop 1 start
+        for (var var_radio_program : radio_programs){ //loop 1 start
           var_radio_program_button_name = '#publishAction_'+var_radio_program;
           var_radio_program_button_url  = 'https://lislog.herokuapp.com/radio/jp/co/tbs/'+var_radio_program+'.html';
           alert(var_radio_program_button_name);
