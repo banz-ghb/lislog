@@ -73,9 +73,7 @@ header .tagline {
 }
 
 #share-app ul {
-  /* 2013-02-23 banz-ghb start horizontal to vertical */
-  /* float: right; */
-  /* 2013-02-23 banz-ghb end   horizontal to vertical */
+  float: right;
 }
 
 #share-app p {
@@ -84,7 +82,9 @@ header .tagline {
 }
 
 #share-app li {
-  float: left;
+  /* 2013-02-23 banz-ghb start horizontal to vertical */
+  /* float: left; */
+  /* 2013-02-23 banz-ghb end   horizontal to vertical */
   list-style: none;
   margin-left: 8px;
 }
