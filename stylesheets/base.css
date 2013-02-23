@@ -342,6 +342,115 @@ header .tagline {
 
 /* ------------------------------------------ */
 
+/* 2013-02-22 banz-ghb start add style */
+/* =most-recent-activity
+--------------------------------------------- */
+/* spacing */
+#most-recent-activity h1 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#most-recent-activity {
+  padding: 20px 5px 20px 10px;
+}
+
+#most-recent-activity .list {
+  float: left;
+  margin-right: 3px;
+  width: 172px;
+}
+
+#most-recent-activity ul {
+  padding: 0 4px;
+}
+/* style */
+#most-recent-activity {
+  background-image: url("../images/samples-bg.png");
+  border-bottom: 1px solid #dadada;
+  border-left: 1px solid #b3b3b3;
+  border-right: 1px solid #b3b3b3;
+  border-top: 1px solid #fff;
+}
+
+#most-recent-activity h3 {
+  background: url("../images/header-sketch.png") no-repeat;
+  color: #646464;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 29px;
+  text-align: center;
+}
+
+#most-recent-activity ul {
+  background: url("../images/picture-sketch.png") 4px 8px;
+  background-repeat: repeat-y;
+  height: 161px;
+  overflow: hidden;
+  padding-top: 8px;
+}
+
+#most-recent-activity li {
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  color: #7c7c7c;
+  display: block;
+  font-size: 11px;
+  font-weight: bold;
+  height: 32px;
+  margin-bottom: 11px;
+  overflow: hidden;
+  position: relative;
+}
+
+#most-recent-activity li a:link,
+#most-recent-activity li a:visited {
+  color: #7c7c7c;
+  display: block;
+  line-height: 32px;
+  padding-left: 36px;
+}
+
+#most-recent-activity .list img {
+  height: auto;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 32px;
+}
+
+#most-recent-activity .inline ul {
+  background-repeat: repeat;
+}
+
+#most-recent-activity .inline li {
+  float: left;
+  margin-left: 12px;
+  overflow: hidden;
+  padding: 0;
+  width: 32px;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+#most-recent-activity .inline li.first-column {
+  margin-left: 0;
+}
+
+#most-recent-activity .inline li a:link,
+#most-recent-activity .inline li a:visited {
+  display: block;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+/* ------------------------------------------ */
+/* 2013-02-22 banz-ghb end   add style */
+
 /* =clearfix
 --------------------------------------------- */
 .clearfix:after {
