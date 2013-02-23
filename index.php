@@ -187,6 +187,7 @@ $app_name = idx($app_info, 'name', '');
 
         //array_activities[i].publish_time
         for(i = 0; i < 1; i++) {
+          alert(array_activities[i].data.radio_program.title);
           $('#most-recent-activity-title').text(array_activities[i].data.radio_program.title);
           //Chrome can't parse iso format
           //hint (use jquery wrapper)
