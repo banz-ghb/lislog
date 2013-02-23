@@ -266,7 +266,7 @@ $app_name = idx($app_info, 'name', '');
         <h1>Welcome to <strong><?php echo he($app_name); ?></strong></h1>
 
         <div id="share-app">
-          <p>Press button when you tune in:</p>
+          <p>Press button when you tune in:</p><br>
           <ul>
             <!-- start -->
             <li>
