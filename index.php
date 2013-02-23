@@ -165,9 +165,9 @@ $app_name = idx($app_info, 'name', '');
                 if (response != null) { //if start
                   logResponse(response);
                   FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 2
-                    function (response) {
-                      updateMostRecentActivity(response.data);
-                      addRowToBottom(response.data);
+                    function (response2) {
+                      updateMostRecentActivity(response2.data);
+                      addRowToBottom(response2.data);
                     }
                   ); //FB.api 2
                 } //if end
