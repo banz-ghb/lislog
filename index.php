@@ -281,7 +281,7 @@ $app_name = idx($app_info, 'name', '');
             </li>
           <li>
               <a href="#" class="facebook-button" id="publishAction_fumou" data-url="<?php echo AppInfo::getUrl(); ?>">
-                <span class="plus">不毛</span>
+                <span class="plus">不毛な議論</span>
               </a>
             </li>
             <li>
@@ -296,7 +296,7 @@ $app_name = idx($app_info, 'name', '');
             </li>
             <li>
             <a href="#" class="facebook-button" id="publishAction_elekata" data-url="<?php echo AppInfo::getUrl(); ?>">
-                <span class="plus">エレ片</span>
+                <span class="plus">エレ片のコント太郎</span>
               </a>
             </li>
             <!-- end   -->
