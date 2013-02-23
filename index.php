@@ -291,7 +291,7 @@ $app_name = idx($app_info, 'name', '');
             </li>
             <li>
               <a href="#" class="facebook-button" id="publishAction_banana" data-url="<?php echo AppInfo::getUrl(); ?>">
-                <span class="plus">バナナ</span>
+                <span class="plus">バナナムーンゴールド</span>
               </a>
             </li>
             <li>
