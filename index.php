@@ -279,7 +279,7 @@ $app_name = idx($app_info, 'name', '');
                 <span class="plus">爆笑</span>
               </a>
             </li>
-          <li>
+            <li>
               <a href="#" class="facebook-button" id="publishAction_fumou" data-url="<?php echo AppInfo::getUrl(); ?>">
                 <span class="plus">不毛な議論</span>
               </a>
