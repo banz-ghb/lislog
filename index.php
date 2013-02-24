@@ -248,6 +248,9 @@ $app_name = idx($app_info, 'name', '');
         // 2013-02-24 banz-ghb start get activity when logging in
         FB.getLoginStatus(function(response3){ //start response3
           if (response3.session) {
+            alert("not login");
+            logResponse(response3);
+          /*
             logResponse(response3);
             FB.api('/me/lislogapp:tune_in','POST',//FB.api 31
               function (response31) {
@@ -262,10 +265,18 @@ $app_name = idx($app_info, 'name', '');
                 } //if end
               }
             ); //FB.api 31
+            */
           } else {
-            alert("not login");
+          //alert("not login");
+          //logResponse(response3);
             logResponse(response3);
-          }
+            FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 31
+              function (response31) {
+                updateMostRecentActivity(response31.data);
+                addRowToBottom(response31.data);
+              }
+            ); //FB.api 31
+          } //if end
         }); //end response3
         // 2013-02-24 banz-ghb end   get activity when logging in
 
