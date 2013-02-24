@@ -159,7 +159,7 @@ $app_name = idx($app_info, 'name', '');
             //FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
             var var_radio_program_button_url =
               'https://lislog.herokuapp.com/radio/jp/co/tbs/'+$(this).attr("id").replace("publishAction_","")+'.html';
-            alert(var_radio_program_button_url);
+            //alert(var_radio_program_button_url);
             FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
               function (response) {
                 if (response != null) { //if start
@@ -187,7 +187,7 @@ $app_name = idx($app_info, 'name', '');
 
         //array_activities[i].publish_time
         for(i = 0; i < 1; i++) {
-          alert(array_activities[i].data.radio_program.title);
+          //alert(array_activities[i].data.radio_program.title);
           $('#most-recent-activity-title').text(array_activities[i].data.radio_program.title);
           //Chrome can't parse iso format
           //hint (use jquery wrapper)
