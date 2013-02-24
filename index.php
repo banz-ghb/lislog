@@ -248,6 +248,7 @@ $app_name = idx($app_info, 'name', '');
         // 2013-02-24 banz-ghb start get activity when logging in
         FB.getLoginStatus(function(response3){ //start response3
           if (response3.session) {
+            logResponse(response3);
             FB.api('/me/lislogapp:tune_in','POST',//FB.api 31
               function (response31) {
                 if (response31 != null) { //if start
@@ -263,6 +264,7 @@ $app_name = idx($app_info, 'name', '');
             ); //FB.api 31
           } else {
             alert("not login");
+            logResponse(response3);
           }
         }); //end response3
         // 2013-02-24 banz-ghb end   get activity when logging in
