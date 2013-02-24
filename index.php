@@ -247,7 +247,7 @@ $app_name = idx($app_info, 'name', '');
 
         // 2013-02-24 banz-ghb start get activity when logging in
         FB.getLoginStatus(function(response3){ //start response3
-          if (response3.session) {
+          if (response3.session) { //no longer defined as of 2013-02-24
             alert("unexpected error");
             logResponse(response3);
           } else {
