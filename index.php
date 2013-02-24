@@ -251,7 +251,7 @@ $app_name = idx($app_info, 'name', '');
             alert("unexpected error");
             logResponse(response3);
           } else {
-            if (response3.session == "connected") {
+            if (response3.status == "connected") {
             //alert("login");
               logResponse(response3);
               FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 31
