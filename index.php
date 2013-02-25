@@ -63,7 +63,9 @@ if ($user_id) {
   // This fetches some things that you like . 'limit=*" only returns * values.
   // To see the format of the data you are retrieving, use the "Graph API
   // Explorer" which is at https://developers.facebook.com/tools/explorer/
+  //2013-02-26 banz-ghb end   stop using graph api on a server
   //2013-02-10 banz-ghb comment out candidate
+  /*
   $likes = idx($facebook->api('/me/likes?limit=4'), 'data', array());
 
   // This fetches 4 of your friends.
@@ -71,6 +73,8 @@ if ($user_id) {
 
   // And this returns 16 of your photos.
   $photos = idx($facebook->api('/me/photos?limit=16'), 'data', array());
+  */
+  //2013-02-26 banz-ghb end   stop using graph api on a server
 
   // Here is an example of a FQL call that fetches all of your friends that are
   // using this app
