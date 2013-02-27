@@ -268,7 +268,7 @@ $app_name = idx($app_info, 'name', '');
               alert("not login");
               logResponse(response3);
               FB.login(function(response4){
-                if (response3.status == "connected") {
+                if (response4.status == "connected") {
                   logResponse(response4);
                 } else {
                   alert("login aborted.");
