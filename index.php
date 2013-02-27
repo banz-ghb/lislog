@@ -274,7 +274,7 @@ $app_name = idx($app_info, 'name', '');
                   alert("login aborted.");
                   logResponse(response4);
                 }
-              }
+              }); //end response4
             } //if end
           } //if end
         }); //end response3
