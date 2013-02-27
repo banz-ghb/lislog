@@ -332,11 +332,13 @@ $app_name = idx($app_info, 'name', '');
 
       </div>
       <?php } else { ?>
-      <div>
-        <h1>Welcome</h1>
+      <!-- 2013-02-11 banz-ghb start comment out php login logic -->
+      <!--div-->
+        <!-- h1Welcome/h1-->
         <!-- https://developers.facebook.com/docs/reference/plugins/login/ -->
-        <div class="fb-login-button" data-scope="user_likes,user_photos" scope="publish_actions"></div>
-      </div>
+        <!--div class="fb-login-button" data-scope="user_likes,user_photos" scope="publish_actions"--><!--/div-->
+      <!--/div-->
+      <!-- 2013-02-11 banz-ghb end   comment out php login logic -->
       <?php } ?>
     </header>
 
