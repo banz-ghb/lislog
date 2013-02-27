@@ -267,6 +267,14 @@ $app_name = idx($app_info, 'name', '');
             } else {
               alert("not login");
               logResponse(response3);
+              FB.login(function(response4){
+                if (response3.status == "connected") {
+                  logResponse(response4);
+                } else {
+                  alert("login aborted.");
+                  logResponse(response4);
+                }
+              }
             } //if end
           } //if end
         }); //end response3
