@@ -214,6 +214,14 @@ $app_name = idx($app_info, 'name', '');
             logResponse(response111[i]);//alert(response111[i].name);
             var li = $('<li/>').text(response111[i].name);
             $('#app-using-friends').append(li);
+            var a = $('<a/>').text(response111[i].name);
+            a.attr("href", "https://www.facebook.com/"+response111[i].uid);//a is added attributes
+            a.attr("target", "_top");//a is added attributes
+            li.append(a);
+            var img = $('<img/>');
+            a.append(img);
+            img.attr("src", "https://graph.facebook.com/"+response111[i].uid+"/picture?type=square");//img is added attributes
+            img.attr("alt", response111[i].name);//img is added attributes
           }
         }); //FB.api
       }
