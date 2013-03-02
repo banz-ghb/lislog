@@ -120,6 +120,7 @@ $app_name = idx($app_info, 'name', '');
     <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
 
     <script type="text/javascript">
+      ///// Utility
       function logResponse(response) {
         if (console && console.log) {
           console.log('The response was', response);
@@ -249,42 +250,32 @@ $app_name = idx($app_info, 'name', '');
           window.location = window.location;
         });
 
-        // 2013-02-24 banz-ghb start get activity when logging in
-        FB.getLoginStatus(function(response3){ //start response3
-        //refer to Javascript Test Console on developers.facebook.com
-        //https://developers.facebook.com/tools/console/
-        //if (response3.session) { //no longer defined as of 2013-02-24
-        //  alert("unexpected error");
-        //  logResponse(response3);
-        //} else {
-            if (response3.status == "connected") {
-            //alert("login");
-              logResponse(response3);
-              FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 31
-                function (response31) {
-                  updateMostRecentActivity(response31.data);
-                  addRowToBottom(response31.data);
-                }
-              ); //FB.api 31
-            } else {
-              alert("not login");
-              logResponse(response3);
-              FB.login(function(response4){
-                if (response4.status == "connected") {
-                  logResponse(response4);
-                } else {
-                  alert("login aborted.");
-                  logResponse(response4);
-                }
-              }); //end response4
-            } //if end
-        //} //if end
+        // 2013-02-24 banz-ghb start add event subscribe event function
+        function function_eventStateChangeOnLislog(response3){ //start response3
+          if (response3.status == "connected") {
+            logResponse(response3);//alert("login");
+            FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 31
+              function (response31) {
+                updateMostRecentActivity(response31.data);
+                addRowToBottom(response31.data);
+              }
+            ); //FB.api 31
+          } else {
+            logResponse(response3);//alert("not login");
+            FB.login(function(response4){
+              if (response4.status == "connected") {
+                logResponse(response4);
+              } else {
+                alert("login aborted.");
+                logResponse(response4);
+              }
+            }); //end response4
+          } //if end
         }); //end response3
-        // 2013-02-24 banz-ghb end   get activity when logging in
 
-        // 2013-03-02 banz-ghb start subscribe statusChange Event candidate
-        //FB.Event.subscribe('auth.statusChange', XXXXX);
-        // 2013-03-02 banz-ghb end   subscribe statusChange Event candidate
+        FB.getLoginStatus(function_eventStateChangeOnLislog);
+        FB.Event.subscribe('auth.statusChange', function_eventStateChangeOnLislog);
+        // 2013-02-24 banz-ghb end   add event subscribe event function
 
         FB.Canvas.setAutoGrow();
       };
