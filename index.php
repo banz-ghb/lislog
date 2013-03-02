@@ -212,11 +212,11 @@ $app_name = idx($app_info, 'name', '');
 
           //array_activities[i].publish_time
           for(i = 0; i < response111.length; i++) {
-            logResponse(response);//alert(response111.name);
+            logResponse(response111);//alert(response111.name);
             var li = $('<li/>').text(response111.name);
             $('#app-using-friends').append(li);
           }
-        });
+        }); //FB.api
       }
       // 2013-03-02 banz-ghb end   add getAppUsingFriends
       </script>
