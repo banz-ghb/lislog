@@ -282,6 +282,10 @@ $app_name = idx($app_info, 'name', '');
         }); //end response3
         // 2013-02-24 banz-ghb end   get activity when logging in
 
+        // 2013-03-02 banz-ghb start subscribe statusChange Event candidate
+        //FB.Event.subscribe('auth.statusChange', XXXXX);
+        // 2013-03-02 banz-ghb end   subscribe statusChange Event candidate
+
         FB.Canvas.setAutoGrow();
       };
 
