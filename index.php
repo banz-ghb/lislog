@@ -251,10 +251,12 @@ $app_name = idx($app_info, 'name', '');
 
         // 2013-02-24 banz-ghb start get activity when logging in
         FB.getLoginStatus(function(response3){ //start response3
-          if (response3.session) { //no longer defined as of 2013-02-24
-            alert("unexpected error");
-            logResponse(response3);
-          } else {
+        //refer to Javascript Test Console on developers.facebook.com
+        //https://developers.facebook.com/tools/console/
+        //if (response3.session) { //no longer defined as of 2013-02-24
+        //  alert("unexpected error");
+        //  logResponse(response3);
+        //} else {
             if (response3.status == "connected") {
             //alert("login");
               logResponse(response3);
@@ -276,7 +278,7 @@ $app_name = idx($app_info, 'name', '');
                 }
               }); //end response4
             } //if end
-          } //if end
+        //} //if end
         }); //end response3
         // 2013-02-24 banz-ghb end   get activity when logging in
 
