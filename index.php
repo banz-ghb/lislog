@@ -254,6 +254,7 @@ $app_name = idx($app_info, 'name', '');
         function function_eventStateChangeOnLislog(response3){ //start response3
           if (response3.status == "connected") {
             logResponse(response3);//alert("login");
+            $('#fb-auth').hide();
             FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 31
               function (response31) {
                 updateMostRecentActivity(response31.data);
@@ -262,6 +263,10 @@ $app_name = idx($app_info, 'name', '');
             ); //FB.api 31
           } else {
             logResponse(response3);//alert("not login");
+
+            // 2013-03-02 banz-ghb start show login button instead of auto login because auto login dialog is blocked on Chrome
+            $('#fb-auth').show();
+            /*
             FB.login(function(response4){
               if (response4.status == "connected") {
                 logResponse(response4);
@@ -270,6 +275,8 @@ $app_name = idx($app_info, 'name', '');
                 logResponse(response4);
               }
             }); //end response4
+            */
+            // 2013-03-02 banz-ghb end   show login button instead of auto login because auto login dialog is blocked on Chrome
           } //if end
         } //end response3
 
@@ -345,6 +352,8 @@ $app_name = idx($app_info, 'name', '');
       <!--/div-->
       <!-- 2013-02-11 banz-ghb end   comment out php login logic -->
       <?php } ?>
+      <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
+      <div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"></div>
     </header>
 
     <!-- 2013-02-11 banz-ghb start -->
