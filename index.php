@@ -271,7 +271,7 @@ $app_name = idx($app_info, 'name', '');
               }
             }); //end response4
           } //if end
-        }); //end response3
+        } //end response3
 
         FB.getLoginStatus(function_eventStateChangeOnLislog);
         FB.Event.subscribe('auth.statusChange', function_eventStateChangeOnLislog);
