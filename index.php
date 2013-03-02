@@ -274,7 +274,7 @@ $app_name = idx($app_info, 'name', '');
               }
             ); //FB.api 31
             // 2013-02-24 banz-ghb start update profile picture
-            $('#picture').attr("style", "background-image: url(https://graph.facebook.com/"+response3[0].uid+"/picture?type=normal)");
+            $('#picture').attr("style", "background-image: url(https://graph.facebook.com/"+response3.authResponse.userID+"/picture?type=normal)");
             // 2013-02-24 banz-ghb end   update profile picture
           } else {
             logResponse(response3);//alert("not login");
