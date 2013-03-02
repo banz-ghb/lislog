@@ -254,7 +254,9 @@ $app_name = idx($app_info, 'name', '');
         function function_eventStateChangeOnLislog(response3){ //start response3
           if (response3.status == "connected") {
             logResponse(response3);//alert("login");
-            $('#fb-auth').hide();
+            $("#fb-auth").hide();
+            $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
+            $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
             FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 31
               function (response31) {
                 updateMostRecentActivity(response31.data);
@@ -266,6 +268,8 @@ $app_name = idx($app_info, 'name', '');
 
             // 2013-03-02 banz-ghb start show login button instead of auto login because auto login dialog is blocked on Chrome
             $('#fb-auth').show();
+            $("#picture").hide();    // 2013-02-24 banz-ghb switch lislog-main
+            $("#lislog-main").hide();// 2013-02-24 banz-ghb switch lislog-main
             /*
             FB.login(function(response4){
               if (response4.status == "connected") {
@@ -298,10 +302,10 @@ $app_name = idx($app_info, 'name', '');
     </script>
 
     <header class="clearfix">
-      <?php if (isset($basic)) { ?>
+      <!--?php if (isset($basic)) { ?--><!-- 2013-02-24 banz-ghb switch lislog-main -->
       <p id="picture" style="background-image: url(https://graph.facebook.com/<?php echo he($user_id); ?>/picture?type=normal)"></p>
 
-      <div>
+      <div id="lislog-main"><!-- 2013-02-24 banz-ghb switch lislog-main -->
         <h1>Welcome to <strong><?php echo he($app_name); ?></strong></h1>
 
         <div id="share-app">
@@ -343,7 +347,7 @@ $app_name = idx($app_info, 'name', '');
         </div>
 
       </div>
-      <?php } else { ?>
+      <!--?php } else { ?--><!-- 2013-02-24 banz-ghb switch lislog-main -->
       <!-- 2013-02-11 banz-ghb start comment out php login logic -->
       <!--div-->
         <!-- h1Welcome/h1-->
@@ -351,7 +355,7 @@ $app_name = idx($app_info, 'name', '');
         <!--div class="fb-login-button" data-scope="user_likes,user_photos" scope="publish_actions"--><!--/div-->
       <!--/div-->
       <!-- 2013-02-11 banz-ghb end   comment out php login logic -->
-      <?php } ?>
+      <!--?php } ?--><!-- 2013-02-24 banz-ghb switch lislog-main -->
       <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
       <div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"></div>
     </header>
