@@ -220,7 +220,7 @@ $app_name = idx($app_info, 'name', '');
             li.append(a);
             var img = $('<img/>');
             a.append(img);
-            img.attr("style", "background-image: url(https://graph.facebook.com/"+response111[0].uid+"/picture?type=normal)");//img is added attributes
+            img.attr("src", "https://graph.facebook.com/"+response111[i].uid+"/picture?type=square");//img is added attributes
             img.attr("alt", response111[0].name);//img is added attributes
           }
         }); //FB.api
@@ -274,7 +274,7 @@ $app_name = idx($app_info, 'name', '');
               }
             ); //FB.api 31
             // 2013-02-24 banz-ghb start update profile picture
-            $('#picture').attr("style", "background-image: url(https://graph.facebook.com/"+response3.uid+"/picture?type=normal)");
+            $('#picture').attr("style", "background-image: url(https://graph.facebook.com/"+response3[0].uid+"/picture?type=normal)");
             // 2013-02-24 banz-ghb end   update profile picture
           } else {
             logResponse(response3);//alert("not login");
