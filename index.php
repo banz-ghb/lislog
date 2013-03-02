@@ -220,7 +220,7 @@ $app_name = idx($app_info, 'name', '');
             li.append(a);
             var img = $('<img/>');
             a.append(img);
-            img.attr("src", "https://graph.facebook.com/"+response111[0].uid+"/picture?type=square");//img is added attributes
+            img.attr("style", "background-image: url(https://graph.facebook.com/"+response111[0].uid+"/picture?type=normal)");//img is added attributes
             img.attr("alt", response111[0].name);//img is added attributes
           }
         }); //FB.api
