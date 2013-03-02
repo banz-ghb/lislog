@@ -201,6 +201,23 @@ $app_name = idx($app_info, 'name', '');
         }
       }
       //2013-02-10 banz-ghb end   get recent activities
+
+      // 2013-03-02 banz-ghb start add getAppUsingFriends
+      function getAppUsingFriends() {
+        FB.api({ //FB.api
+          method : 'fql.query',
+          query  : 'SELECT uid, name FROM user WHERE uid IN(SELECT uid2 FROM friend WHERE uid1 = me()) AND is_app_user = 1'
+        },function(response111){
+          $('#app-using-friends li').remove();
+
+          //array_activities[i].publish_time
+          for(i = 0; i < response111.length; i++) {
+            var li = $('<li/>').text(response111.name);
+            $('#app-using-friends').append(li);
+          }
+        });
+      }
+      // 2013-03-02 banz-ghb end   add getAppUsingFriends
       </script>
 
     <!--[if IE]>
@@ -245,6 +262,7 @@ $app_name = idx($app_info, 'name', '');
               function (response31) {
                 updateMostRecentActivity(response31.data);
                 addRowToBottom(response31.data);
+                getAppUsingFriends();// 2013-03-02 banz-ghb add getAppUsingFriends
               }
             ); //FB.api 31
           } else {
@@ -358,7 +376,7 @@ $app_name = idx($app_info, 'name', '');
 
       <div class="list">
         <h3>Friends using this app</h3>
-        <ul class="friends">
+        <ul id="app-using-friends" class="friends">
           <!-- app_using_friends --><!-- 2013-03-02 banz-ghb disable to show app_using_friends -->
         </ul>
       </div>
