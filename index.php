@@ -64,12 +64,16 @@ if ($user_id) {
   // To see the format of the data you are retrieving, use the "Graph API
   // Explorer" which is at https://developers.facebook.com/tools/explorer/
 
+  // 2013-03-02 banz-ghb start disable to show app_using_friends
   // Here is an example of a FQL call that fetches all of your friends that are
   // using this app
+  /*
   $app_using_friends = $facebook->api(array(
     'method' => 'fql.query',
     'query' => 'SELECT uid, name FROM user WHERE uid IN(SELECT uid2 FROM friend WHERE uid1 = me()) AND is_app_user = 1'
   ));
+  */
+  // 2013-03-02 banz-ghb end   disable to show app_using_friends
 }
 
 // Fetch the basic info of the app that they are using
@@ -355,21 +359,7 @@ $app_name = idx($app_info, 'name', '');
       <div class="list">
         <h3>Friends using this app</h3>
         <ul class="friends">
-          <?php
-            foreach ($app_using_friends as $auf) {
-              // Extract the pieces of info we need from the requests above
-              $id = idx($auf, 'uid');
-              $name = idx($auf, 'name');
-          ?>
-          <li>
-            <a href="https://www.facebook.com/<?php echo he($id); ?>" target="_top">
-              <img src="https://graph.facebook.com/<?php echo he($id) ?>/picture?type=square" alt="<?php echo he($name); ?>">
-              <?php echo he($name); ?>
-            </a>
-          </li>
-          <?php
-            }
-          ?>
+          <!-- app_using_friends --><!-- 2013-03-02 banz-ghb disable to show app_using_friends -->
         </ul>
       </div>
 
