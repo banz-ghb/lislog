@@ -63,18 +63,6 @@ if ($user_id) {
   // This fetches some things that you like . 'limit=*" only returns * values.
   // To see the format of the data you are retrieving, use the "Graph API
   // Explorer" which is at https://developers.facebook.com/tools/explorer/
-  //2013-02-26 banz-ghb end   stop using graph api on a server
-  //2013-02-10 banz-ghb comment out candidate
-  /*
-  $likes = idx($facebook->api('/me/likes?limit=4'), 'data', array());
-
-  // This fetches 4 of your friends.
-  $friends = idx($facebook->api('/me/friends?limit=4'), 'data', array());
-
-  // And this returns 16 of your photos.
-  $photos = idx($facebook->api('/me/photos?limit=16'), 'data', array());
-  */
-  //2013-02-26 banz-ghb end   stop using graph api on a server
 
   // Here is an example of a FQL call that fetches all of your friends that are
   // using this app
@@ -145,11 +133,6 @@ $app_name = idx($app_info, 'name', '');
           );
         });
 
-        // start
-        //anchors = document.getElementsByTagName('a');
-        //for (var p in anchors){
-        // console.log(p);
-        //}
         var radio_programs = ["baka", "bakusho", "fumou", "megane", "banana", "elekata"];
 
       //for each (var var_radio_program in radio_programs){ //loop 1 start
@@ -209,10 +192,7 @@ $app_name = idx($app_info, 'name', '');
 
         //array_activities[i].publish_time
         for(i = 0; i < array_activities.length; i++) {
-          //var data = array[i];
-          //var li = $('<li/>');
           var li = $('<li/>').text(array_activities[i].publish_time); //.appendTo(tr);
-          //$('<td/>').text(data.name).appendTo(tr);
           $('#recent-activities').append(li);
         }
       }
@@ -270,16 +250,6 @@ $app_name = idx($app_info, 'name', '');
             $('#fb-auth').show();
             $("#picture").hide();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").hide();// 2013-02-24 banz-ghb switch lislog-main
-            /*
-            FB.login(function(response4){
-              if (response4.status == "connected") {
-                logResponse(response4);
-              } else {
-                alert("login aborted.");
-                logResponse(response4);
-              }
-            }); //end response4
-            */
             // 2013-03-02 banz-ghb end   show login button instead of auto login because auto login dialog is blocked on Chrome
           } //if end
         } //end response3
@@ -302,7 +272,6 @@ $app_name = idx($app_info, 'name', '');
     </script>
 
     <header class="clearfix">
-      <!--?php if (isset($basic)) { ?--><!-- 2013-02-24 banz-ghb switch lislog-main -->
       <p id="picture" style="background-image: url(https://graph.facebook.com/<?php echo he($user_id); ?>/picture?type=normal)"></p>
 
       <div id="lislog-main"><!-- 2013-02-24 banz-ghb switch lislog-main -->
@@ -347,15 +316,6 @@ $app_name = idx($app_info, 'name', '');
         </div>
 
       </div>
-      <!--?php } else { ?--><!-- 2013-02-24 banz-ghb switch lislog-main -->
-      <!-- 2013-02-11 banz-ghb start comment out php login logic -->
-      <!--div-->
-        <!-- h1Welcome/h1-->
-        <!-- https://developers.facebook.com/docs/reference/plugins/login/ -->
-        <!--div class="fb-login-button" data-scope="user_likes,user_photos" scope="publish_actions"--><!--/div-->
-      <!--/div-->
-      <!-- 2013-02-11 banz-ghb end   comment out php login logic -->
-      <!--?php } ?--><!-- 2013-02-24 banz-ghb switch lislog-main -->
       <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
       <div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"></div>
     </header>
