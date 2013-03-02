@@ -368,7 +368,7 @@ $app_name = idx($app_info, 'name', '');
     </section>
 
     <?php
-      if ($user_id) {
+      //if ($user_id) { // 2013-03-02 banz-ghb disable php code
     ?>
 
     <section id="samples" class="clearfix">
@@ -405,7 +405,7 @@ $app_name = idx($app_info, 'name', '');
     </section>
 
     <?php
-      }
+      //} // 2013-03-02 banz-ghb disable php code
     ?>
 
     <section id="guides" class="clearfix">
