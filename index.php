@@ -273,6 +273,9 @@ $app_name = idx($app_info, 'name', '');
                 getAppUsingFriends();// 2013-03-02 banz-ghb add getAppUsingFriends
               }
             ); //FB.api 31
+            // 2013-02-24 banz-ghb start update profile picture
+            $('#picture').attr("style", "background-image: url(https://graph.facebook.com/"+response3.uid+"/picture?type=normal)");
+            // 2013-02-24 banz-ghb end   update profile picture
           } else {
             logResponse(response3);//alert("not login");
 
@@ -302,7 +305,7 @@ $app_name = idx($app_info, 'name', '');
     </script>
 
     <header class="clearfix">
-      <p id="picture" style="background-image: url(https://graph.facebook.com/<?php echo he($user_id); ?>/picture?type=normal)"></p>
+      <p id="picture"></p>
 
       <div id="lislog-main"><!-- 2013-02-24 banz-ghb switch lislog-main -->
         <h1>Welcome to <strong><?php echo he($app_name); ?></strong></h1>
