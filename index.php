@@ -155,7 +155,7 @@ $app_name = idx($app_info, 'name', '');
           // 2013-03-03 banz-ghb end   #7 generate lislog buttons dymamically
 
           //var_radio_program_button_url  = 'https://lislog.herokuapp.com/radio/jp/co/tbs/'+radio_programs[i]+'.html';
-          $(this).find
+          //$(this).find //test
           $(var_radio_program_button_name).click(function() { //bind function 10 start
             //$(this).find("a").attr("href")
             //FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
