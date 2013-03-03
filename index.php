@@ -81,7 +81,7 @@ $app_name = idx($app_info, 'name', '');
 
     <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
 
-    <script type="text/javascript">
+    <script type="text/javascript"><!--
       ///// Utility
       function logResponse(response) {
         if (console && console.log) {
@@ -124,7 +124,6 @@ $app_name = idx($app_info, 'name', '');
         for (var i = 0; i < radio_programs.length; i++){
           var_radio_program_button_name = 'publishAction_'+radio_programs[i];
 
-          // 2013-03-03 banz-ghb start #7 generate lislog buttons dymamically
           var li = $('<li/>');;
           $('#radioprogram-list').append(li);
           var a = $('<a/>');
@@ -136,18 +135,9 @@ $app_name = idx($app_info, 'name', '');
           var span = $('<span/>').text(radio_programs_title[i]);
           span.attr("class", "plus");
           a.append(span);
-          // 2013-03-03 banz-ghb end   #7 generate lislog buttons dymamically
-
-          //var_radio_program_button_url  = 'https://lislog.herokuapp.com/radio/jp/co/tbs/'+radio_programs[i]+'.html';
-          //$(this).find //test
-          //$(var_radio_program_button_name).click(function() { //bind function 10 start
           a.click(function() { //bind function 10 start
-            //$(this).find("a").attr("href")
-            //FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
-            //alert($(this).attr("id"));
             var var_radio_program_button_url =
               'https://lislog.herokuapp.com/radio/jp/co/tbs/'+$(this).attr("id").replace("publishAction_","")+'.html';
-            //'https://lislog.herokuapp.com/radio/jp/co/tbs/'+radio_programs+'.html';
               FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
               function (response) {
                 $("#most-recent-activity").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
@@ -215,6 +205,7 @@ $app_name = idx($app_info, 'name', '');
           }
         }); //FB.api
       }
+      //-->
       </script>
 
     <!--[if IE]>
