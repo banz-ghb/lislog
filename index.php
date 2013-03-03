@@ -130,6 +130,7 @@ $app_name = idx($app_info, 'name', '');
                       addRowToBottom(response2.data);
                     }
                   ); //FB.api 2
+                  $("#samples").show();// 2013-03-02 banz-ghb hide samples when logged out
                 } //if end
               }
             ); //FB.api 1
@@ -225,7 +226,6 @@ $app_name = idx($app_info, 'name', '');
             $("#fb-auth").hide();
             $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
-            $("#most-recent-activity").hide();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
             FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 31
               function (response31) {
                 updateMostRecentActivity(response31.data);
@@ -242,9 +242,10 @@ $app_name = idx($app_info, 'name', '');
             $('#fb-auth').show();
             $("#picture").hide();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").hide();// 2013-02-24 banz-ghb switch lislog-main
-            $("#most-recent-activity").hide();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
           } //if end
-        } //end response3
+          $("#most-recent-activity").hide();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
+          $("#samples").hide();// 2013-03-02 banz-ghb hide samples when logged out
+} //end response3
 
         FB.getLoginStatus(function_eventStateChangeOnLislog);
         FB.Event.subscribe('auth.statusChange', function_eventStateChangeOnLislog);
