@@ -108,10 +108,59 @@ $app_name = idx($app_info, 'name', '');
         });
 
         var radio_programs = ["baka", "bakusho", "fumou", "megane", "banana", "elekata"];
+        var radio_programs_title = [ "伊集院光　深夜の馬鹿力"
+                                    ,"爆笑問題カーボーイ"
+                                    ,"山里亮太の不毛な議論"
+                                    ,"おぎやはぎのメガネびいき"
+                                    ,"バナナマンのバナンムーンGOLD"
+                                    ,"エレ片のコント太郎"
+                                   ];
 
-      //for each (var var_radio_program in radio_programs){ //loop 1 start
+        // 2013-03-03 banz-ghb start #7 generate lislog buttons dymamically
+        $('#radioprogram-list li').remove();
+        // 2013-03-03 banz-ghb end   #7 generate lislog buttons dymamically
+
+        //for each (var var_radio_program in radio_programs){ //loop 1 start
         for (var i = 0; i < radio_programs.length; i++){
           var_radio_program_button_name = '#publishAction_'+radio_programs[i];
+
+          // 2013-03-03 banz-ghb start #7 generate lislog buttons dymamically
+          var li = $('<li/>');;
+          $('#radioprogram-list').append(li);
+          var a = $('<a/>');
+          a.attr("href", "#");
+          a.attr("class", "facebook-button");
+          a.attr("id", var_radio_program_button_name);
+          a.attr("data-url", "<?php echo AppInfo::getUrl(); ?>");
+          li.append(a);
+          var span = $('<span/>').text(radio_programs_title[i]);
+          span.attr("class", "plus");
+          a.append(span);
+          /*
+            $('#recent-activities li').remove();
+            //array_activities[i].publish_time
+            for(i = 0; i < array_activities.length; i++) {
+              var li = $('<li/>').text(array_activities[i].publish_time); //.appendTo(tr);
+              $('#recent-activities').append(li);
+            }
+
+            <li>
+              <a href="#" class="facebook-button" id="publishAction_fumou" data-url="<?php echo AppInfo::getUrl(); ?>">
+                <span class="plus">不毛な議論</span>
+              </a>
+            </li>
+
+            var a = $('<a/>').text(response111[i].name);
+            a.attr("href", "https://www.facebook.com/"+response111[i].uid);//a is added attributes
+            a.attr("target", "_top");//a is added attributes
+            li.append(a);
+            var img = $('<img/>');
+            a.append(img);
+            img.attr("src", "https://graph.facebook.com/"+response111[i].uid+"/picture?type=square");//img is added attributes
+            img.attr("alt", response111[0].name);//img is added attributes
+          */
+          // 2013-03-03 banz-ghb end   #7 generate lislog buttons dymamically
+
           //var_radio_program_button_url  = 'https://lislog.herokuapp.com/radio/jp/co/tbs/'+radio_programs[i]+'.html';
           $(this).find
           $(var_radio_program_button_name).click(function() { //bind function 10 start
@@ -272,7 +321,7 @@ $app_name = idx($app_info, 'name', '');
 
         <div id="share-app">
           <p>Press button when you tune in:</p><br>
-          <ul>
+          <ul id="radioprogram-list">
             <!-- start -->
             <li>
               <a href="#" class="facebook-button" id="publishAction_baka" data-url="<?php echo AppInfo::getUrl(); ?>">
