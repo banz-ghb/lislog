@@ -125,8 +125,9 @@ $app_name = idx($app_info, 'name', '');
         } //loop 1 end
       }); //define function 1 end
 
-    /////////////////////////
+      //////////////////////////////////////////////////////////////
       //View functions
+      //////////////////////////////////////////////////////////////
       function updateMostRecentActivity(array_activities) {
         for(i = 0; i < 1; i++) {
           $('#most-recent-activity-title').text(array_activities[i].data.radio_program.title);
