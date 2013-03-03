@@ -143,13 +143,6 @@ $app_name = idx($app_info, 'name', '');
               var li = $('<li/>').text(array_activities[i].publish_time); //.appendTo(tr);
               $('#recent-activities').append(li);
             }
-
-            <li>
-              <a href="#" class="facebook-button" id="publishAction_fumou" data-url="XXX">
-                <span class="plus">不毛な議論</span>
-              </a>
-            </li>
-
             var a = $('<a/>').text(response111[i].name);
             a.attr("href", "https://www.facebook.com/"+response111[i].uid);//a is added attributes
             a.attr("target", "_top");//a is added attributes
