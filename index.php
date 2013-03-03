@@ -270,7 +270,7 @@ $app_name = idx($app_info, 'name', '');
           } //if end
           $("#most-recent-activity").hide();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
           $("#samples").hide();// 2013-03-02 banz-ghb hide samples when logged out
-} //end response3
+        } //end response3
 
         FB.getLoginStatus(function_eventStateChangeOnLislog);
         FB.Event.subscribe('auth.statusChange', function_eventStateChangeOnLislog);
