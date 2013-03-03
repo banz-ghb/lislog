@@ -122,7 +122,7 @@ $app_name = idx($app_info, 'name', '');
 
         //for each (var var_radio_program in radio_programs){ //loop 1 start
         for (var i = 0; i < radio_programs.length; i++){
-          var_radio_program_button_name = '#publishAction_'+radio_programs[i];
+          var_radio_program_button_name = 'publishAction_'+radio_programs[i];
 
           // 2013-03-03 banz-ghb start #7 generate lislog buttons dymamically
           var li = $('<li/>');;
