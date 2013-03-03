@@ -117,7 +117,7 @@ $app_name = idx($app_info, 'name', '');
                                    ];
 
         // 2013-03-03 banz-ghb start #7 generate lislog buttons dymamically
-        $('#radioprogram-list li').remove();
+        //$('#radioprogram-list li').remove(); //test
         // 2013-03-03 banz-ghb end   #7 generate lislog buttons dymamically
 
         //for each (var var_radio_program in radio_programs){ //loop 1 start
