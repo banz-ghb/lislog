@@ -116,9 +116,9 @@ $app_name = idx($app_info, 'name', '');
                                     ,"エレ片のコント太郎"
                                    ];
 
-        // 2013-03-03 banz-ghb start #7 generate lislog buttons dymamically
-        //$('#radioprogram-list li').remove(); //test
-        // 2013-03-03 banz-ghb end   #7 generate lislog buttons dymamically
+        // 2013-03-03 banz-ghb start #7 generate lislog buttons dynamically
+        $('#radioprogram-list li').remove();
+        // 2013-03-03 banz-ghb end   #7 generate lislog buttons dynamically
 
         for (var i = 0; i < radio_programs_id.length; i++){ //loop 1 start
           addPublishActionButtonOnLiElement(radio_programs_id[i], radio_programs_title[i]);
