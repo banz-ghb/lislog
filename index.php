@@ -193,6 +193,7 @@ $app_name = idx($app_info, 'name', '');
           //$('#most-recent-activity-publish_time').text(new Date().toLocaleString(array_activities[i].publish_time));
           $('#most-recent-activity-publish_time').text(array_activities[i].publish_time);
         }
+        $("#most-recent-activity").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
       }
       //http://d.hatena.ne.jp/okahiro_p/20120525/1337918243
       function addRowToBottom(array_activities) {
@@ -270,6 +271,7 @@ $app_name = idx($app_info, 'name', '');
             $("#fb-auth").hide();
             $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
+            $("#most-recent-activity").hide();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
             FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 31
               function (response31) {
                 updateMostRecentActivity(response31.data);
@@ -287,6 +289,7 @@ $app_name = idx($app_info, 'name', '');
             $('#fb-auth').show();
             $("#picture").hide();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").hide();// 2013-02-24 banz-ghb switch lislog-main
+            $("#most-recent-activity").hide();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
             // 2013-03-02 banz-ghb end   show login button instead of auto login because auto login dialog is blocked on Chrome
           } //if end
         } //end response3
