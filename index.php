@@ -145,7 +145,7 @@ $app_name = idx($app_info, 'name', '');
             }
 
             <li>
-              <a href="#" class="facebook-button" id="publishAction_fumou" data-url="<?php echo AppInfo::getUrl(); ?>">
+              <a href="#" class="facebook-button" id="publishAction_fumou" data-url="XXX">
                 <span class="plus">不毛な議論</span>
               </a>
             </li>
