@@ -46,40 +46,6 @@ $facebook = new Facebook(array(
   'trustForwarded' => true,
 ));
 
-// 2013-03-03 banz-ghb start disable server side logic
-/*
-$user_id = $facebook->getUser();
-if ($user_id) {
-  try {
-    // Fetch the viewer's basic information
-    $basic = $facebook->api('/me');
-  } catch (FacebookApiException $e) {
-    // If the call fails we check if we still have a user. The user will be
-    // cleared if the error is because of an invalid accesstoken
-    if (!$facebook->getUser()) {
-      header('Location: '. AppInfo::getUrl($_SERVER['REQUEST_URI']));
-      exit();
-    }
-  }
-*/
-// 2013-03-03 banz-ghb end   disable server side logic
-
-  // This fetches some things that you like . 'limit=*" only returns * values.
-  // To see the format of the data you are retrieving, use the "Graph API
-  // Explorer" which is at https://developers.facebook.com/tools/explorer/
-
-  // 2013-03-02 banz-ghb start disable to show app_using_friends
-  // Here is an example of a FQL call that fetches all of your friends that are
-  // using this app
-  /*
-  $app_using_friends = $facebook->api(array(
-    'method' => 'fql.query',
-    'query' => 'SELECT uid, name FROM user WHERE uid IN(SELECT uid2 FROM friend WHERE uid1 = me()) AND is_app_user = 1'
-  ));
-  */
-  // 2013-03-02 banz-ghb end   disable to show app_using_friends
-//} // 2013-03-03 banz-ghb disable server side logic
-
 // Fetch the basic info of the app that they are using
 $app_info = $facebook->api('/'. AppInfo::appID());
 
@@ -147,15 +113,12 @@ $app_name = idx($app_info, 'name', '');
         for (var i = 0; i < radio_programs.length; i++){
           var_radio_program_button_name = '#publishAction_'+radio_programs[i];
           //var_radio_program_button_url  = 'https://lislog.herokuapp.com/radio/jp/co/tbs/'+radio_programs[i]+'.html';
-          //alert(var_radio_program_button_name);
-          //alert(radio_programs);
           $(this).find
           $(var_radio_program_button_name).click(function() { //bind function 10 start
             //$(this).find("a").attr("href")
             //FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
             var var_radio_program_button_url =
               'https://lislog.herokuapp.com/radio/jp/co/tbs/'+$(this).attr("id").replace("publishAction_","")+'.html';
-            //alert(var_radio_program_button_url);
             FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
               function (response) {
                 $("#most-recent-activity").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
@@ -175,16 +138,10 @@ $app_name = idx($app_info, 'name', '');
         // end
       }); //define function 1 end
 
-
     /////////////////////////
       //View functions
-      //2013-02-10 banz-ghb start get recent activities
       function updateMostRecentActivity(array_activities) {
-        //$('#most-recent-activity p').remove();
-
-        //array_activities[i].publish_time
         for(i = 0; i < 1; i++) {
-          //alert(array_activities[i].data.radio_program.title);
           $('#most-recent-activity-title').text(array_activities[i].data.radio_program.title);
           //Chrome can't parse iso format
           //hint (use jquery wrapper)
@@ -205,9 +162,7 @@ $app_name = idx($app_info, 'name', '');
           $('#recent-activities').append(li);
         }
       }
-      //2013-02-10 banz-ghb end   get recent activities
 
-      // 2013-03-02 banz-ghb start add getAppUsingFriends
       function getAppUsingFriends() {
         FB.api({ //FB.api
           method : 'fql.query',
@@ -230,7 +185,6 @@ $app_name = idx($app_info, 'name', '');
           }
         }); //FB.api
       }
-      // 2013-03-02 banz-ghb end   add getAppUsingFriends
       </script>
 
     <!--[if IE]>
@@ -285,12 +239,10 @@ $app_name = idx($app_info, 'name', '');
           } else {
             logResponse(response3);//alert("not login");
 
-            // 2013-03-02 banz-ghb start show login button instead of auto login because auto login dialog is blocked on Chrome
             $('#fb-auth').show();
             $("#picture").hide();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").hide();// 2013-02-24 banz-ghb switch lislog-main
             $("#most-recent-activity").hide();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
-            // 2013-03-02 banz-ghb end   show login button instead of auto login because auto login dialog is blocked on Chrome
           } //if end
         } //end response3
 
@@ -375,10 +327,6 @@ $app_name = idx($app_info, 'name', '');
       <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">Learn How to use lislog</a>
     </section>
 
-    <?php
-      //if ($user_id) { // 2013-03-02 banz-ghb disable php code
-    ?>
-
     <section id="samples" class="clearfix">
       <h1>Social Graph</h1>
 
@@ -412,10 +360,6 @@ $app_name = idx($app_info, 'name', '');
       </div>
     </section>
 
-    <?php
-      //} // 2013-03-02 banz-ghb disable php code
-    ?>
-
     <section id="guides" class="clearfix">
       <h1>Check Your Facebook Timeline</h1>
       <ul>
@@ -426,7 +370,7 @@ $app_name = idx($app_info, 'name', '');
           <!-- a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="icon apps-on-facebook"--><!-- Timeline --><!-- /a -->
           <!-- for PC     https://www.facebook.com/me/app_lislogapp -->
           <!-- for Mobile https://www.facebook.com/me -->
-          <a href="https://www.facebook.com/me/app_lislogapp" target="_top" class="icon apps-on-facebook">Timeline</a>
+          <a href="https://www.facebook.com/me" target="_top" class="icon apps-on-facebook">Timeline</a>
           <p>View the activity logs of lislog in your facebook timeline.</p>
         </li>
       </ul>
