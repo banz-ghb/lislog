@@ -158,6 +158,7 @@ $app_name = idx($app_info, 'name', '');
             //alert(var_radio_program_button_url);
             FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
               function (response) {
+                $("#most-recent-activity").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
                 if (response != null) { //if start
                   logResponse(response);
                   FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 2
@@ -193,7 +194,6 @@ $app_name = idx($app_info, 'name', '');
           //$('#most-recent-activity-publish_time').text(new Date().toLocaleString(array_activities[i].publish_time));
           $('#most-recent-activity-publish_time').text(array_activities[i].publish_time);
         }
-        $("#most-recent-activity").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
       }
       //http://d.hatena.ne.jp/okahiro_p/20120525/1337918243
       function addRowToBottom(array_activities) {
