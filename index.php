@@ -159,7 +159,9 @@ $app_name = idx($app_info, 'name', '');
           $(var_radio_program_button_name).click(function() { //bind function 10 start
             //$(this).find("a").attr("href")
             //FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
+            alert($(this).attr("id"));
             var var_radio_program_button_url =
+            //'https://lislog.herokuapp.com/radio/jp/co/tbs/'+radio_programs+'.html';
               'https://lislog.herokuapp.com/radio/jp/co/tbs/'+$(this).attr("id").replace("publishAction_","")+'.html';
             FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
               function (response) {
