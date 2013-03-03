@@ -107,7 +107,7 @@ $app_name = idx($app_info, 'name', '');
           );
         });
 
-        var radio_programs = ["baka", "bakusho", "fumou", "megane", "banana", "elekata"];
+        var radio_programs_id = ["baka", "bakusho", "fumou", "megane", "banana", "elekata"];
         var radio_programs_title = [ "伊集院光　深夜の馬鹿力"
                                     ,"爆笑問題カーボーイ"
                                     ,"山里亮太の不毛な議論"
@@ -120,21 +120,17 @@ $app_name = idx($app_info, 'name', '');
         //$('#radioprogram-list li').remove(); //test
         // 2013-03-03 banz-ghb end   #7 generate lislog buttons dymamically
 
-        //for each (var var_radio_program in radio_programs){ //loop 1 start
-        for (var i = 0; i < radio_programs.length; i++){
-          var_radio_program_button_name = 'publishAction_'+radio_programs[i];
-
+        for (var i = 0; i < radio_programs_id.length; i++){ //loop 1 start
+          var_radio_program_button_name = 'publishAction_'+radio_programs_id[i];
+          //configure a li element
           var li = $('<li/>');;
           $('#radioprogram-list').append(li);
+          //configure an a element
           var a = $('<a/>');
           a.attr("href", "#");
           a.attr("class", "facebook-button");
           a.attr("id", var_radio_program_button_name);
           a.attr("data-url", "<?php echo AppInfo::getUrl(); ?>");
-          li.append(a);
-          var span = $('<span/>').text(radio_programs_title[i]);
-          span.attr("class", "plus");
-          a.append(span);
           a.click(function() { //bind function 10 start
             var var_radio_program_button_url =
               'https://lislog.herokuapp.com/radio/jp/co/tbs/'+$(this).attr("id").replace("publishAction_","")+'.html';
@@ -154,8 +150,12 @@ $app_name = idx($app_info, 'name', '');
               }
             ); //FB.api 1
           });  //bind function 10 end
+          li.append(a);
+          //configure a span element
+          var span = $('<span/>').text(radio_programs_title[i]);
+          span.attr("class", "plus");
+          a.append(span);
         } //loop 1 end
-        // end
       }); //define function 1 end
 
     /////////////////////////
