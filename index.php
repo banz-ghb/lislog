@@ -136,34 +136,19 @@ $app_name = idx($app_info, 'name', '');
           var span = $('<span/>').text(radio_programs_title[i]);
           span.attr("class", "plus");
           a.append(span);
-          /*
-            $('#recent-activities li').remove();
-            //array_activities[i].publish_time
-            for(i = 0; i < array_activities.length; i++) {
-              var li = $('<li/>').text(array_activities[i].publish_time); //.appendTo(tr);
-              $('#recent-activities').append(li);
-            }
-            var a = $('<a/>').text(response111[i].name);
-            a.attr("href", "https://www.facebook.com/"+response111[i].uid);//a is added attributes
-            a.attr("target", "_top");//a is added attributes
-            li.append(a);
-            var img = $('<img/>');
-            a.append(img);
-            img.attr("src", "https://graph.facebook.com/"+response111[i].uid+"/picture?type=square");//img is added attributes
-            img.attr("alt", response111[0].name);//img is added attributes
-          */
           // 2013-03-03 banz-ghb end   #7 generate lislog buttons dymamically
 
           //var_radio_program_button_url  = 'https://lislog.herokuapp.com/radio/jp/co/tbs/'+radio_programs[i]+'.html';
           //$(this).find //test
-          $(var_radio_program_button_name).click(function() { //bind function 10 start
+        //$(var_radio_program_button_name).click(function() { //bind function 10 start
+          a.click(function() { //bind function 10 start
             //$(this).find("a").attr("href")
             //FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
             alert($(this).attr("id"));
             var var_radio_program_button_url =
-            //'https://lislog.herokuapp.com/radio/jp/co/tbs/'+radio_programs+'.html';
               'https://lislog.herokuapp.com/radio/jp/co/tbs/'+$(this).attr("id").replace("publishAction_","")+'.html';
-            FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
+            //'https://lislog.herokuapp.com/radio/jp/co/tbs/'+radio_programs+'.html';
+              FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
               function (response) {
                 $("#most-recent-activity").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
                 if (response != null) { //if start
