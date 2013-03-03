@@ -46,6 +46,8 @@ $facebook = new Facebook(array(
   'trustForwarded' => true,
 ));
 
+// 2013-03-03 banz-ghb start disable server side logic
+/*
 $user_id = $facebook->getUser();
 if ($user_id) {
   try {
@@ -59,6 +61,8 @@ if ($user_id) {
       exit();
     }
   }
+*/
+// 2013-03-03 banz-ghb end   disable server side logic
 
   // This fetches some things that you like . 'limit=*" only returns * values.
   // To see the format of the data you are retrieving, use the "Graph API
@@ -74,7 +78,7 @@ if ($user_id) {
   ));
   */
   // 2013-03-02 banz-ghb end   disable to show app_using_friends
-}
+//} // 2013-03-03 banz-ghb disable server side logic
 
 // Fetch the basic info of the app that they are using
 $app_info = $facebook->api('/'. AppInfo::appID());
@@ -350,7 +354,8 @@ $app_name = idx($app_info, 'name', '');
 
       </div>
       <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
-      <div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"></div>
+      <div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions" data-show-faces="true"></div>
+      <!--div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"--><!--/div-->
     </header>
 
     <!-- 2013-02-11 banz-ghb start -->
