@@ -174,7 +174,6 @@ $app_name = idx($app_info, 'name', '');
         }); //FB.api
       }
 
-      // 2013-03-03 banz-ghb end   add function addPublishActionButtonOnLiElement
       function addPublishActionButtonOnLiElement(var_radio_program_id, var_radio_program_title) {
           var_radio_program_button_name = 'publishAction_'+var_radio_program_id; //radio_programs_id[i]
           //configure a li element
@@ -211,7 +210,6 @@ $app_name = idx($app_info, 'name', '');
           a.append(span);
           span.attr("class", "plus");
       }
-      // 2013-03-03 banz-ghb end   add function addPublishActionButtonOnLiElement
       //-->
       </script>
 
