@@ -317,38 +317,8 @@ $app_name = idx($app_info, 'name', '');
         <div id="share-app">
           <p>Press button when you tune in:</p><br>
           <ul id="radioprogram-list">
-            <!-- start -->
-            <li>
-              <a href="#" class="facebook-button" id="publishAction_baka" data-url="<?php echo AppInfo::getUrl(); ?>">
-                <span class="plus">バカ</span>
-              </a>
-            </li>
-                      <li>
-              <a href="#" class="facebook-button" id="publishAction_bakusho" data-url="<?php echo AppInfo::getUrl(); ?>">
-                <span class="plus">爆笑</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="facebook-button" id="publishAction_fumou" data-url="<?php echo AppInfo::getUrl(); ?>">
-                <span class="plus">不毛な議論</span>
-              </a>
-            </li>
-            <li>
-            <a href="#" class="facebook-button" id="publishAction_megane" data-url="<?php echo AppInfo::getUrl(); ?>">
-                <span class="plus">メガネ</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="facebook-button" id="publishAction_banana" data-url="<?php echo AppInfo::getUrl(); ?>">
-                <span class="plus">バナナムーンゴールド</span>
-              </a>
-            </li>
-            <li>
-            <a href="#" class="facebook-button" id="publishAction_elekata" data-url="<?php echo AppInfo::getUrl(); ?>">
-                <span class="plus">エレ片のコント太郎</span>
-              </a>
-            </li>
-            <!-- end   -->
+            <!-- start temporarilly removed -->
+            <!-- end   temporarilly removed -->
           </ul>
         </div>
 
