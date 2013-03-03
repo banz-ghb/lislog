@@ -316,18 +316,12 @@ $app_name = idx($app_info, 'name', '');
       <!-- 2013-03-03 banz-ghb end   no extended permission when logging in-->
     </header>
 
-    <!-- 2013-02-11 banz-ghb start -->
     <section id="most-recent-activity" class="clearfix">
       <div>
         <h1>Most Recent Activity:</h1>
         <p id="most-recent-activity-title">Empty</p><p>Your ranking: Heavy Listener (or Listner)</p>
         <p id="most-recent-activity-publish_time">Empty</p>
         </div>
-    </section>
-    <!-- 2013-02-11 banz-ghb end -->
-    <section id="get-started">
-      <p>Guide</p>
-      <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">Learn How to use lislog</a>
     </section>
 
     <section id="samples" class="clearfix">
@@ -362,6 +356,13 @@ $app_name = idx($app_info, 'name', '');
         </ul>
       </div>
     </section>
+
+    <!-- 2013-03-03 banz-ghb start change location of get-started -->
+    <section id="get-started">
+      <p>Guide</p>
+      <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">Learn How to use lislog</a>
+    </section>
+    <!-- 2013-03-03 banz-ghb end   change location of get-started -->
 
     <section id="guides" class="clearfix">
       <h1>Check Your Facebook Timeline</h1>
