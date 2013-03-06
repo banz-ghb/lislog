@@ -93,6 +93,35 @@ header .tagline {
   margin-left: 8px;
   margin-top: 10px; /* 2012-03-05 banz-ghb set margin-top */
 }
+
+/* 2012-03-06 banz-ghb start change layout */
+#radioprogram-list {
+  float: left;
+  width: 344px;
+}
+
+#radioprogram-list ul {
+  /* 2013-02-23 banz-ghb start horizontal to vertical */
+  /*float: right*/;
+  /* 2013-02-23 banz-ghb end   horizontal to vertical */
+}
+
+#radioprogram-list p {
+  /* 2013-02-23 banz-ghb start horizontal to vertical */
+  /*float: left;*/
+  /* 2013-02-23 banz-ghb end   horizontal to vertical */
+  margin-left: 8px;
+}
+
+#radioprogram-list li {
+  /* 2013-02-23 banz-ghb start horizontal to vertical */
+  /* float: left; */
+  /* 2013-02-23 banz-ghb end   horizontal to vertical */
+  list-style: none;
+  margin-left: 8px;
+  margin-top: 10px; /* 2012-03-05 banz-ghb set margin-top */
+}
+/* 2012-03-06 banz-ghb start change layout */
 /* ------------------------------------------ */
 
 /* =buttons

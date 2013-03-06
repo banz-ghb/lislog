@@ -229,17 +229,23 @@ $app_name = idx($app_info, 'name', '');
       <div id="lislog-main"><!-- 2013-02-24 banz-ghb switch lislog-main -->
         <h1>Welcome to <strong><?php echo he($app_name); ?></strong></h1>
 
-        <div id="share-app">
+        <div id="share-app" class="clearfix">
           <p>Press button when you tune in:</p><br>
+        </div>
+
+        <!-- 2012-03-06 banz-ghb start change layout -->
+        <div class="clearfix">
           <ul id="radioprogram-list">
             <!-- start temporarilly removed -->
             <!-- end   temporarilly removed -->
           </ul>
         </div>
+        <!-- 2012-03-06 banz-ghb end   change layout -->
 
       </div>
-      <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
+
       <!-- 2013-03-03 banz-ghb start no extended permission when logging in  data-scope="user_likes,user_photos,publish_actions" -->
+      <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
       <div id="fb-auth" class="fb-login-button" data-show-faces="true"></div>
       <!--div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"--><!--/div-->
       <!-- 2013-03-03 banz-ghb end   no extended permission when logging in-->

@@ -17,3 +17,13 @@ body {
 #share-app {
   width: auto;
 }
+
+/* 2012-03-06 banz-ghb start change layout */
+#radioprogram-list li {
+  margin: 10 8px 4px 0; /* 2012-03-05 banz-ghb set margin-top 0 to 10 */
+}
+
+#radioprogram-list {
+  width: auto;
+}
+/* 2012-03-06 banz-ghb end   change layout */
