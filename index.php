@@ -230,11 +230,12 @@ $app_name = idx($app_info, 'name', '');
         <h1>Welcome to <strong><?php echo he($app_name); ?></strong></h1>
 
         <div id="share-app" class="clearfix">
-          <p>Press button when you tune in:</p><br>
+
         </div>
 
         <!-- 2012-03-06 banz-ghb start change layout -->
         <div class="clearfix">
+          <p>Press button when you tune in:</p><br>
           <ul id="radioprogram-list">
             <!-- start temporarilly removed -->
             <!-- end   temporarilly removed -->
