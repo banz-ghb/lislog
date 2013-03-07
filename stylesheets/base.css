@@ -160,6 +160,9 @@ header .tagline {
 .facebook-button span {
   background: url("../images/sprites.png") no-repeat;
   padding: 0 7px 0 21px;
+  /* 2012-03-07 banz-ghb end   indent titles */
+  margin-left 20px;
+  /* 2012-03-07 banz-ghb end   indent titles */
 }
 
 .facebook-button .speech-bubble {
