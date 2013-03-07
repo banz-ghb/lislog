@@ -158,9 +158,9 @@ header .tagline {
 }
 
 .facebook-button span {
-  background: url("../images/sprites.png") no-repeat;
-  padding: 0 7px 0 21px;
   /* 2012-03-07 banz-ghb start hide picture */
+  /* background: url("../images/sprites.png") no-repeat;*/
+  /* padding: 0 7px 0 21px;*/
   /* float: left; */
   /* 2012-03-07 banz-ghb end   hide picture */
 }
