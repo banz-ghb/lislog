@@ -227,7 +227,12 @@ $app_name = idx($app_info, 'name', '');
       <p id="picture"></p>
 
       <div id="lislog-main"><!-- 2013-02-24 banz-ghb switch lislog-main -->
-        <h1>Welcome to <strong><?php echo he($app_name); ?></strong></h1>
+        <h1><fb:intl desc="Welcome message">
+          "{welcome-message}"
+          <fb:intl-token name="welcome-message">
+          Welcome to
+          </fb:intl-token>
+          </fb:intl> <strong><?php echo he($app_name); ?></strong></h1>
 
         <div id="share-app" class="clearfix">
 
