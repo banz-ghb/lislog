@@ -126,6 +126,12 @@ header .tagline {
 
 /* =buttons
 --------------------------------------------- */
+/* 2012-03-07 banz-ghb start fix width */
+.facebook-button {
+  width: 200px;
+}
+/* 2012-03-07 banz-ghb end   fix width */
+
 .facebook-button:link, .facebook-button:visited {
   background-color: #eee;
   background-image: -moz-linear-gradient(top, #fdfdfd, #eaebeb);
