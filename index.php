@@ -228,7 +228,6 @@ $app_name = idx($app_info, 'name', '');
 
       <div id="lislog-main"><!-- 2013-02-24 banz-ghb switch lislog-main -->
         <h1><fb:intl desc="Welcome message">
-          "{welcome-message}"
           <fb:intl-token name="welcome-message">
           Welcome to
           </fb:intl-token>
