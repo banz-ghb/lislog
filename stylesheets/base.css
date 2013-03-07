@@ -160,10 +160,9 @@ header .tagline {
 .facebook-button span {
   background: url("../images/sprites.png") no-repeat;
   padding: 0 7px 0 21px;
-  /* 2012-03-07 banz-ghb end   indent titles */
-  /* margin-left 20px; */
-  float: left;
-  /* 2012-03-07 banz-ghb end   indent titles */
+  /* 2012-03-07 banz-ghb start hide picture */
+  /* float: left; */
+  /* 2012-03-07 banz-ghb end   hide picture */
 }
 
 .facebook-button .speech-bubble {
@@ -171,7 +170,9 @@ header .tagline {
 }
 
 .facebook-button .plus {
-  background-position: 6px -17px;
+  /* 2012-03-07 banz-ghb start hide picture */
+  /* background-position: 6px -17px; */
+  /* 2012-03-07 banz-ghb end   hide picture */
 }
 
 .facebook-button .apprequests {
