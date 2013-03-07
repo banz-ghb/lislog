@@ -162,7 +162,7 @@ header .tagline {
   /* background: url("../images/sprites.png") no-repeat;*/
    vertical-align: middle;
    padding: 0 7px 0 7px;/*padding: 0 7px 0 21px;*/
-  /* float: left; */
+   float: left;
   /* 2012-03-07 banz-ghb end   hide picture */
 }
 
