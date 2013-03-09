@@ -225,7 +225,7 @@ $app_name = idx($app_info, 'name', '');
 
     <header class="clearfix">
       <!-- 2013-03-09 banz-ghb start header -->
-      <div id="menu-main">
+      <div id="menu-main" style="height:50px;border:1px solid red;">
         <div id="menu-sub" ><p>home</p><p>history</p></div>
       </div>
       <!-- 2013-03-09 banz-ghb end   header -->
