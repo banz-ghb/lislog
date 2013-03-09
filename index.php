@@ -134,6 +134,8 @@ $app_name = idx($app_info, 'name', '');
       // test beta
       function menuclick(){ //menu function 1 start
           alert("debug1");
+          FB.Canvas.scrollTo(0,300);
+          /*
           var pos;
           pos=0;
           //$('html,body').stop(true,false); tab用にｅｌｅｍｅｎｔ指定が必要
@@ -141,6 +143,7 @@ $app_name = idx($app_info, 'name', '');
             ,2000
             ,'linear'
           ); //end animate
+          */
           alert("debug2");
       } //menu function 1 end
       // test beta
