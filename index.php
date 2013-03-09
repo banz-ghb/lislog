@@ -134,9 +134,17 @@ $app_name = idx($app_info, 'name', '');
       // test beta
       function menuclick(){ //menu function 1 start
           var var_offset;
-          var_offset= $("#recent-activities").offset().top; /*"#most-recent-activity"*/
+          //var_offset= $("#recent-activities").offset().top; /*"#most-recent-activity"*/
           alert("debug1: "+var_offset);
-          FB.Canvas.scrollTo(0,var_offset);
+
+          //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
+          $('html,body').animate(
+        		  {scrollTop: $("#most-recent-activity").offset().top},
+        		  {duration: 1000, step: function(top_offset){
+        		    FB.Canvas.scrollTo(0, top_offset + 30);
+        		  }
+        		});
+          //FB.Canvas.scrollTo(0,var_offset);
           //FB.Canvas.scrollTo(0,300);
           /*
           var pos;
