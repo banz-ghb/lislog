@@ -142,6 +142,7 @@ $app_name = idx($app_info, 'name', '');
               FB.Canvas.scrollTo(0, top_offset + 30);
             }
           });
+          return false;
           //alert("debug2: "+top_offset);
       }); //menu function 1 end
 
