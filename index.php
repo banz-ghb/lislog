@@ -136,7 +136,7 @@ $app_name = idx($app_info, 'name', '');
       //get-started
       //$("#menu-get-started").click(function(){ //menu function 1 start
       function testclick(){
-          alert(test);
+          //alert(test);
           //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
           $('html,body').animate(
             {scrollTop: $("#get-started").offset().top},
