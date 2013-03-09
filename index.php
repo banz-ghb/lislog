@@ -141,6 +141,7 @@ $app_name = idx($app_info, 'name', '');
             ,2000
             ,'linear'
           ); //end animate
+          alert("debug2");
       } //menu function 1 end
       // test beta
 
