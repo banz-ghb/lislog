@@ -126,11 +126,6 @@ header .tagline {
 
 /* =buttons
 --------------------------------------------- */
-/* 2012-03-07 banz-ghb start fix width */
-.facebook-button {
-  width: 150px;
-}
-/* 2012-03-07 banz-ghb end   fix width */
 
 .facebook-button:link, .facebook-button:visited {
   background-color: #eee;
@@ -171,6 +166,9 @@ header .tagline {
 }
 
 .facebook-button .plus {
+  /* 2012-03-09 banz-ghb start fix width */
+  width: 150px;
+  /* 2012-03-09 banz-ghb end   fix width */
   /* 2012-03-07 banz-ghb start hide picture */
   /* background-position: 6px -17px; */
   /* 2012-03-07 banz-ghb end   hide picture */
