@@ -131,33 +131,18 @@ $app_name = idx($app_info, 'name', '');
 
       }); //define function start1 end
 
-      // test beta
+      /* comment out
       function menuclick(){ //menu function 1 start
-          var var_offset;
-          //var_offset= $("#recent-activities").offset().top; /*"#most-recent-activity"*/
-          //alert("debug1: "+var_offset);
-
           //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
           $('html,body').animate(
-        		  {scrollTop: $("#most-recent-activity").offset().top},
-        		  {duration: 1000, step: function(top_offset){
-        		    FB.Canvas.scrollTo(0, top_offset + 30);
-        		  }
-        		});
-          //FB.Canvas.scrollTo(0,var_offset);
-          //FB.Canvas.scrollTo(0,300);
-          /*
-          var pos;
-          pos=0;
-          //$('html,body').stop(true,false); tab用にｅｌｅｍｅｎｔ指定が必要
-          $('html,body').animate(  {scrollTop:1000} //{scrollTop:$($(this).attr("href")).offset().top - pos}
-            ,2000
-            ,'linear'
-          ); //end animate
-          */
-          alert("debug2: "+top_offset);
+            {scrollTop: $("#most-recent-activity").offset().top},
+            {duration: 1000, step: function(top_offset){
+              FB.Canvas.scrollTo(0, top_offset + 30);
+            }
+          });
+          //alert("debug2: "+top_offset);
       } //menu function 1 end
-      // test beta
+      */
 
       //////////////////////////////////////////////////////////////
       //View functions
@@ -223,7 +208,7 @@ $app_name = idx($app_info, 'name', '');
           a.click(function() { //bind function 10 start
             var var_radio_program_button_url =
               'https://lislog.herokuapp.com/radio/jp/co/tbs/'+$(this).attr("id").replace("publishAction_","")+'.html';
-              FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
+            FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
               function (response) {
                 $("#most-recent-activity").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
                 if (response != null) { //if start
@@ -238,6 +223,15 @@ $app_name = idx($app_info, 'name', '');
                 } //if end
               }
             ); //FB.api 1
+            //2013-03-09 banz-ghb start scroll
+            //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
+            $('html,body').animate(
+              {scrollTop: $("#most-recent-activity").offset().top},
+              {duration: 500, step: function(top_offset){
+                FB.Canvas.scrollTo(0, top_offset + 30);
+              }
+            });
+            //2013-03-09 banz-ghb end   scroll
           });  //bind function 10 end
           //configure a span element
           var span = $('<span/>').text(var_radio_program_title); //radio_programs_title[i]
