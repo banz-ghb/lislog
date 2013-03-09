@@ -131,8 +131,10 @@ $app_name = idx($app_info, 'name', '');
 
       }); //define function start1 end
 
-      /* comment out
-      function menuclick(){ //menu function 1 start
+      //most-recent-activity
+      //samples
+      //get-started
+      $("menu-most-recent-activity").click(function(){ //menu function 1 start
           //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
           $('html,body').animate(
             {scrollTop: $("#most-recent-activity").offset().top},
@@ -141,8 +143,7 @@ $app_name = idx($app_info, 'name', '');
             }
           });
           //alert("debug2: "+top_offset);
-      } //menu function 1 end
-      */
+      }); //menu function 1 end
 
       //////////////////////////////////////////////////////////////
       //View functions
@@ -256,10 +257,10 @@ $app_name = idx($app_info, 'name', '');
       <!-- 2013-03-09 banz-ghb start header -->
       <div id="menu-main" style="height:50px;border:1px solid red;"></div>
         <div id="menu-sub" >
-        <a id="menu-get-started" onClick="menuclick()"><span>home</span></a>
-        | <a href="#most-recent-activity">history</a>
-         | <a href="#samples-a">つながり</a>
-         | <a href="#get-started">guide</a>
+        <a id="menu-home"                >home</a>
+      | <a id="menu-most-recent-activity">history</a>
+      | <a id="menu-samples"             >つながり</a>
+      | <a id="menu-get-started"         >guide</a>
         </div>
       <!-- 2013-03-09 banz-ghb end   header -->
     <p id="picture"></p>
