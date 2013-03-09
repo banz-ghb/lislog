@@ -82,14 +82,19 @@ $app_name = idx($app_info, 'name', '');
     <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
 
     <script type="text/javascript"><!--
-      ///// Utility
+      //////////////////////////////////////////////////////////////
+      // Utility
+      //////////////////////////////////////////////////////////////
       function logResponse(response) {
         if (console && console.log) {
           console.log('The response was', response);
         }
       }
 
-      $(function(){ //define function 1 start
+      //////////////////////////////////////////////////////////////
+      // Build html elements
+      //////////////////////////////////////////////////////////////
+      $(function(){ //define function start1 start
         // Set up so we handle click on the buttons
 
         $('#sendRequest').click(function() {
@@ -123,7 +128,24 @@ $app_name = idx($app_info, 'name', '');
         for (var i = 0; i < radio_programs_id.length; i++){ //loop 1 start
           addPublishActionButtonOnLiElement(radio_programs_id[i], radio_programs_title[i]);
         } //loop 1 end
-      }); //define function 1 end
+
+        // 2013-03-09 banz-ghb start add menu function
+        //////////////////////////////////////////////////////////////
+        // menu function
+        //////////////////////////////////////////////////////////////
+        $("menu-get-started").click(function(){ //menu function 1 start
+          var pos;
+          pos=0;
+          $('html,body').stop(true,false);
+          $('html,body').animate( //start animate
+            500//{scrollTop:$($(this).attr("href")).offset().top - pos}
+            ,2000
+            ,'linear'
+          ); //end animate
+} //menu function 1 end
+        // 2013-03-09 banz-ghb end   add menu function
+
+      }); //define function start1 end
 
       //////////////////////////////////////////////////////////////
       //View functions
@@ -226,7 +248,7 @@ $app_name = idx($app_info, 'name', '');
     <header class="clearfix">
       <!-- 2013-03-09 banz-ghb start header -->
       <div id="menu-main" style="height:50px;border:1px solid red;">
-        <div id="menu-sub" ><p>home</p><p>history</p></div>
+        <div id="menu-sub" ><a id="menu-get-started">home</a>!<p>history</p></div>
       </div>
       <!-- 2013-03-09 banz-ghb end   header -->
     <p id="picture"></p>
