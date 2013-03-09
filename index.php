@@ -135,7 +135,7 @@ $app_name = idx($app_info, 'name', '');
       function menuclick(){ //menu function 1 start
           var var_offset;
           //var_offset= $("#recent-activities").offset().top; /*"#most-recent-activity"*/
-          alert("debug1: "+var_offset);
+          //alert("debug1: "+var_offset);
 
           //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
           $('html,body').animate(
@@ -155,7 +155,7 @@ $app_name = idx($app_info, 'name', '');
             ,'linear'
           ); //end animate
           */
-          alert("debug2");
+          alert("debug2: "+top_offset);
       } //menu function 1 end
       // test beta
 
