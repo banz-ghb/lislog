@@ -136,8 +136,8 @@ $app_name = idx($app_info, 'name', '');
           alert("debug1");
           var pos;
           pos=0;
-          $('html,body').stop(true,false);
-          $('html,body').animate(  {scrollTop:5000} //{scrollTop:$($(this).attr("href")).offset().top - pos}
+          //$('html,body').stop(true,false);
+          $('html,body').animate(  {scrollTop:500} //{scrollTop:$($(this).attr("href")).offset().top - pos}
             ,2000
             ,'linear'
           ); //end animate
