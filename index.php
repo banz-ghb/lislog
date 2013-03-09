@@ -133,7 +133,7 @@ $app_name = idx($app_info, 'name', '');
         //////////////////////////////////////////////////////////////
         // menu function
         //////////////////////////////////////////////////////////////
-        /*$('menu-get-started').click(*/function menu-get-started-click(){ //menu function 1 start
+        /*$('menu-get-started').click(*/ function menu-get-started-click(){ //menu function 1 start
           alert("debug");
           var pos;
           pos=0;
