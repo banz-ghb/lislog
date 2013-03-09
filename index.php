@@ -134,13 +134,13 @@ $app_name = idx($app_info, 'name', '');
       // test beta
       function menuclick(){ //menu function 1 start
           alert("debug");
-          /*var pos;
+          var pos;
           pos=0;
           $('html,body').stop(true,false);
           $('html,body').animate(  500
             ,2000
             ,'linear'
-          );*/ //end animate
+          ); //end animate
       } //menu function 1 end
       // test beta
 
