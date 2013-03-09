@@ -246,8 +246,11 @@ $app_name = idx($app_info, 'name', '');
     <header class="clearfix">
       <!-- 2013-03-09 banz-ghb start header -->
       <div id="menu-main" style="height:50px;border:1px solid red;">
-        <div id="menu-sub" ><a id="menu-get-started" onClick="menuclick()"><span>home</span></a> | <a>history</a></div>
-      </div>
+        <div id="menu-sub" >
+        <a id="menu-get-started" onClick="menuclick()"><span>home</span></a></div>
+        | <a href="#most-recent-activity">history</a>
+         | <a href="#samples">つながり</a></div>
+         | <a href="#get-started">guide</a></div>
       <!-- 2013-03-09 banz-ghb end   header -->
     <p id="picture"></p>
 
