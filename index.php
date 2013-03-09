@@ -129,6 +129,23 @@ $app_name = idx($app_info, 'name', '');
           addPublishActionButtonOnLiElement(radio_programs_id[i], radio_programs_title[i]);
         } //loop 1 end
 
+        // 2013-03-09 banz-ghb start add menu function
+        //////////////////////////////////////////////////////////////
+        // menu function
+        //////////////////////////////////////////////////////////////
+        $('menu-get-started').click(function(){ //menu function 1 start
+          alert("debug");
+          var pos;
+          pos=0;
+          $('html,body').stop(true,false);
+          $('html,body').animate( //start animate
+             500//{scrollTop:$($(this).attr("href")).offset().top - pos}
+            ,2000
+            ,'linear'
+          ); //end animate
+        }) //menu function 1 end
+        // 2013-03-09 banz-ghb end   add menu function
+
       }); //define function start1 end
 
       //////////////////////////////////////////////////////////////
@@ -395,23 +412,6 @@ $app_name = idx($app_info, 'name', '');
         js.src = "//connect.facebook.net/en_US/all.js";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
-
-      // 2013-03-09 banz-ghb start add menu function
-      //////////////////////////////////////////////////////////////
-      // menu function
-      //////////////////////////////////////////////////////////////
-      $("menu-get-started").click(function(){ //menu function 1 start
-        alert("debug");
-        var pos;
-        pos=0;
-        $('html,body').stop(true,false);
-        $('html,body').animate( //start animate
-           500//{scrollTop:$($(this).attr("href")).offset().top - pos}
-          ,2000
-          ,'linear'
-        ); //end animate
-      }) //menu function 1 end
-      // 2013-03-09 banz-ghb end   add menu function
     </script>
   </body>
 </html>
