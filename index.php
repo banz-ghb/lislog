@@ -292,7 +292,7 @@ $app_name = idx($app_info, 'name', '');
         </div>
     </section>
 
-    <section id="samples" class="clearfix">
+    <section id="samples" class="clearfix"><a id="samples-a"></a>
       <h1>Social Graph</h1>
 
       <div class="list">
