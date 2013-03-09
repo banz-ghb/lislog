@@ -134,11 +134,11 @@ $app_name = idx($app_info, 'name', '');
       //most-recent-activity
       //samples
       //get-started
-      $("#menu-most-recent-activity").click(function(){ //menu function 1 start
+      $("#menu-get-started").click(function(){ //menu function 1 start
           alert(test);
           //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
           $('html,body').animate(
-            {scrollTop: $("#most-recent-activity").offset().top},
+            {scrollTop: $("#get-started").offset().top},
             {duration: 1000, step: function(top_offset){
               FB.Canvas.scrollTo(0, top_offset + 30);
             }
