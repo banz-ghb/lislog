@@ -409,7 +409,7 @@ $app_name = idx($app_info, 'name', '');
           ,2000
           ,'linear'
         ); //end animate
-      } //menu function 1 end
+      }) //menu function 1 end
       // 2013-03-09 banz-ghb end   add menu function
     </script>
   </body>
