@@ -142,7 +142,7 @@ $app_name = idx($app_info, 'name', '');
             ,2000
             ,'linear'
           ); //end animate
-} //menu function 1 end
+        } //menu function 1 end
         // 2013-03-09 banz-ghb end   add menu function
 
       }); //define function start1 end
@@ -248,7 +248,7 @@ $app_name = idx($app_info, 'name', '');
     <header class="clearfix">
       <!-- 2013-03-09 banz-ghb start header -->
       <div id="menu-main" style="height:50px;border:1px solid red;">
-        <div id="menu-sub" ><a id="menu-get-started">home</a>!<p>history</p></div>
+        <div id="menu-sub" ><a id="menu-get-started">home</a>|<a>history</a></div>
       </div>
       <!-- 2013-03-09 banz-ghb end   header -->
     <p id="picture"></p>
