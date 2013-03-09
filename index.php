@@ -131,6 +131,19 @@ $app_name = idx($app_info, 'name', '');
 
       }); //define function start1 end
 
+      // test beta
+      function menu-get-started-click(){ //menu function 1 start
+          alert("debug");
+          var pos;
+          pos=0;
+          $('html,body').stop(true,false);
+          $('html,body').animate(  500
+            ,2000
+            ,'linear'
+          ); //end animate
+      } //menu function 1 end
+      // test beta
+
       //////////////////////////////////////////////////////////////
       //View functions
       //////////////////////////////////////////////////////////////
