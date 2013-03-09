@@ -132,7 +132,7 @@ $app_name = idx($app_info, 'name', '');
       }); //define function start1 end
 
       // test beta
-      function menu-get-started-click(){ //menu function 1 start
+      function menuclick(){ //menu function 1 start
           alert("debug");
           /*var pos;
           pos=0;
@@ -245,7 +245,7 @@ $app_name = idx($app_info, 'name', '');
     <header class="clearfix">
       <!-- 2013-03-09 banz-ghb start header -->
       <div id="menu-main" style="height:50px;border:1px solid red;">
-        <div id="menu-sub" ><a id="menu-get-started" onClick="menu-get-started-click()"><span>home</span></a> | <a>history</a></div>
+        <div id="menu-sub" ><a id="menu-get-started" onClick="menuclick()"><span>home</span></a> | <a>history</a></div>
       </div>
       <!-- 2013-03-09 banz-ghb end   header -->
     <p id="picture"></p>
