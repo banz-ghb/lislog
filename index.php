@@ -137,7 +137,7 @@ $app_name = idx($app_info, 'name', '');
           var pos;
           pos=0;
           $('html,body').stop(true,false);
-          $('html,body').animate(  500
+          $('html,body').animate(  5000
             ,2000
             ,'linear'
           ); //end animate
