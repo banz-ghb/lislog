@@ -133,6 +133,16 @@ $app_name = idx($app_info, 'name', '');
         //////////////////////////////////////////////////////////////
         // menu function
         //////////////////////////////////////////////////////////////
+        $("menu-get-started").click(function(){ //menu function 1 start
+          var pos;
+          pos=0;
+          $('html,body').stop(true,false);
+          $('html,body').animate( //start animate
+             500//{scrollTop:$($(this).attr("href")).offset().top - pos}
+            ,2000
+            ,'linear'
+          ); //end animate
+        } //menu function 1 end
         // 2013-03-09 banz-ghb end   add menu function
 
       }); //define function start1 end
@@ -238,7 +248,7 @@ $app_name = idx($app_info, 'name', '');
     <header class="clearfix">
       <!-- 2013-03-09 banz-ghb start header -->
       <div id="menu-main" style="height:50px;border:1px solid red;">
-        <div id="menu-sub" ><a id="menu-get-started">home</a>|<a>history</a></div>
+        <div id="menu-sub" ><a id="menu-get-started"><span>home</span></a> | <a>history</a></div>
       </div>
       <!-- 2013-03-09 banz-ghb end   header -->
     <p id="picture"></p>
