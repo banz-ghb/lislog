@@ -220,18 +220,19 @@ $app_name = idx($app_info, 'name', '');
                     }
                   ); //FB.api 2
                   $("#samples").show();// 2013-03-02 banz-ghb hide samples when logged out
+
+                  //2013-03-09 banz-ghb start scroll
+                  //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
+                  $('html,body').animate(
+                    {scrollTop: $("#most-recent-activity").offset().top},
+                    {duration: 500, step: function(top_offset){
+                      FB.Canvas.scrollTo(0, top_offset + 30);
+                    }
+                  });
+                  //2013-03-09 banz-ghb end   scroll
                 } //if end
               }
             ); //FB.api 1
-            //2013-03-09 banz-ghb start scroll
-            //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
-            $('html,body').animate(
-              {scrollTop: $("#most-recent-activity").offset().top},
-              {duration: 500, step: function(top_offset){
-                FB.Canvas.scrollTo(0, top_offset + 30);
-              }
-            });
-            //2013-03-09 banz-ghb end   scroll
           });  //bind function 10 end
           //configure a span element
           var span = $('<span/>').text(var_radio_program_title); //radio_programs_title[i]
