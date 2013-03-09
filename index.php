@@ -224,7 +224,12 @@ $app_name = idx($app_info, 'name', '');
   <body>
 
     <header class="clearfix">
-      <p id="picture"></p>
+      <!-- 2013-03-09 banz-ghb start header -->
+      <div id="menu-main">
+        <div id="menu-sub" ><p>home</p><p>history</p></div>
+      </div>
+      <!-- 2013-03-09 banz-ghb end   header -->
+    <p id="picture"></p>
 
       <div id="lislog-main"><!-- 2013-02-24 banz-ghb switch lislog-main -->
         <h1><fb:intl desc="Welcome message">
