@@ -134,7 +134,7 @@ $app_name = idx($app_info, 'name', '');
       // test beta
       function menuclick(){ //menu function 1 start
           var var_offset;
-          var_offset= $("recent-activities"/*"#most-recent-activity"*/).offset().top;
+          var_offset= $("recent-activities").offset().top; /*"#most-recent-activity"*/
           alert("debug1: "+var_offset);
           FB.Canvas.scrollTo(0,var_offset);
           //FB.Canvas.scrollTo(0,300);
