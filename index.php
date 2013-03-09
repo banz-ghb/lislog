@@ -401,6 +401,7 @@ $app_name = idx($app_info, 'name', '');
       // menu function
       //////////////////////////////////////////////////////////////
       $("menu-get-started").click(function(){ //menu function 1 start
+        alert("debug");
         var pos;
         pos=0;
         $('html,body').stop(true,false);
