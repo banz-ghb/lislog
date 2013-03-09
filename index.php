@@ -278,7 +278,7 @@ $app_name = idx($app_info, 'name', '');
 
       <!-- 2013-03-03 banz-ghb start no extended permission when logging in  data-scope="user_likes,user_photos,publish_actions" -->
       <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
-      <div id="fb-auth" class="fb-login-button" data-show-faces="true"></div>
+      <div id="fb-auth" class="fb-login-button" data-show-faces="true">Login with Facebook</div>
       <!--div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"--><!--/div-->
       <!-- 2013-03-03 banz-ghb end   no extended permission when logging in-->
     </header>
