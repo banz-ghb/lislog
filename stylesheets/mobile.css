@@ -11,7 +11,7 @@ body {
   position: fixed;
   /*width: inherit;*/
   /*width: device-width;*/
-    margin: 0px 10px 0px 10px;*/ /* top right bottom left */
+    margin: 10px 10px 10px 10px;*/ /* top right bottom left */
   top:   0px; /* have to syncronize margin of body defined in base and mobile */
   left: /*1*/0px;/* have to syncronize margin of body defined in base and mobile */
 }
