@@ -13,6 +13,7 @@ body {
   left: 10px;/* have to syncronize margin of body defined in base and mobile */
 }
 #navigation ul {
+  margin: 0px 10px 0px 10px; /* top right bottom left */
   width: auto; /* var candidate */
 }
 
