@@ -19,12 +19,12 @@
 }
 
 #navigation_top {
-  width: 720px; /* var candidate */
+  width: auto; /* var candidate */
   margin: 0 auto;
 }
 
 #navigation ul {
-  width: 720px; /* var candidate */
+  width: auto; /* var candidate */
   float: left;
 }
 
