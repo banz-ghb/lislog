@@ -1,10 +1,10 @@
 body {
   /* 2013-03-11 banz-ghb start set margin */
   /*margin: 10px;*/ /* top right bottom left */
-  margin: 0px 10px 0px 10px; /* top right bottom left */
+  margin: 0px 0px 0px 0px; /* top right bottom left */
   /* 2013-03-11 banz-ghb end   set margin */
   /*width: (device-width - 20);*//*width: auto;*/
-  width: 320px;
+  /*width: 320px;*/
 }
 
 /* 2013-03-09 banz-ghb start add navigation-header.css */
@@ -15,8 +15,8 @@ body {
   /*margin: 10px 10px 10px 10px;*/ /* top right bottom left */
   /*top:   0px;*/ /* have to syncronize margin of body defined in base and mobile */
   /*left: 10px;*//* have to syncronize margin of body defined in base and mobile */
-    margin-right:10px;
-    margin-left:10px;
+    margin-right:0px;
+    margin-left:0px;
   top:   0px; /* have to syncronize margin of body defined in base and mobile */
   left:  0px;/* have to syncronize margin of body defined in base and mobile */
 }
