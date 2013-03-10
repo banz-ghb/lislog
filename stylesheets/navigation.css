@@ -12,19 +12,19 @@
 #navigation {
   background-color: blue;
   position: fixed;
-  width: 100%;
-top: 20px; /* have to syncronize margin of body defined in base and mobile */
+  width: 720px; /* var candidate */
+  top: 20px; /* have to syncronize margin of body defined in base and mobile */
   left: 20px;/* have to syncronize margin of body defined in base and mobile */
   z-index: 10;
 }
 
 #navigation_top {
-  /*width: 300px ;*/
+  width: 720px; /* var candidate */
   margin: 0 auto;
 }
 
 #navigation ul {
-  /*padding:;*/
+  width: 720px; /* var candidate */
   float: left;
 }
 
