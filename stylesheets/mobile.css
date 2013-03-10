@@ -3,17 +3,17 @@ body {
   /*margin: 10px;*/ /* top right bottom left */
   margin: 0px 10px 0px 10px; /* top right bottom left */
   /* 2013-03-11 banz-ghb end   set margin */
-  width: auto;
+  width: (device-width - 20);/*width: auto;*/
 }
 
 /* 2013-03-09 banz-ghb start add navigation-header.css */
 #navigation {
-  margin: 0px 0px 0px 0px; /* top right bottom left */
+  /*margin: 0px 0px 0px 0px;*/ /* top right bottom left */
   top:   0px; /* have to syncronize margin of body defined in base and mobile */
   left: 10px;/* have to syncronize margin of body defined in base and mobile */
 }
 #navigation ul {
-  margin: 0px 0px 0px 0px; /* top right bottom left */
+  /*margin: 0px 0px 0px 0px;*/ /* top right bottom left */
   /*width: auto;*/ /* var candidate */
 }
 
