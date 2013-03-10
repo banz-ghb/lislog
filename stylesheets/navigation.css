@@ -19,6 +19,7 @@
 
 #navigation_top {
   /*width: 300px ;*/
+  width: auto;
   margin: 0 auto;
 }
 
