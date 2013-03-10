@@ -12,6 +12,9 @@ body {
   top:   0px; /* have to syncronize margin of body defined in base and mobile */
   left: 10px;/* have to syncronize margin of body defined in base and mobile */
 }
+#navigation ul {
+  width: auto; /* var candidate */
+}
 
 #navigation li {
   padding: 0 3px;
