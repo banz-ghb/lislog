@@ -11,6 +11,11 @@ body {
   top:   0px; /* have to syncronize margin of body defined in base and mobile */
   left: 10px;/* have to syncronize margin of body defined in base and mobile */
 }
+
+#navigation li {
+  padding: 0 3px;
+  font-size:1.0em;
+}
 /* 2013-03-09 banz-ghb start add navigation-header.css */
 
 #guides ul li,
