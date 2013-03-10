@@ -262,7 +262,7 @@ $app_name = idx($app_info, 'name', '');
           <li><a id="menu-home"                >home</a></li>
            <li><a id="menu-most-recent-activity">history</a></li>
           <li><a id="menu-samples"             >つながり</a></li>
-          <li><a id="menu-get-started" class="last" onClick="testclick()">guide</a></li>
+          <li><a id="menu-get-started" onClick="testclick()">guide</a></li>
         </ul>
       </div>
     </div>

@@ -12,14 +12,14 @@
 #navigation {
   background-color: blue;
   position: fixed;
-  top: 20px; /* have to syncronize margin of body defined in base and mobile */
+  width: 100%;
+top: 20px; /* have to syncronize margin of body defined in base and mobile */
   left: 20px;/* have to syncronize margin of body defined in base and mobile */
   z-index: 10;
 }
 
 #navigation_top {
   /*width: 300px ;*/
-  width: auto;
   margin: 0 auto;
 }
 
@@ -34,8 +34,9 @@
   border-left: 1px solid red;
   display: inline
 }
-
+/*
 .last {
   border-right: 1px solid red;
 }
+*/
 /* 2013-03-09 banz-ghb end   add navigation-header.css */
