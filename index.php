@@ -267,7 +267,7 @@ $app_name = idx($app_info, 'name', '');
       </div>
     </div>
     <!-- 2013-03-09 banz-ghb end   header -->
-  <header class="clearfix">
+  <header style="margin-top:50px;" class="clearfix">
     <p id="picture"></p>
 
       <div id="lislog-main"><!-- 2013-02-24 banz-ghb switch lislog-main -->
