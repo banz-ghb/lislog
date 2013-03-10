@@ -20,7 +20,7 @@
 
 #navigation_top {
   width: auto; /* var candidate */
-  margin: 0 auto;
+  margin: 0 /*auto*/;
 }
 
 #navigation ul {
