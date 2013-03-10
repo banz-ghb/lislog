@@ -1,11 +1,14 @@
 body {
-  margin: 10px;
+  /* 2013-03-11 banz-ghb start set margin */
+  /*margin: 10px;*/ /* top right bottom left */
+  margin: 0px 10px 0px 10px; /* top right bottom left */
+  /* 2013-03-11 banz-ghb end   set margin */
   width: auto;
 }
 
 /* 2013-03-09 banz-ghb start add navigation-header.css */
 #navigation {
-  top: 10px; /* have to syncronize margin of body defined in base and mobile */
+  top:   0px; /* have to syncronize margin of body defined in base and mobile */
   left: 10px;/* have to syncronize margin of body defined in base and mobile */
 }
 /* 2013-03-09 banz-ghb start add navigation-header.css */

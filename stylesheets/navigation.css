@@ -15,14 +15,6 @@
   top: 20px; /* have to syncronize margin of body defined in base and mobile */
   left: 20px;/* have to syncronize margin of body defined in base and mobile */
   z-index: 10;
-
-  /*
-  border-left: 1px solid #b3b3b3;
-  border-right: 1px solid #b3b3b3;
-  border-top: 1px solid #b3b3b3;
-  font-size: 11px;
-  padding: 24px 18px;
-  */
 }
 
 #navigation_top {
@@ -45,4 +37,4 @@
 .last {
   border-right: 1px solid red;
 }
-/* 2013-03-09 banz-ghb end   add navigation-header.css
+/* 2013-03-09 banz-ghb end   add navigation-header.css */
