@@ -1,0 +1,48 @@
+/*
+  title: navigation-header css
+*/
+
+
+/* ------------------------------------------ */
+
+/* =navigation
+--------------------------------------------- */
+/* 2013-03-09 banz-ghb start add navigation-header.css
+/* p200 */
+navigation {
+  /*background: ;*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  /*
+  border-left: 1px solid #b3b3b3;
+  border-right: 1px solid #b3b3b3;
+  border-top: 1px solid #b3b3b3;
+  font-size: 11px;
+  padding: 24px 18px;
+  */
+}
+
+navigation_top {
+  /*width: 300px ;*/
+  margin: 0 auto;
+}
+
+navigation ul {
+  /*padding:;*/
+  float: left;
+}
+
+navigation li {
+  padding: 0 30px;
+  font-size:1.4em;
+  border-left: 1px solid red;
+  display: inline
+}
+
+.last {
+  border-right: 1px solid red;
+}
+/* 2013-03-09 banz-ghb end   add navigation-header.css
