@@ -9,7 +9,7 @@ body {
 /* 2013-03-09 banz-ghb start add navigation-header.css */
 #navigation {
   /*width: inherit;*/
-    width: auto;
+    width: device-width - 10;
   /*margin: 0px 0px 0px 0px;*/ /* top right bottom left */
   top:   0px; /* have to syncronize margin of body defined in base and mobile */
   left: 10px;/* have to syncronize margin of body defined in base and mobile */
