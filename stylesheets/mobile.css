@@ -8,12 +8,13 @@ body {
 
 /* 2013-03-09 banz-ghb start add navigation-header.css */
 #navigation {
-  position: fixed;
+  /*position: fixed;*/
   /*width: inherit;*/
   /*width: device-width;*/
-    margin: 10px 10px 10px 10px;*/ /* top right bottom left */
-  top:   0px; /* have to syncronize margin of body defined in base and mobile */
-  left: /*1*/0px;/* have to syncronize margin of body defined in base and mobile */
+  /*margin: 10px 10px 10px 10px;*/ /* top right bottom left */
+  /*top:   0px;*/ /* have to syncronize margin of body defined in base and mobile */
+  /*left: 10px;*//* have to syncronize margin of body defined in base and mobile */
+    margin:0;
 }
 #navigation_top {
   /*Sbackground-color: red;*/

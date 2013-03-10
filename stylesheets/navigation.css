@@ -11,7 +11,7 @@
 /* p200 */
 #navigation {
   background-color: blue;
-  position: absolute;
+  position: fixed;
   width: 720px; /* var candidate */
   top: 20px; /* have to syncronize margin of body defined in base and mobile */
   left: 20px;/* have to syncronize margin of body defined in base and mobile */
