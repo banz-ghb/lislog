@@ -12,8 +12,8 @@
 #navigation {
   /*background: ;*/
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 20px; /* have to syncronize margin of body defined in base and mobile */
+  left: 20px;/* have to syncronize margin of body defined in base and mobile */
   z-index: 10;
 
   /*
