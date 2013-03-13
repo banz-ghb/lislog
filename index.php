@@ -416,11 +416,11 @@ $app_name = idx($app_info, 'name', '');
             $("#picture").hide();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").hide();// 2013-02-24 banz-ghb switch lislog-main
             // 2013-03-13 banz-ghb start add FB.login
-            FB.login(function(response){
-              alert('login callback');
-            }
+            //FB.login(function(response){
+            //  alert('login callback');
+            //}
             // 2013-03-13 banz-ghb end   add FB.login
-} //if end
+          } //if end
           $("#most-recent-activity").hide();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
           $("#samples").hide();// 2013-03-02 banz-ghb hide samples when logged out
         } //end response3
