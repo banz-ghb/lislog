@@ -416,7 +416,7 @@ $app_name = idx($app_info, 'name', '');
               FB.ui({method:    'permissions.request',
                      client_id: <?php echo AppInfo::appID(); ?>,
                      display:   'touch',
-                     perms:     'publish_actions'}
+                     perms:     'user_likes,user_photos,publish_actions'}
               ,function (response){
             	  logResponse(response);
               } );
