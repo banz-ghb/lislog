@@ -240,6 +240,7 @@ $app_name = idx($app_info, 'name', '');
                     FB.api('/me/music.listens',    'GET',{limit:4}, //FB.api 2
                   //2013-03-13 banz-ghb end   change listen action
                     function (response2) {
+                        logResponse(response2);
                       updateMostRecentActivity(response2.data);
                       addRowToBottom(response2.data);
                     }
