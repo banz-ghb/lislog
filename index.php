@@ -227,12 +227,18 @@ $app_name = idx($app_info, 'name', '');
           a.click(function() { //bind function 10 start
             var var_radio_program_button_url =
               'https://lislog.herokuapp.com/radio/jp/co/tbs/'+$(this).attr("id").replace("publishAction_","")+'.html';
-            FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
+            //2013-03-13 banz-ghb start change listen action
+            //FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
+              FB.api('me/music.listens','POST',{radio_station:var_radio_program_button_url},//FB.api 1
+            //2013-03-13 banz-ghb end   change listen action
               function (response) {
                 $("#most-recent-activity").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
                 if (response != null) { //if start
                   logResponse(response);
-                  FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 2
+                  //2013-03-13 banz-ghb start change listen action
+                  //FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 2
+                    FB.api('/me/music.listens',    'GET',{limit:4}, //FB.api 2
+                  //2013-03-13 banz-ghb end   change listen action
                     function (response2) {
                       updateMostRecentActivity(response2.data);
                       addRowToBottom(response2.data);
@@ -415,7 +421,10 @@ $app_name = idx($app_info, 'name', '');
             $("#fb-auth").hide();
             $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
-            FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 31
+            //2013-03-13 banz-ghb start change listen action
+            //FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 31
+              FB.api('/me/music.listens',    'GET',{limit:4}, //FB.api 31
+            //2013-03-13 banz-ghb end   change listen action
               function (response31) {
                 updateMostRecentActivity(response31.data);
                 addRowToBottom(response31.data);

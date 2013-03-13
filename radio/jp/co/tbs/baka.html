@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# lislogapi: http://ogp.me/ns/fb/lislogapi#">
+    <!-- 2013-03-13 banz-ghb start change listen action -->
+    <!--head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# lislogapi: http://ogp.me/ns/fb/lislogapi#"-->
+    <head    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# music:     http://ogp.me/ns/music#">
+    <!-- 2013-03-13 banz-ghb end   change listen action -->
         <meta charset="UTF-8">
         <title>TBSラジオ - 伊集院光　深夜の馬鹿力</title>
 
@@ -9,7 +12,9 @@
         <meta property="og:title" content="伊集院光　深夜の馬鹿力" />
         <meta property="og:image" content="https://fbstatic-a.akamaihd.net/images/devsite/attachment_blank.png" />
         <meta property="og:url" content="http://lislog.herokuapp.com/radio/jp/co/tbs/baka.html" />
-        <meta property="og:type" content="lislogapp:radio_program" />
+        <!-- 2013-03-13 banz-ghb start change listen action -->
+        <meta property="og:type" content="music.radio_station" />
+        <!-- 2013-03-13 banz-ghb end   change listen action -->
 
 
         <link type="text/css" rel="stylesheet" href="/stylesheets/app.css" />
@@ -36,7 +41,9 @@
                 </tr>
                 <tr>
                     <th class="key">og:type</th>
-                    <td class="value">lislogapp:radio_program</td>
+                    <!-- 2013-03-13 banz-ghb start change listen action -->
+                    <td class="value">music.radio_station</td>
+                    <!-- 2013-03-13 banz-ghb end   change listen action -->
                 </tr>
             </table>
         </div>
