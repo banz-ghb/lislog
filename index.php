@@ -382,7 +382,9 @@ $app_name = idx($app_info, 'name', '');
           // window.location.reload() because if this is in a canvas there was a
           // post made to this page and a reload will trigger a message to the
           // user asking if they want to send data again.
-          window.location = window.location;
+          // 2013-03-14 banz-ghb start disable code for php
+          //window.location = window.location;
+          // 2013-03-14 banz-ghb end   disable code for php
         });
 
         // 2013-02-24 banz-ghb start add event subscribe event function
