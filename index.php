@@ -112,6 +112,21 @@ $app_name = idx($app_info, 'name', '');
           );
         });
 
+        $('#fb-auth').click(function() {
+          FB.login(function(response) {
+              // handle the response
+           }, {scope: 'user_likes,user_photos,publish_actions'});
+           /*
+           FB.ui({method:    'permissions.request',
+                  client_id: <?php echo AppInfo::appID(); ?>,
+                  display:   'touch',
+                  perms:     'user_likes,user_photos,publish_actions'}
+            ,function (response){
+              logResponse(response);
+           });
+           */
+         });
+
         var radio_programs_id = ["baka", "bakusho", "fumou", "megane", "banana", "elekata"];
         var radio_programs_title = [ "伊集院光　深夜の馬鹿力"
                                     ,"爆笑問題カーボーイ"
@@ -295,7 +310,8 @@ $app_name = idx($app_info, 'name', '');
 
       <!-- 2013-03-03 banz-ghb start no extended permission when logging in  data-scope="user_likes,user_photos,publish_actions" -->
       <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
-      <div id="fb-auth" class="fb-login-button" data-show-faces="true"></div>
+      <div id="fb-login" class="fb-login-button" data-show-faces="true"></div>
+      <div id="fb-auth" >アプリを承認する</div>
       <!--div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"--><!--/div-->
       <!-- 2013-03-03 banz-ghb end   no extended permission when logging in-->
     </header>
@@ -376,9 +392,9 @@ $app_name = idx($app_info, 'name', '');
 
         // Listen to the auth.login which will be called when the user logs in
         // using the Login button
+
         // 2013-03-14 banz-ghb start disable code for php
         //FB.Event.subscribe('auth.login', function_eventStateChangeOnLislog);
-
         FB.Event.subscribe('auth.login', function(response) {
           // We want to reload the page now so PHP can read the cookie that the
           // Javascript SDK sat. But we don't want to use
@@ -386,16 +402,16 @@ $app_name = idx($app_info, 'name', '');
           // post made to this page and a reload will trigger a message to the
           // user asking if they want to send data again.
           // 2013-03-14 banz-ghb start disable code for php
-            window.location = window.location;
+            window.location = window.location; //pending
           // 2013-03-14 banz-ghb end   disable code for php
         });
-
         // 2013-03-14 banz-ghb start disable code for php
 
         // 2013-02-24 banz-ghb start add event subscribe event function
         function function_eventStateChangeOnLislog(response3){ //start response3
           if (response3.status == "connected") {
             logResponse(response3);//alert("login");
+            $("#fb-login").hide();
             $("#fb-auth").hide();
             $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
@@ -410,25 +426,15 @@ $app_name = idx($app_info, 'name', '');
             $('#picture').attr("style", "background-image: url(https://graph.facebook.com/"+response3.authResponse.userID+"/picture?type=normal)");
             // 2013-02-24 banz-ghb end   update profile picture
           } else if (response3.status == "not_authorized") {
-              $("#fb-auth").hide();
-              $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
-              $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
-              FB.login(function(response) {
-                 // handle the response
-              }, {scope: 'user_likes,user_photos,publish_actions'});
-              /*
-              FB.ui({method:    'permissions.request',
-                     client_id: <?php echo AppInfo::appID(); ?>,
-                     display:   'touch',
-                     perms:     'user_likes,user_photos,publish_actions'}
-              ,function (response){
-                 logResponse(response);
-              });
-              */
+            $("#fb-login").hide();
+            $("#fb-auth").show();
+            $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
+            $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
           } else {
             logResponse(response3);//alert("not login");
 
-            $('#fb-auth').show();
+            $('#fb-login').show();
+            $("#fb-auth").hide();
             $("#picture").hide();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").hide();// 2013-02-24 banz-ghb switch lislog-main
             alert('login callback 1');
