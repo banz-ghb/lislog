@@ -415,6 +415,7 @@ $app_name = idx($app_info, 'name', '');
             $('#fb-auth').show();
             $("#picture").hide();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").hide();// 2013-02-24 banz-ghb switch lislog-main
+            alert('login callback 1');
             // 2013-03-13 banz-ghb start add FB.login
             //FB.login(function(response){
             //  alert('login callback');
