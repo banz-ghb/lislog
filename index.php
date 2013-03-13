@@ -409,6 +409,10 @@ $app_name = idx($app_info, 'name', '');
             // 2013-02-24 banz-ghb start update profile picture
             $('#picture').attr("style", "background-image: url(https://graph.facebook.com/"+response3.authResponse.userID+"/picture?type=normal)");
             // 2013-02-24 banz-ghb end   update profile picture
+          } else if (response3.status == "not_authorized") {
+              $("#fb-auth").hide();
+              $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
+              $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
           } else {
             logResponse(response3);//alert("not login");
 
