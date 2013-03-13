@@ -376,6 +376,9 @@ $app_name = idx($app_info, 'name', '');
 
         // Listen to the auth.login which will be called when the user logs in
         // using the Login button
+        // 2013-03-14 banz-ghb start disable code for php
+        FB.Event.subscribe('auth.login', function_eventStateChangeOnLislog);
+        /*
         FB.Event.subscribe('auth.login', function(response) {
           // We want to reload the page now so PHP can read the cookie that the
           // Javascript SDK sat. But we don't want to use
@@ -383,9 +386,11 @@ $app_name = idx($app_info, 'name', '');
           // post made to this page and a reload will trigger a message to the
           // user asking if they want to send data again.
           // 2013-03-14 banz-ghb start disable code for php
-          //window.location = window.location;
+            window.location = window.location;
           // 2013-03-14 banz-ghb end   disable code for php
         });
+        */
+        // 2013-03-14 banz-ghb start disable code for php
 
         // 2013-02-24 banz-ghb start add event subscribe event function
         function function_eventStateChangeOnLislog(response3){ //start response3
