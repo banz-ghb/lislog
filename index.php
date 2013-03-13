@@ -413,13 +413,18 @@ $app_name = idx($app_info, 'name', '');
               $("#fb-auth").hide();
               $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
               $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
+              FB.login(function(response) {
+                 // handle the response
+              }, {scope: 'user_likes,user_photos,publish_actions'});
+              /*
               FB.ui({method:    'permissions.request',
                      client_id: <?php echo AppInfo::appID(); ?>,
                      display:   'touch',
                      perms:     'user_likes,user_photos,publish_actions'}
               ,function (response){
-            	  logResponse(response);
-              } );
+                 logResponse(response);
+              });
+              */
           } else {
             logResponse(response3);//alert("not login");
 
