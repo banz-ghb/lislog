@@ -377,8 +377,8 @@ $app_name = idx($app_info, 'name', '');
         // Listen to the auth.login which will be called when the user logs in
         // using the Login button
         // 2013-03-14 banz-ghb start disable code for php
-        FB.Event.subscribe('auth.login', function_eventStateChangeOnLislog);
-        /*
+        //FB.Event.subscribe('auth.login', function_eventStateChangeOnLislog);
+
         FB.Event.subscribe('auth.login', function(response) {
           // We want to reload the page now so PHP can read the cookie that the
           // Javascript SDK sat. But we don't want to use
@@ -389,7 +389,7 @@ $app_name = idx($app_info, 'name', '');
             window.location = window.location;
           // 2013-03-14 banz-ghb end   disable code for php
         });
-        */
+
         // 2013-03-14 banz-ghb start disable code for php
 
         // 2013-02-24 banz-ghb start add event subscribe event function
@@ -412,6 +412,11 @@ $app_name = idx($app_info, 'name', '');
           } else {
             logResponse(response3);//alert("not login");
 
+            // 2013-03-13 banz-ghb start add FB.login
+            FB.login(function(response){
+              alert('login callback');
+            }
+            // 2013-03-13 banz-ghb end   add FB.login
             $('#fb-auth').show();
             $("#picture").hide();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").hide();// 2013-02-24 banz-ghb switch lislog-main
