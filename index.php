@@ -281,10 +281,9 @@ $app_name = idx($app_info, 'name', '');
     <div id="navigation"><!-- style="height:50px;border:1px solid blue;" -->
       <div id="navigation_top" class="clearfix">
         <ul>
-          <li><a id="menu-home"                >home</a></li>
-           <li><a id="menu-most-recent-activity">history</a></li>
-          <li><a id="menu-samples"             >つながり</a></li>
-          <li><a id="menu-get-started" onClick="testclick()">guide</a></li>
+          <li><a id="#Top"               >トップ</a></li>
+          <li><a id="#MostRecentActivity">アクティビティログ</a></li>
+          <li><a id="#Guide"             >ガイド</a></li>
         </ul>
       </div>
     </div>
@@ -362,6 +361,7 @@ $app_name = idx($app_info, 'name', '');
           </li>
         </ul>
       </div>
+      <div class="fb-shared-activity" data-width="300" data-height="300"></div>
     </section>
 
     <!-- 2013-03-03 banz-ghb start change location of get-started -->
