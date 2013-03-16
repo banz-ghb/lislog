@@ -163,7 +163,7 @@ $app_name = idx($app_info, 'name', '');
           });
           return false;
           //alert("debug2: "+top_offset);
-      }); //menu function 1 end
+      }//); //menu function 1 end
 
       //////////////////////////////////////////////////////////////
       //View functions
