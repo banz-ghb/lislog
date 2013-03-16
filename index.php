@@ -361,7 +361,7 @@ $app_name = idx($app_info, 'name', '');
           </li>
         </ul>
       </div>
-      <div class="fb-shared-activity" data-width="300" data-height="300"></div>
+      <div class="fb-shared-activity" ></div>
     </section>
 
     <!-- 2013-03-03 banz-ghb start change location of get-started -->
