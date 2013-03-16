@@ -147,11 +147,10 @@ $app_name = idx($app_info, 'name', '');
       }); //define function start1 end
 
       //most-recent-activity
-      //about-us
+      //samples
       //get-started
       //$("#menu-get-started").click(function(){ //menu function 1 start
-      //function testclick(){
-      $("#navi-guide").click(function(){ //menu function 1 start
+      function testclick(){
           //alert(test);
           //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
           $('html,body').animate(
@@ -246,7 +245,7 @@ $app_name = idx($app_info, 'name', '');
                       addRowToBottom(response2.data);
                     }
                   ); //FB.api 2
-                  $("#about-us").show();// 2013-03-02 banz-ghb hide about-us when logged out
+                  $("#samples").show();// 2013-03-02 banz-ghb hide samples when logged out
 
                   //2013-03-09 banz-ghb start scroll
                   //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
@@ -318,7 +317,7 @@ $app_name = idx($app_info, 'name', '');
       <!-- 2013-03-03 banz-ghb start no extended permission when logging in  data-scope="user_likes,user_photos,publish_actions" -->
       <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
       <div id="fb-login" class="fb-login-button" data-show-faces="true"></div>
-      <div id="fb-auth" >リスログを使用する</div>
+      <div id="fb-auth" >アプリを承認する</div>
       <!--div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"--><!--/div-->
       <!-- 2013-03-03 banz-ghb end   no extended permission when logging in-->
     </header>
@@ -331,34 +330,7 @@ $app_name = idx($app_info, 'name', '');
         </div>
     </section>
 
-    <section id="shared-activity" class="clearfix">
-      <div class="fb-shared-activity" ></div>
-    </section>
-
-    <!-- 2013-03-03 banz-ghb start change location of guide -->
-    <section id="guide">
-      <p>ガイド</p>
-      <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">Learn How to use lislog</a>
-    </section>
-    <!-- 2013-03-03 banz-ghb end   change location of guide -->
-
-    <section id="related-link" class="clearfix">
-      <h1>Check Your Facebook Timeline</h1>
-      <ul>
-        <li>
-          <!-- response.username -->
-          <!-- https://www.facebook.com/akinori.kohno.5/allactivity?privacy_source=activity_log&log_filter=app_554694347877002 -->
-          <!-- https://www.facebook.com/${RESPONSE.USERNAME}/allactivity?privacy_source=activity_log&log_filter=app_${APPID} -->
-          <!-- a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="icon apps-on-facebook"--><!-- Timeline --><!-- /a -->
-          <!-- for PC     https://www.facebook.com/me/app_lislogapp -->
-          <!-- for Mobile https://www.facebook.com/me -->
-          <a href="https://www.facebook.com/me" target="_top" class="icon apps-on-facebook">Timeline</a>
-          <p>View the activity logs of lislog in your facebook timeline.</p>
-        </li>
-      </ul>
-    </section>
-
-    <section id="about-us" class="clearfix">
+    <section id="samples" class="clearfix"><a id="samples-a"></a>
       <h1>Social Graph</h1>
 
       <div class="list">
@@ -389,10 +361,31 @@ $app_name = idx($app_info, 'name', '');
           </li>
         </ul>
       </div>
+      <div class="fb-shared-activity" data-width="300" data-height="300"></div>
     </section>
 
-    <!-- ******************************************************************* -->
-    <!-- End of html contents, from here javascript boilerplate for facebook -->
+    <!-- 2013-03-03 banz-ghb start change location of get-started -->
+    <section id="get-started">
+      <p>Guide</p>
+      <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">Learn How to use lislog</a>
+    </section>
+    <!-- 2013-03-03 banz-ghb end   change location of get-started -->
+
+    <section id="guides" class="clearfix">
+      <h1>Check Your Facebook Timeline</h1>
+      <ul>
+        <li>
+          <!-- response.username -->
+          <!-- https://www.facebook.com/akinori.kohno.5/allactivity?privacy_source=activity_log&log_filter=app_554694347877002 -->
+          <!-- https://www.facebook.com/${RESPONSE.USERNAME}/allactivity?privacy_source=activity_log&log_filter=app_${APPID} -->
+          <!-- a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="icon apps-on-facebook"--><!-- Timeline --><!-- /a -->
+          <!-- for PC     https://www.facebook.com/me/app_lislogapp -->
+          <!-- for Mobile https://www.facebook.com/me -->
+          <a href="https://www.facebook.com/me" target="_top" class="icon apps-on-facebook">Timeline</a>
+          <p>View the activity logs of lislog in your facebook timeline.</p>
+        </li>
+      </ul>
+    </section>
     <div id="fb-root"></div>
     <script type="text/javascript">
       window.fbAsyncInit = function() {
@@ -462,7 +455,7 @@ $app_name = idx($app_info, 'name', '');
             // 2013-03-13 banz-ghb end   add FB.login
           } //if end
           $("#most-recent-activity").hide();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
-          $("#about-us").hide();// 2013-03-02 banz-ghb hide about-us when logged out
+          $("#samples").hide();// 2013-03-02 banz-ghb hide samples when logged out
         } //end response3
 
         FB.getLoginStatus(function_eventStateChangeOnLislog);
