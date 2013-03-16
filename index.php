@@ -363,7 +363,7 @@ $app_name = idx($app_info, 'name', '');
       </div>
     </section>
 
-    <section id="shared-activity">
+    <section id="shared-activity" class="clearfix">
       <div class="fb-shared-activity" ></div>
     </section>
 
