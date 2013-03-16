@@ -150,13 +150,11 @@ $app_name = idx($app_info, 'name', '');
       //about-us
       //get-started
       //$("#menu-get-started").click(function(){ //menu function 1 start
-      //function testclick(){
-      //$("#navi-guide").click(function(){ //menu function 1 start
-        function navi-guide-click(){
+      function testclick(){
           //alert(test);
           //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
           $('html,body').animate(
-            {scrollTop: $("#guide").offset().top},
+            {scrollTop: $("#get-started").offset().top},
             {duration: 1000, step: function(top_offset){
               FB.Canvas.scrollTo(0, top_offset + 30);
             }
@@ -283,9 +281,9 @@ $app_name = idx($app_info, 'name', '');
     <div id="navigation"><!-- style="height:50px;border:1px solid blue;" -->
       <div id="navigation_top" class="clearfix">
         <ul>
-          <li><a id="navi-top"               >トップ</a></li>
-          <li><a id="navi-most-recent-sctivity">アクティビティログ</a></li>
-          <li><a id="navi-guide" onclick="navi-guide-click()"            >ガイド</a></li>
+          <li><a id="#Top"               >トップ</a></li>
+          <li><a id="#MostRecentActivity">アクティビティログ</a></li>
+          <li><a id="#Guide"             >ガイド</a></li>
         </ul>
       </div>
     </div>
