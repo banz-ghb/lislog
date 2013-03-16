@@ -151,7 +151,8 @@ $app_name = idx($app_info, 'name', '');
       //get-started
       //$("#menu-get-started").click(function(){ //menu function 1 start
       //function testclick(){
-      $("#navi-guide").click(function(){ //menu function 1 start
+      //$("#navi-guide").click(function(){ //menu function 1 start
+        function navi-guide-click(){
           //alert(test);
           //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
           $('html,body').animate(
@@ -284,7 +285,7 @@ $app_name = idx($app_info, 'name', '');
         <ul>
           <li><a id="navi-top"               >トップ</a></li>
           <li><a id="navi-most-recent-sctivity">アクティビティログ</a></li>
-          <li><a id="navi-guide"             >ガイド</a></li>
+          <li><a id="navi-guide" onclick="navi-guide-click()"            >ガイド</a></li>
         </ul>
       </div>
     </div>
