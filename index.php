@@ -330,6 +330,34 @@ $app_name = idx($app_info, 'name', '');
         </div>
     </section>
 
+    <section id="shared-activity" class="clearfix">
+      <div class="fb-shared-activity" ></div>
+    </section>
+
+    <!-- 2013-03-03 banz-ghb start change location of guide -->
+    <section id="guide">
+      <p>ガイド</p>
+      <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">Learn How to use lislog</a>
+    </section>
+    <!-- 2013-03-03 banz-ghb end   change location of guide -->
+
+    <section id="related-link" class="clearfix">
+      <h1>Check Your Facebook Timeline</h1>
+      <ul>
+        <li>
+          <!-- response.username -->
+          <!-- https://www.facebook.com/akinori.kohno.5/allactivity?privacy_source=activity_log&log_filter=app_554694347877002 -->
+          <!-- https://www.facebook.com/${RESPONSE.USERNAME}/allactivity?privacy_source=activity_log&log_filter=app_${APPID} -->
+          <!-- a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="icon apps-on-facebook"--><!-- Timeline --><!-- /a -->
+          <!-- for PC     https://www.facebook.com/me/app_lislogapp -->
+          <!-- for Mobile https://www.facebook.com/me -->
+          <a href="https://www.facebook.com/me" target="_top" class="icon apps-on-facebook">Timeline</a>
+          <p>View the activity logs of lislog in your facebook timeline.</p>
+        </li>
+      </ul>
+    </section>
+
+
     <section id="samples" class="clearfix"><a id="samples-a"></a>
       <h1>Social Graph</h1>
 
@@ -363,33 +391,7 @@ $app_name = idx($app_info, 'name', '');
       </div>
     </section>
 
-    <section id="shared-activity" class="clearfix">
-      <div class="fb-shared-activity" ></div>
-    </section>
-
-    <!-- 2013-03-03 banz-ghb start change location of guide -->
-    <section id="guide">
-      <p>ガイド</p>
-      <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">Learn How to use lislog</a>
-    </section>
-    <!-- 2013-03-03 banz-ghb end   change location of guide -->
-
-    <section id="related-link" class="clearfix">
-      <h1>Check Your Facebook Timeline</h1>
-      <ul>
-        <li>
-          <!-- response.username -->
-          <!-- https://www.facebook.com/akinori.kohno.5/allactivity?privacy_source=activity_log&log_filter=app_554694347877002 -->
-          <!-- https://www.facebook.com/${RESPONSE.USERNAME}/allactivity?privacy_source=activity_log&log_filter=app_${APPID} -->
-          <!-- a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="icon apps-on-facebook"--><!-- Timeline --><!-- /a -->
-          <!-- for PC     https://www.facebook.com/me/app_lislogapp -->
-          <!-- for Mobile https://www.facebook.com/me -->
-          <a href="https://www.facebook.com/me" target="_top" class="icon apps-on-facebook">Timeline</a>
-          <p>View the activity logs of lislog in your facebook timeline.</p>
-        </li>
-      </ul>
-    </section>
-
+    <!-- ******************************************************************* -->
     <!-- End of html contents, from here javascript boilerplate for facebook -->
     <div id="fb-root"></div>
     <script type="text/javascript">
