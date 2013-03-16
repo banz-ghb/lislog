@@ -147,7 +147,7 @@ $app_name = idx($app_info, 'name', '');
       }); //define function start1 end
 
       //most-recent-activity
-      //samples
+      //about-us
       //get-started
       //$("#menu-get-started").click(function(){ //menu function 1 start
       function testclick(){
@@ -245,7 +245,7 @@ $app_name = idx($app_info, 'name', '');
                       addRowToBottom(response2.data);
                     }
                   ); //FB.api 2
-                  $("#samples").show();// 2013-03-02 banz-ghb hide samples when logged out
+                  $("#about-us").show();// 2013-03-02 banz-ghb hide about-us when logged out
 
                   //2013-03-09 banz-ghb start scroll
                   //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
@@ -357,8 +357,7 @@ $app_name = idx($app_info, 'name', '');
       </ul>
     </section>
 
-
-    <section id="samples" class="clearfix"><a id="samples-a"></a>
+    <section id="about-us" class="clearfix">
       <h1>Social Graph</h1>
 
       <div class="list">
@@ -462,7 +461,7 @@ $app_name = idx($app_info, 'name', '');
             // 2013-03-13 banz-ghb end   add FB.login
           } //if end
           $("#most-recent-activity").hide();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
-          $("#samples").hide();// 2013-03-02 banz-ghb hide samples when logged out
+          $("#about-us").hide();// 2013-03-02 banz-ghb hide about-us when logged out
         } //end response3
 
         FB.getLoginStatus(function_eventStateChangeOnLislog);

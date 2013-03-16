@@ -37,7 +37,7 @@ body {
 /* 2013-03-09 banz-ghb start add navigation-header.css */
 
 #guides ul li,
-#samples .list {
+#about-us .list {
   float: none;
   margin: 0 auto 10px;
   width: 172px;

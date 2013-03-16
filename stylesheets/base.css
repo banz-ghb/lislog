@@ -232,27 +232,27 @@ header .tagline {
 }
 /* ------------------------------------------ */
 
-/* =related-link/samples/shared-activity spacing
+/* =related-link/about-us/shared-activity spacing
 --------------------------------------------- */
 #related-link h1,
-#samples h1 {
+#about-us h1 {
   margin-bottom: 15px;
   text-align: center;
 }
 
-#related-link, #samples, #shared-activity {
+#related-link, #about-us, #shared-activity {
   padding: 20px 5px 20px 10px;
 }
 
 #related-link ul li,
-#samples .list {
+#about-us .list {
   float: left;
   margin-right: 3px;
   width: 172px;
 }
 
 #related-link ul li p,
-#samples ul {
+#about-us ul {
   padding: 0 4px;
 }
 /* ------------------------------------------ */
@@ -304,9 +304,9 @@ header .tagline {
 }
 /* ------------------------------------------ */
 
-/* =samples shared-activity
+/* =about-us shared-activity
 --------------------------------------------- */
-#samples ,#shared-activity {
+#about-us ,#shared-activity {
   background-image: url("../images/samples-bg.png");
   border-bottom: 1px solid #dadada;
   border-left: 1px solid #b3b3b3;
@@ -314,7 +314,7 @@ header .tagline {
   border-top: 1px solid #fff;
 }
 
-#samples h3 {
+#about-us h3 {
   background: url("../images/header-sketch.png") no-repeat;
   color: #646464;
   font-weight: bold;
@@ -323,7 +323,7 @@ header .tagline {
   text-align: center;
 }
 
-#samples ul {
+#about-us ul {
   background: url("../images/picture-sketch.png") 4px 8px;
   background-repeat: repeat-y;
   height: 161px;
@@ -331,7 +331,7 @@ header .tagline {
   padding-top: 8px;
 }
 
-#samples li {
+#about-us li {
   background-repeat: no-repeat;
   background-position: 0 0;
   color: #7c7c7c;
@@ -344,15 +344,15 @@ header .tagline {
   position: relative;
 }
 
-#samples li a:link,
-#samples li a:visited {
+#about-us li a:link,
+#about-us li a:visited {
   color: #7c7c7c;
   display: block;
   line-height: 32px;
   padding-left: 36px;
 }
 
-#samples .list img {
+#about-us .list img {
   height: auto;
   left: 0;
   position: absolute;
@@ -360,11 +360,11 @@ header .tagline {
   width: 32px;
 }
 
-#samples .inline ul {
+#about-us .inline ul {
   background-repeat: repeat;
 }
 
-#samples .inline li {
+#about-us .inline li {
   float: left;
   margin-left: 12px;
   overflow: hidden;
@@ -376,12 +376,12 @@ header .tagline {
   background-size: cover;
 }
 
-#samples .inline li.first-column {
+#about-us .inline li.first-column {
   margin-left: 0;
 }
 
-#samples .inline li a:link,
-#samples .inline li a:visited {
+#about-us .inline li a:link,
+#about-us .inline li a:visited {
   display: block;
   width: 32px;
   height: 32px;
