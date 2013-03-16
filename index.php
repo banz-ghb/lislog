@@ -162,7 +162,7 @@ $app_name = idx($app_info, 'name', '');
         });
         //alert("debug2: "+top_offset);
         return false;
-      }//); //menu function 1 end
+      }); //menu function 1 end
       //2013-03-16 banz-ghb end   implement scroll
 
       //////////////////////////////////////////////////////////////
