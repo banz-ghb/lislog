@@ -361,17 +361,20 @@ $app_name = idx($app_info, 'name', '');
           </li>
         </ul>
       </div>
+    </section>
+
+    <section id="shared-activity">
       <div class="fb-shared-activity" ></div>
     </section>
 
-    <!-- 2013-03-03 banz-ghb start change location of get-started -->
-    <section id="get-started">
-      <p>Guide</p>
+    <!-- 2013-03-03 banz-ghb start change location of guide -->
+    <section id="guide">
+      <p>ガイド</p>
       <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">Learn How to use lislog</a>
     </section>
-    <!-- 2013-03-03 banz-ghb end   change location of get-started -->
+    <!-- 2013-03-03 banz-ghb end   change location of guide -->
 
-    <section id="guides" class="clearfix">
+    <section id="related-link" class="clearfix">
       <h1>Check Your Facebook Timeline</h1>
       <ul>
         <li>
@@ -386,6 +389,8 @@ $app_name = idx($app_info, 'name', '');
         </li>
       </ul>
     </section>
+
+    <!-- End of html contents, from here javascript boilerplate for facebook -->
     <div id="fb-root"></div>
     <script type="text/javascript">
       window.fbAsyncInit = function() {
