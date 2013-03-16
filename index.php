@@ -108,7 +108,7 @@ $app_name = idx($app_info, 'name', '');
       }
 
       //////////////////////////////////////////////////////////////
-      // Build html elements
+      // Build html elements start
       //////////////////////////////////////////////////////////////
       $(function(){ //define function start1 start
         // Set up so we handle click on the buttons
@@ -160,13 +160,11 @@ $app_name = idx($app_info, 'name', '');
           addPublishActionButtonOnLiElement(radio_programs_id[i], radio_programs_title[i]);
         } //loop 1 end
 
-      }); //define function start1 end
-
-      //most-recent-activity
-      //samples
-      //get-started
-      //$("#menu-get-started").click(function(){ //menu function 1 start
-      function testclick(){
+        //most-recent-activity
+        //samples
+        //get-started
+        $("#menu-get-started").click(function(){ //menu function 1 start
+        //function testclick(){
           //alert(test);
           //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
           $('html,body').animate(
@@ -177,7 +175,12 @@ $app_name = idx($app_info, 'name', '');
           });
           return false;
           //alert("debug2: "+top_offset);
-      }//); //menu function 1 end
+        }); //menu function 1 end
+
+      }); //define function start1 end
+      //////////////////////////////////////////////////////////////
+      // Build html elements end
+      //////////////////////////////////////////////////////////////
 
       //////////////////////////////////////////////////////////////
       //View functions
@@ -299,7 +302,7 @@ $app_name = idx($app_info, 'name', '');
         <ul>
           <li><a id="#Top"               >トップ</a></li>
           <li><a id="#MostRecentActivity">アクティビティログ</a></li>
-          <li><a id="#Guide"             >ガイド</a></li>
+          <li><a id="menu-get-started"   >ガイド</a></li>
         </ul>
       </div>
     </div>
