@@ -166,8 +166,6 @@ $app_name = idx($app_info, 'name', '');
       //////////////////////////////////////////////////////////////
       //View functions
       //////////////////////////////////////////////////////////////
-      // 2013-03-16 banz-ghb start remove most-recent-activity
-      /*
       function updateMostRecentActivity(array_activities) {
         for(i = 0; i < 1; i++) {
           $('#most-recent-activity-title').text(array_activities[i].data.radio_program.title);
@@ -180,8 +178,6 @@ $app_name = idx($app_info, 'name', '');
           $('#most-recent-activity-publish_time').text(array_activities[i].publish_time);
         }
       }
-      */
-      // 2013-03-16 banz-ghb end   remove most-recent-activity
       //http://d.hatena.ne.jp/okahiro_p/20120525/1337918243
       function addRowToBottom(array_activities) {
         $('#recent-activities li').remove();
@@ -236,7 +232,7 @@ $app_name = idx($app_info, 'name', '');
               FB.api('me/music.listens','POST',{radio_station:var_radio_program_button_url},//FB.api 1
             //2013-03-13 banz-ghb end   change listen action
               function (response) {
-                //$("#most-recent-activity").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
+                $("#most-recent-activity").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
                 if (response != null) { //if start
                   logResponse(response);
                   //2013-03-13 banz-ghb start change listen action
@@ -245,25 +241,21 @@ $app_name = idx($app_info, 'name', '');
                   //2013-03-13 banz-ghb end   change listen action
                     function (response2) {
                         logResponse(response2);
-                      //updateMostRecentActivity(response2.data); // 2013-03-16 banz-ghb remove updateMostRecentActivity
+                      updateMostRecentActivity(response2.data);
                       addRowToBottom(response2.data);
                     }
                   ); //FB.api 2
                   $("#about-us").show();// 2013-03-02 banz-ghb hide about-us when logged out
 
-                  //2013-03-16 banz-ghb start remove most-recent-activity
                   //2013-03-09 banz-ghb start scroll
                   //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
-                  /*
                   $('html,body').animate(
                     {scrollTop: $("#most-recent-activity").offset().top},
                     {duration: 500, step: function(top_offset){
                       FB.Canvas.scrollTo(0, top_offset + 30);
                     }
                   });
-                  */
                   //2013-03-09 banz-ghb end   scroll
-                  //2013-03-16 banz-ghb end   remove most-recent-activity
                 } //if end
               }
             ); //FB.api 1
@@ -330,7 +322,13 @@ $app_name = idx($app_info, 'name', '');
       <!-- 2013-03-03 banz-ghb end   no extended permission when logging in-->
     </header>
 
-    <!-- 2013-03-16 banz-ghb remove most-recent-activity -->
+    <section id="most-recent-activity" class="clearfix">
+      <div>
+        <h1>Most Recent Activity:</h1>
+        <p id="most-recent-activity-title">Empty</p><p>Your ranking: Heavy Listener (or Listner)</p>
+        <p id="most-recent-activity-publish_time">Empty</p>
+        </div>
+    </section>
 
     <section id="shared-activity" class="clearfix">
       <div class="fb-shared-activity" ></div>
@@ -435,7 +433,7 @@ $app_name = idx($app_info, 'name', '');
               FB.api('/me/music.listens',    'GET',{limit:4}, //FB.api 31
             //2013-03-13 banz-ghb end   change listen action
               function (response31) {
-                //updateMostRecentActivity(response31.data);// 2013-03-16 banz-ghb remove  most-recent-activity
+                updateMostRecentActivity(response31.data);
                 addRowToBottom(response31.data);
                 getAppUsingFriends();// 2013-03-02 banz-ghb add getAppUsingFriends
               }
