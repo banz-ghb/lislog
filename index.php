@@ -146,22 +146,24 @@ $app_name = idx($app_info, 'name', '');
 
       }); //define function start1 end
 
-      //most-recent-activity
-      //about-us
-      //get-started
+      //2013-03-16 banz-ghb start implement scroll
+      //shared-activity
+      //guide
       //$("#menu-get-started").click(function(){ //menu function 1 start
-      function testclick(){
-          //alert(test);
-          //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
-          $('html,body').animate(
-            {scrollTop: $("#get-started").offset().top},
-            {duration: 1000, step: function(top_offset){
-              FB.Canvas.scrollTo(0, top_offset + 30);
-            }
-          });
-          return false;
-          //alert("debug2: "+top_offset);
+      //function testclick(){
+      $("##shared-activity").click(function(){ //menu function 1 start
+        //alert(test);
+        //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
+        $('html,body').animate(
+          {scrollTop: $("#shared-activity").offset().top},
+          {duration: 1000, step: function(top_offset){
+            FB.Canvas.scrollTo(0, top_offset + 30);
+          }
+        });
+        //alert("debug2: "+top_offset);
+        return false;
       }//); //menu function 1 end
+      //2013-03-16 banz-ghb end   implement scroll
 
       //////////////////////////////////////////////////////////////
       //View functions
@@ -236,7 +238,7 @@ $app_name = idx($app_info, 'name', '');
               FB.api('me/music.listens','POST',{radio_station:var_radio_program_button_url},//FB.api 1
             //2013-03-13 banz-ghb end   change listen action
               function (response) {
-                //$("#most-recent-activity").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
+                //$("#shared-activity").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
                 if (response != null) { //if start
                   logResponse(response);
                   //2013-03-13 banz-ghb start change listen action
@@ -289,9 +291,9 @@ $app_name = idx($app_info, 'name', '');
     <div id="navigation"><!-- style="height:50px;border:1px solid blue;" -->
       <div id="navigation_top" class="clearfix">
         <ul>
-          <li><a id="#Top"               >トップ</a></li>
-          <li><a id="#MostRecentActivity">アクティビティログ</a></li>
-          <li><a id="#Guide"             >ガイド</a></li>
+          <li><a id="#top"               >トップ</a></li>
+          <li><a id="#shared-activity">アクティビティログ</a></li>
+          <li><a id="#guide"             >ガイド</a></li>
         </ul>
       </div>
     </div>
@@ -462,7 +464,7 @@ $app_name = idx($app_info, 'name', '');
             //}
             // 2013-03-13 banz-ghb end   add FB.login
           } //if end
-          $("#most-recent-activity").hide();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
+          $("#shared-activity").hide();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
           $("#about-us").hide();// 2013-03-02 banz-ghb hide about-us when logged out
         } //end response3
 
