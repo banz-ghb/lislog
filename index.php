@@ -13,6 +13,19 @@ if (strstr($_SERVER["HTTP_USER_AGENT"], "MSIE")) {
 	header('p3p: CP="ALL DSP COR PSAa PSDa OUR NOR ONL UNI COM NAV"');
 }
 //2012-01-13 banz-ghb end   keep session in IE
+//2012-03-16 banz-ghb start get locales
+//ja,en-US;q=0.8,en;q=0.6
+$locales = explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE']);
+$client_language = 'en';
+$client_locale   = 'en_US';
+foreach ($locales as $locale){
+	if (preg_match('/^ja/i',$locale)) {
+		$client_language = 'ja';
+		$client_locale   = 'ja_JP';
+		break;
+	}
+}
+//2012-03-16 banz-ghb end   get locales
 
 // Provides access to app specific values such as your app id and app secret.
 // Defined in 'AppInfo.php'
@@ -53,7 +66,9 @@ $app_name = idx($app_info, 'name', '');
 
 ?>
 <!DOCTYPE html>
-<html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
+<!--2012-03-16 banz-ghb start get locales-->
+<html xmlns:fb="http://ogp.me/ns/fb#" lang="<?php echo he($client_language)?>">
+<!--2012-03-16 banz-ghb end   get locales-->
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
@@ -85,6 +100,7 @@ $app_name = idx($app_info, 'name', '');
       //////////////////////////////////////////////////////////////
       // Utility
       //////////////////////////////////////////////////////////////
+      // TODO: control debug mode by environment variant
       function logResponse(response) {
         if (console && console.log) {
           console.log('The response was', response);
@@ -391,7 +407,9 @@ $app_name = idx($app_info, 'name', '');
       window.fbAsyncInit = function() {
         FB.init({
           appId      : '<?php echo AppInfo::appID(); ?>', // App ID
-          channelUrl : '//<?php echo $_SERVER["HTTP_HOST"]; ?>/channel.html', // Channel File
+          // 2012-03-16 banz-ghb start get locales
+          channelUrl : '//<?php echo $_SERVER["HTTP_HOST"]; ?>/channel_<?php he($client_locale);?>.html', // Channel File
+          // 2012-03-16 banz-ghb start get locales
           status     : true, // check login status
           cookie     : true, // enable cookies to allow the server to access the session
           xfbml      : true // parse XFBML
@@ -470,7 +488,9 @@ $app_name = idx($app_info, 'name', '');
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js";
+        //2012-03-16 banz-ghb start get locales
+        js.src = "//connect.facebook.net/<?php echo he($client_locale);?>/all.js";
+        //2012-03-16 banz-ghb end   get locales
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
