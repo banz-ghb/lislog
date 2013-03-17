@@ -19,8 +19,10 @@ body {
     margin-left:0px;
   top:   0px; /* have to syncronize margin of body defined in base and mobile */
   left:  0px;/* have to syncronize margin of body defined in base and mobile */
-  padding-top:20px;
-  padding-bottom:20px:
+  /*vertical-align: middle;*/
+  height: 40px;
+  padding-top:10px;
+ /*padding-bottom:20px:*/
 }
 #navigation_top {
   /*Sbackground-color: red;*/
