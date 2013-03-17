@@ -364,7 +364,7 @@ $app_name = idx($app_info, 'name', '');
     <div id="navigation"><!-- style="height:50px;border:1px solid blue;" -->
       <div id="navigation_top" class="clearfix">
         <ul>
-          <li><a id="menu-lislog-main"    >トップ</a></li>
+          <li><a id="menu-lislog-main" class="first"  >トップ</a></li>
           <li><a id="menu-get-started"    >ガイド</a></li>
           <li><a id="menu-shared-activity">アクティビティログ</a></li>
           </ul>

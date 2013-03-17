@@ -36,9 +36,16 @@
   padding: 0 30px;
   color: #fff;
   font-size:1.4em;
-  border-left: 1px solid red;
+  /*border-left: 1px solid #fff;*/
   display: inline
 }
+
+/*
+.first {
+  border-left: 1px solid black;
+}
+*/
+
 /*
 .last {
   border-right: 1px solid red;
