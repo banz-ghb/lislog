@@ -32,7 +32,11 @@ body {
 
 #navigation li {
   padding: 0 3px;
-  font-size:1.0em;
+  /*font-size:1.0em;*/
+  color: #fff;
+  font-family: "CorbelRegular";
+  font-size: 20px;
+
 }
 /* 2013-03-09 banz-ghb start add navigation-header.css */
 
