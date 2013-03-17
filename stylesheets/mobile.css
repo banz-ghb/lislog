@@ -70,5 +70,5 @@ body {
 
 /* 2013-03-17 banz-ghb adjust layout of id-shared-activity */
 #id-shared-activity-div {
-  margin:  5px  auto;
+  margin:  5px  /*auto*/;
 }
