@@ -418,7 +418,7 @@ $app_name = idx($app_info, 'name', '');
     <!-- 2013-03-17 banz-ghb start move samples -->
     <section id="id-shared-activity" class="clearfix">
       <!-- adjust layout -- data-width="300" data-height="300" -->
-      <div class="fb-shared-activity" ></div>
+      <div id="id-shared-activity-div" class="fb-shared-activity" ></div>
     </section>
     <!-- 2013-03-17 banz-ghb end   move samples -->
 
