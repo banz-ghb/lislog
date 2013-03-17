@@ -344,6 +344,7 @@ $app_name = idx($app_info, 'name', '');
           div.attr("data-href",     var_radio_program_button_url_1);
           div.attr("data-action",   "music.listens");
           div.attr("data-max-rows", "1");
+          div.attr("data-width",    "270"); //adjust layout
           // 2013-03-17 banz-ghb end   add facepile
 
       }
@@ -384,17 +385,18 @@ $app_name = idx($app_info, 'name', '');
 
         </div>
 
-        <!-- 2012-03-06 banz-ghb start change layout -->
-        <div class="clearfix">
-          <p>Press button when you tune in:</p><br>
-          <ul id="radioprogram-list">
-            <!-- start temporarilly removed -->
-            <!-- end   temporarilly removed -->
-          </ul>
-        </div>
-        <!-- 2012-03-06 banz-ghb end   change layout -->
-
+        <!-- 2013-03-17 banz-ghb move radioprogram-list -->
       </div>
+
+    <!-- 2012-03-06 banz-ghb start change layout -->
+    <div class="clearfix">
+      <p>Press button when you tune in:</p><br>
+      <ul id="radioprogram-list">
+        <!-- start temporarilly removed -->
+        <!-- end   temporarilly removed -->
+      </ul>
+    </div>
+    <!-- 2012-03-06 banz-ghb end   change layout -->
 
       <!-- 2013-03-03 banz-ghb start no extended permission when logging in  data-scope="user_likes,user_photos,publish_actions" -->
       <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
@@ -415,7 +417,8 @@ $app_name = idx($app_info, 'name', '');
 
     <!-- 2013-03-17 banz-ghb start move samples -->
     <section id="id-shared-activity" class="clearfix">
-      <div class="fb-shared-activity" data-width="300" data-height="300"></div>
+      <!-- adjust layout -- data-width="300" data-height="300" -->
+      <div class="fb-shared-activity" ></div>
     </section>
     <!-- 2013-03-17 banz-ghb end   move samples -->
 
