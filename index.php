@@ -160,9 +160,10 @@ $app_name = idx($app_info, 'name', '');
           addPublishActionButtonOnLiElement(radio_programs_id[i], radio_programs_title[i]);
         } //loop 1 end
 
-        //most-recent-activity
-        //samples
-        //get-started
+        //lislog-main           ->          menu-lislog-main
+        //*most-recent-activity             menu-most-recent-activity
+        //*samples              ->about-us
+        //*get-started          ->          menu-get-started
         $("#menu-get-started").click(function(){ //menu function 1 start
         //function testclick(){
           //alert(test);
@@ -176,8 +177,28 @@ $app_name = idx($app_info, 'name', '');
           return false;
           //alert("debug2: "+top_offset);
         }); //menu function 1 end
+        // 2013-03-17 banz-ghb start add other navigations
+        $("#menu-lislog-main").click(function(){ //menu function 1-2 start
+          $('html,body').animate(
+            {scrollTop: 0},
+            {duration: 1000, step: function(top_offset){
+              FB.Canvas.scrollTo(0, top_offset );
+            }
+          });
+          return false;
+        }); //menu function 1-2 end
+        $("#menu-most-recent-activity").click(function(){ //menu function 1-3 start
+          $('html,body').animate(
+            {scrollTop: $("#most-recent-activity").offset().top},
+            {duration: 1000, step: function(top_offset){
+              FB.Canvas.scrollTo(0, top_offset + 30);
+            }
+          });
+          return false;
+        }); //menu function 1-3 end
+        // 2013-03-17 banz-ghb end   add other navigations
 
-      }); //define function start1 end
+      }); //define function start1-2 end
       //////////////////////////////////////////////////////////////
       // Build html elements end
       //////////////////////////////////////////////////////////////
@@ -208,6 +229,7 @@ $app_name = idx($app_info, 'name', '');
         }
       }
 
+      // 2013-03-16 banz-ghb start delete candidate instead of facepile
       function getAppUsingFriends() {
         FB.api({ //FB.api
           method : 'fql.query',
@@ -230,6 +252,7 @@ $app_name = idx($app_info, 'name', '');
           }
         }); //FB.api
       }
+      // 2013-03-16 banz-ghb end   delete candidate instead of facepile
 
       function addPublishActionButtonOnLiElement(var_radio_program_id, var_radio_program_title) {
           var_radio_program_button_name = 'publishAction_'+var_radio_program_id; //radio_programs_id[i]
@@ -254,16 +277,17 @@ $app_name = idx($app_info, 'name', '');
                 $("#most-recent-activity").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
                 if (response != null) { //if start
                   logResponse(response);
-                  //2013-03-13 banz-ghb start change listen action
+                  //2013-03-16 banz-ghb start delete candidate
+                  /*
                   //FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 2
                     FB.api('/me/music.listens',    'GET',{limit:4}, //FB.api 2
-                  //2013-03-13 banz-ghb end   change listen action
-                    function (response2) {
+                      function (response2) {
                         logResponse(response2);
-                      updateMostRecentActivity(response2.data);
-                      addRowToBottom(response2.data);
-                    }
-                  ); //FB.api 2
+                        updateMostRecentActivity(response2.data);
+                        addRowToBottom(response2.data);
+                    }); //FB.api 2
+                  */
+                  //2013-03-16 banz-ghb end   delete candidate
                   $("#samples").show();// 2013-03-02 banz-ghb hide samples when logged out
 
                   //2013-03-09 banz-ghb start scroll
@@ -283,6 +307,20 @@ $app_name = idx($app_info, 'name', '');
           var span = $('<span/>').text(var_radio_program_title); //radio_programs_title[i]
           a.append(span);
           span.attr("class", "plus");
+          // TODO implement facepile
+          /*
+          li.append(div);
+          div ->class "fb-facepile"   "fb-facepile"
+              ->attr  "data-href"     "https://lislog.herokuapp.com/radio/jp/co/tbs/baka.html"
+              ->attr  "data-action"   "music.listens"
+              ->attr  "data-max-rows" "1"
+
+          <div class="fb-facepile"
+        	  data-href="https://lislog.herokuapp.com/radio/jp/co/tbs/baka.html"
+        	  data-action="music.listens"
+        	  data-max-rows="1">
+        	 </div>
+          */
       }
       //-->
       </script>
@@ -300,9 +338,9 @@ $app_name = idx($app_info, 'name', '');
     <div id="navigation"><!-- style="height:50px;border:1px solid blue;" -->
       <div id="navigation_top" class="clearfix">
         <ul>
-          <li><a id="#Top"               >トップ</a></li>
-          <li><a id="#MostRecentActivity">アクティビティログ</a></li>
-          <li><a id="menu-get-started"   >ガイド</a></li>
+          <li><a id="menu-lislog-main"         >トップ</a></li>
+          <li><a id="menu-most-recent-activity">アクティビティログ</a></li>
+          <li><a id="menu-get-started"         >ガイド</a></li>
         </ul>
       </div>
     </div>
@@ -450,7 +488,9 @@ $app_name = idx($app_info, 'name', '');
               function (response31) {
                 updateMostRecentActivity(response31.data);
                 addRowToBottom(response31.data);
+                // 2013-03-16 banz-ghb start delete candidate instead of facepile
                 getAppUsingFriends();// 2013-03-02 banz-ghb add getAppUsingFriends
+                // 2013-03-16 banz-ghb end   delete candidate instead of facepile
               }
             ); //FB.api 31
             // 2013-02-24 banz-ghb start update profile picture
