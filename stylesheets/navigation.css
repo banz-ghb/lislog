@@ -10,7 +10,11 @@
 /* 2013-03-09 banz-ghb start add navigation-header.css
 /* p200 */
 #navigation {
-  background-color: blue;
+  /* 2013-03-17 banz-ghb start add gloval css var */
+  /*background-color: blue;*/
+  background: url("../images/get-started-bg.jpg");
+  /*background: data(var-bg-image-location);*/
+  /* 2013-03-17 banz-ghb end   add gloval css var */
   position: fixed;
   width: 720px; /* var candidate */
   top: 20px; /* have to syncronize margin of body defined in base and mobile */

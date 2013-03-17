@@ -32,6 +32,17 @@ h1 {
 
 /* ------------------------------------------ */
 
+/* 2013-03-17 banz-ghb end   add gloval css var */
+/* =global css var
+--------------------------------------------- */
+:root {
+  var-bg-image-location:
+     url("../image/get-started-bg.jpg");
+}
+
+/* ------------------------------------------ */
+/* 2013-03-17 banz-ghb end   add gloval css var */
+
 /* =header
 --------------------------------------------- */
 header {
@@ -101,7 +112,7 @@ header .tagline {
 /* 2012-03-06 banz-ghb start change layout */
 #radioprogram-list {
   float: left;
-  width: 344px;
+  /*width: 344px;*/
 }
 
 #radioprogram-list ul {
@@ -232,12 +243,20 @@ header .tagline {
 }
 /* ------------------------------------------ */
 
-/* =guides/samples spacing
+/* 2013-03-17 banz-ghb adjust layout of id-shared-activity */
+/* =guides/samples/id-shared-activity spacing
 --------------------------------------------- */
 #guides h1,
 #samples h1 {
   margin-bottom: 15px;
   text-align: center;
+}
+
+/* 2013-03-17 banz-ghb adjust layout of id-shared-activity */
+#id-shared-activity {
+  padding-top:    5px;
+  padding-bottom: 5px;
+  /*padding: 20px 5px 20px 10px;*/
 }
 
 #guides, #samples {
@@ -303,6 +322,21 @@ header .tagline {
   background-position: 35px -519px;
 }
 /* ------------------------------------------ */
+
+/* 2013-03-17 banz-ghb start adjust layout of id-shared-activity */
+
+/* =id-shared-activity
+--------------------------------------------- */
+#id-shared-activity {
+  /*background-image: url("../images/samples-bg.png");*/
+  border-bottom: 1px solid #dadada;
+  border-left: 1px solid #b3b3b3;
+  border-right: 1px solid #b3b3b3;
+  border-top: 1px solid #fff;
+}
+
+/* ------------------------------------------ */
+/* 2013-03-17 banz-ghb end   adjust layout of id-shared-activity */
 
 /* =samples
 --------------------------------------------- */
