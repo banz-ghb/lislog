@@ -160,8 +160,8 @@ $app_name = idx($app_info, 'name', '');
           addPublishActionButtonOnLiElement(radio_programs_id[i], radio_programs_title[i]);
         } //loop 1 end
 
-        //lislog-main           ->          menu-lislog-main
-        //*most-recent-activity             menu-most-recent-activity
+        //lislog-main           ->                   menu-lislog-main
+        //*most-recent-activity ->id-shared-activity menu-most-recent-activity
         //*samples              ->about-us
         //*get-started          ->          menu-get-started
         $("#menu-get-started").click(function(){ //menu function 1 start
@@ -187,9 +187,10 @@ $app_name = idx($app_info, 'name', '');
           });
           return false;
         }); //menu function 1-2 end
-        $("#menu-most-recent-activity").click(function(){ //menu function 1-3 start
+        //2013-03-17 banz-ghb remove most-recent-activity
+        $("#menu-shared-activity").click(function(){ //menu function 1-3 start
           $('html,body').animate(
-            {scrollTop: $("#most-recent-activity").offset().top},
+            {scrollTop: $("#id-shared-activity").offset().top},
             {duration: 1000, step: function(top_offset){
               FB.Canvas.scrollTo(0, top_offset + 30);
             }
@@ -206,6 +207,8 @@ $app_name = idx($app_info, 'name', '');
       //////////////////////////////////////////////////////////////
       //View functions
       //////////////////////////////////////////////////////////////
+      // 2013-03-17 banz-ghb start remove most-recent-activity
+      /*
       function updateMostRecentActivity(array_activities) {
         for(i = 0; i < 1; i++) {
           $('#most-recent-activity-title').text(array_activities[i].data.radio_program.title);
@@ -218,6 +221,9 @@ $app_name = idx($app_info, 'name', '');
           $('#most-recent-activity-publish_time').text(array_activities[i].publish_time);
         }
       }
+      */
+      // 2013-03-17 banz-ghb end   remove most-recent-activity
+
       //http://d.hatena.ne.jp/okahiro_p/20120525/1337918243
       function addRowToBottom(array_activities) {
         $('#recent-activities li').remove();
@@ -255,7 +261,12 @@ $app_name = idx($app_info, 'name', '');
       // 2013-03-16 banz-ghb end   delete candidate instead of facepile
 
       function addPublishActionButtonOnLiElement(var_radio_program_id, var_radio_program_title) {
-          var_radio_program_button_name = 'publishAction_'+var_radio_program_id; //radio_programs_id[i]
+          // 2013-03-17 banz-ghb start add facepile
+          var var_radio_program_button_name = 'publishAction_'+var_radio_program_id; //radio_programs_id[i]
+          //clickバインドないと合わせること
+          var var_radio_program_button_url_1 =
+              'https://lislog.herokuapp.com/radio/jp/co/tbs/'+var_radio_program_id+'.html';
+          // 2013-03-17 banz-ghb end   add facepile
           //configure a li element
           var li = $('<li/>');
           $('#radioprogram-list').append(li);
@@ -274,7 +285,8 @@ $app_name = idx($app_info, 'name', '');
               FB.api('me/music.listens','POST',{radio_station:var_radio_program_button_url},//FB.api 1
             //2013-03-13 banz-ghb end   change listen action
               function (response) {
-                $("#most-recent-activity").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
+                //2013-03-17 banz-ghb remove most-recent-activity
+                $("#id-shared-activity").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
                 if (response != null) { //if start
                   logResponse(response);
                   //2013-03-16 banz-ghb start delete candidate
@@ -293,7 +305,8 @@ $app_name = idx($app_info, 'name', '');
                   //2013-03-09 banz-ghb start scroll
                   //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
                   $('html,body').animate(
-                    {scrollTop: $("#most-recent-activity").offset().top},
+                    //2013-03-17 banz-ghb remove most-recent-activity
+                    {scrollTop: $("#id-shared-activity").offset().top},
                     {duration: 500, step: function(top_offset){
                       FB.Canvas.scrollTo(0, top_offset + 30);
                     }
@@ -310,17 +323,27 @@ $app_name = idx($app_info, 'name', '');
           // TODO implement facepile
           /*
           li.append(div);
-          div ->class "fb-facepile"   "fb-facepile"
+          div ->attr  "class"         "fb-facepile"
               ->attr  "data-href"     "https://lislog.herokuapp.com/radio/jp/co/tbs/baka.html"
+                                      ->var_radio_program_button_url
               ->attr  "data-action"   "music.listens"
               ->attr  "data-max-rows" "1"
 
           <div class="fb-facepile"
-        	  data-href="https://lislog.herokuapp.com/radio/jp/co/tbs/baka.html"
-        	  data-action="music.listens"
-        	  data-max-rows="1">
-        	 </div>
+            data-href="https://lislog.herokuapp.com/radio/jp/co/tbs/baka.html"
+            data-action="music.listens"
+            data-max-rows="1">
+           </div>
           */
+          // 2013-03-17 banz-ghb start add facepile
+          var div = $('<div/>');
+          li.append(div);
+          div.attr("class",         "fb-facepile");
+          div.attr("data-href",     var_radio_program_button_url_1);
+          div.attr("data-action",   "music.listens");
+          div.attr("data-max-rows", "1");
+          // 2013-03-17 banz-ghb end   add facepile
+
       }
       //-->
       </script>
@@ -338,10 +361,10 @@ $app_name = idx($app_info, 'name', '');
     <div id="navigation"><!-- style="height:50px;border:1px solid blue;" -->
       <div id="navigation_top" class="clearfix">
         <ul>
-          <li><a id="menu-lislog-main"         >トップ</a></li>
-          <li><a id="menu-most-recent-activity">アクティビティログ</a></li>
-          <li><a id="menu-get-started"         >ガイド</a></li>
-        </ul>
+          <li><a id="menu-lislog-main"    >トップ</a></li>
+          <li><a id="menu-get-started"    >ガイド</a></li>
+          <li><a id="menu-shared-activity">アクティビティログ</a></li>
+          </ul>
       </div>
     </div>
     <!-- 2013-03-09 banz-ghb end   header -->
@@ -379,14 +402,38 @@ $app_name = idx($app_info, 'name', '');
       <!-- 2013-03-03 banz-ghb end   no extended permission when logging in-->
     </header>
 
-    <section id="most-recent-activity" class="clearfix">
-      <div>
-        <h1>Most Recent Activity:</h1>
-        <p id="most-recent-activity-title">Empty</p><p>Your ranking: Heavy Listener (or Listner)</p>
-        <p id="most-recent-activity-publish_time">Empty</p>
-        </div>
+    <!-- 2013-03-17 banz-ghb remove most-recent-activity -->
+
+    <!-- 2013-03-03 banz-ghb start change location of get-started -->
+    <section id="get-started">
+      <p>Guide</p>
+      <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">Learn How to use lislog</a>
+    </section>
+    <!-- 2013-03-03 banz-ghb end   change location of get-started -->
+
+    <!-- 2013-03-17 banz-ghb start move samples -->
+    <section id="id-shared-activity" class="clearfix">
+      <div class="fb-shared-activity" data-width="300" data-height="300"></div>
+    </section>
+    <!-- 2013-03-17 banz-ghb end   move samples -->
+
+    <section id="guides" class="clearfix">
+      <h1>Check Your Facebook Timeline</h1>
+      <ul>
+        <li>
+          <!-- response.username -->
+          <!-- https://www.facebook.com/akinori.kohno.5/allactivity?privacy_source=activity_log&log_filter=app_554694347877002 -->
+          <!-- https://www.facebook.com/${RESPONSE.USERNAME}/allactivity?privacy_source=activity_log&log_filter=app_${APPID} -->
+          <!-- a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="icon apps-on-facebook"--><!-- Timeline --><!-- /a -->
+          <!-- for PC     https://www.facebook.com/me/app_lislogapp -->
+          <!-- for Mobile https://www.facebook.com/me -->
+          <a href="https://www.facebook.com/me" target="_top" class="icon apps-on-facebook">Timeline</a>
+          <p>View the activity logs of lislog in your facebook timeline.</p>
+        </li>
+      </ul>
     </section>
 
+    <!-- 2013-03-17 banz-ghb start move samples -->
     <section id="samples" class="clearfix"><a id="samples-a"></a>
       <h1>Social Graph</h1>
 
@@ -418,31 +465,10 @@ $app_name = idx($app_info, 'name', '');
           </li>
         </ul>
       </div>
-      <div class="fb-shared-activity" data-width="300" data-height="300"></div>
     </section>
+    <!-- 2013-03-17 banz-ghb end   move samples -->
 
-    <!-- 2013-03-03 banz-ghb start change location of get-started -->
-    <section id="get-started">
-      <p>Guide</p>
-      <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">Learn How to use lislog</a>
-    </section>
-    <!-- 2013-03-03 banz-ghb end   change location of get-started -->
-
-    <section id="guides" class="clearfix">
-      <h1>Check Your Facebook Timeline</h1>
-      <ul>
-        <li>
-          <!-- response.username -->
-          <!-- https://www.facebook.com/akinori.kohno.5/allactivity?privacy_source=activity_log&log_filter=app_554694347877002 -->
-          <!-- https://www.facebook.com/${RESPONSE.USERNAME}/allactivity?privacy_source=activity_log&log_filter=app_${APPID} -->
-          <!-- a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="icon apps-on-facebook"--><!-- Timeline --><!-- /a -->
-          <!-- for PC     https://www.facebook.com/me/app_lislogapp -->
-          <!-- for Mobile https://www.facebook.com/me -->
-          <a href="https://www.facebook.com/me" target="_top" class="icon apps-on-facebook">Timeline</a>
-          <p>View the activity logs of lislog in your facebook timeline.</p>
-        </li>
-      </ul>
-    </section>
+    <!-- initialize facebook javascript sdk -->
     <div id="fb-root"></div>
     <script type="text/javascript">
       window.fbAsyncInit = function() {
@@ -486,7 +512,8 @@ $app_name = idx($app_info, 'name', '');
               FB.api('/me/music.listens',    'GET',{limit:4}, //FB.api 31
             //2013-03-13 banz-ghb end   change listen action
               function (response31) {
-                updateMostRecentActivity(response31.data);
+            	//2013-03-17 banz-ghb remove most-recent-activity
+                //updateMostRecentActivity(response31.data);
                 addRowToBottom(response31.data);
                 // 2013-03-16 banz-ghb start delete candidate instead of facepile
                 getAppUsingFriends();// 2013-03-02 banz-ghb add getAppUsingFriends
@@ -515,7 +542,8 @@ $app_name = idx($app_info, 'name', '');
             //}
             // 2013-03-13 banz-ghb end   add FB.login
           } //if end
-          $("#most-recent-activity").hide();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
+          ////2013-03-17 banz-ghb remove most-recent-activity
+          //$("#most-recent-activity").hide();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
           $("#samples").hide();// 2013-03-02 banz-ghb hide samples when logged out
         } //end response3
 
