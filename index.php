@@ -236,6 +236,7 @@ $app_name = idx($app_info, 'name', '');
       }
 
       // 2013-03-16 banz-ghb start delete candidate instead of facepile
+      /*
       function getAppUsingFriends() {
         FB.api({ //FB.api
           method : 'fql.query',
@@ -258,6 +259,7 @@ $app_name = idx($app_info, 'name', '');
           }
         }); //FB.api
       }
+      */
       // 2013-03-16 banz-ghb end   delete candidate instead of facepile
 
       function addPublishActionButtonOnLiElement(var_radio_program_id, var_radio_program_title) {
@@ -448,12 +450,7 @@ $app_name = idx($app_info, 'name', '');
         </ul>
       </div>
 
-      <div class="list">
-        <h3>Friends using this app</h3>
-        <ul id="app-using-friends" class="friends">
-          <!-- app_using_friends --><!-- 2013-03-02 banz-ghb disable to show app_using_friends -->
-        </ul>
-      </div>
+      <!-- 2013-03-17 banz-ghb disable to show app_using_friends -->
 
       <div class="list">
         <h3>Send Request</h3>
@@ -516,7 +513,7 @@ $app_name = idx($app_info, 'name', '');
                 //updateMostRecentActivity(response31.data);
                 addRowToBottom(response31.data);
                 // 2013-03-16 banz-ghb start delete candidate instead of facepile
-                getAppUsingFriends();// 2013-03-02 banz-ghb add getAppUsingFriends
+                //getAppUsingFriends();// 2013-03-17 banz-ghb disable to show app_using_friends
                 // 2013-03-16 banz-ghb end   delete candidate instead of facepile
               }
             ); //FB.api 31
