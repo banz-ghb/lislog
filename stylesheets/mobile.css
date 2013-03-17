@@ -67,3 +67,8 @@ body {
 }
 
 /* 2012-03-06 banz-ghb end   change layout */
+
+/* 2013-03-17 banz-ghb adjust layout of id-shared-activity */
+#id-shared-activity {
+  align:    center;
+}
