@@ -322,9 +322,10 @@ $app_name = idx($app_info, 'name', '');
                   //update shared activity by xfbml
                   //2013-03-18 banz-ghb end   start scroll
                 } //if end
-                return false;
+                /*return false;*/
               }
             ); //FB.api 1
+            return false; /* stop scroll code*/
           });  //bind function 10 end
           //configure a span element
           var span = $('<span/>').text(var_radio_program_title); //radio_programs_title[i]
