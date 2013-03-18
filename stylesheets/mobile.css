@@ -50,14 +50,6 @@ body {
   width: 172px;
 }
 
-#share-app li {
-  margin: 10 8px 4px 0; /* 2012-03-05 banz-ghb set margin-top 0 to 10 */
-}
-
-#share-app {
-  width: auto;
-}
-
 /* 2012-03-06 banz-ghb start change layout */
 #radioprogram-list {
   /*width: 300px;*/

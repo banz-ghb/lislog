@@ -209,22 +209,7 @@ $app_name = idx($app_info, 'name', '');
       //////////////////////////////////////////////////////////////
       //View functions
       //////////////////////////////////////////////////////////////
-      // 2013-03-17 banz-ghb start remove most-recent-activity
-      /*
-      function updateMostRecentActivity(array_activities) {
-        for(i = 0; i < 1; i++) {
-          $('#most-recent-activity-title').text(array_activities[i].data.radio_program.title);
-          //Chrome can't parse iso format
-          //hint (use jquery wrapper)
-          //http://docs.jquery.com/UI/Datepicker/parseDate
-          //new Date().toLocaleString();
-          //$('#most-recent-activity-publish_time').text(new Date().slice(0,-5).toLocaleString(array_activities[i].publish_time));
-          //$('#most-recent-activity-publish_time').text(new Date().toLocaleString(array_activities[i].publish_time));
-          $('#most-recent-activity-publish_time').text(array_activities[i].publish_time);
-        }
-      }
-      */
-      // 2013-03-17 banz-ghb end   remove most-recent-activity
+      // 2013-03-17 banz-ghb remove most-recent-activity
 
       //http://d.hatena.ne.jp/okahiro_p/20120525/1337918243
       function addRowToBottom(array_activities) {
@@ -237,32 +222,7 @@ $app_name = idx($app_info, 'name', '');
         }
       }
 
-      // 2013-03-16 banz-ghb start delete candidate instead of facepile
-      /*
-      function getAppUsingFriends() {
-        FB.api({ //FB.api
-          method : 'fql.query',
-          query  : 'SELECT uid, name FROM user WHERE uid IN(SELECT uid2 FROM friend WHERE uid1 = me()) AND is_app_user = 1'
-        },function(response111){
-          $('#app-using-friends li').remove();
-
-          for(i = 0; i < response111.length; i++) {
-            logResponse(response111[i]);//alert(response111[i].name);
-            var li = $('<li/>').text(response111[i].name);
-            $('#app-using-friends').append(li);
-            var a = $('<a/>').text(response111[i].name);
-            a.attr("href", "https://www.facebook.com/"+response111[i].uid);//a is added attributes
-            a.attr("target", "_top");//a is added attributes
-            li.append(a);
-            var img = $('<img/>');
-            a.append(img);
-            img.attr("src", "https://graph.facebook.com/"+response111[i].uid+"/picture?type=square");//img is added attributes
-            img.attr("alt", response111[0].name);//img is added attributes
-          }
-        }); //FB.api
-      }
-      */
-      // 2013-03-16 banz-ghb end   delete candidate instead of facepile
+      // 2013-03-16 banz-ghb delete candidate instead of facepile
 
       function addPublishActionButtonOnLiElement(var_radio_program_id, var_radio_program_title) {
           // 2013-03-17 banz-ghb start add facepile
@@ -379,7 +339,7 @@ $app_name = idx($app_info, 'name', '');
 
     <!-- 2012-03-06 banz-ghb start change layout -->
     <div class="clearfix">
-      <p>お気に入りラジオを聴いたらリスなうボタンを押して下さい:</p><br>
+      <p>お気に入りラジオを聴いたらリスなうボタンを押して下さい:<!--Press button when you tune in--></p><br>
       <ul id="radioprogram-list">
         <!-- start temporarilly removed -->
         <!-- end   temporarilly removed -->
@@ -400,7 +360,7 @@ $app_name = idx($app_info, 'name', '');
     <!-- 2013-03-03 banz-ghb start change location of get-started -->
     <section id="get-started">
       <p>Guide</p>
-      <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">Learn How to use lislog</a>
+      <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">リスログの使い方<!--Learn How to use lislog--></a>
     </section>
     <!-- 2013-03-03 banz-ghb end   change location of get-started -->
 

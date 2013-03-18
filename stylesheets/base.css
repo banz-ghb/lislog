@@ -82,32 +82,7 @@ header .tagline {
   float: left;
 }
 
-#share-app {
-  float: right;
-  width: 344px;
-}
-
-#share-app ul {
-  /* 2013-02-23 banz-ghb start horizontal to vertical */
-  /*float: right*/;
-  /* 2013-02-23 banz-ghb end   horizontal to vertical */
-}
-
-#share-app p {
-  /* 2013-02-23 banz-ghb start horizontal to vertical */
-  /*float: left;*/
-  /* 2013-02-23 banz-ghb end   horizontal to vertical */
-  margin-left: 8px;
-}
-
-#share-app li {
-  /* 2013-02-23 banz-ghb start horizontal to vertical */
-  /* float: left; */
-  /* 2013-02-23 banz-ghb end   horizontal to vertical */
-  list-style: none;
-  margin-left: 8px;
-  margin-top: 10px; /* 2012-03-05 banz-ghb set margin-top */
-}
+/* delete share-app */
 
 /* 2012-03-06 banz-ghb start change layout */
 #radioprogram-list {
