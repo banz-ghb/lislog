@@ -297,17 +297,6 @@ $app_name = idx($app_info, 'name', '');
                 // 2013-03-18 banz-ghb end   realtime update
                 if (response != null) { //if start
                   logResponse(response);
-                  //2013-03-16 banz-ghb start delete candidate
-                  /*
-                  //FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 2
-                    FB.api('/me/music.listens',    'GET',{limit:4}, //FB.api 2
-                      function (response2) {
-                        logResponse(response2);
-                        updateMostRecentActivity(response2.data);
-                        addRowToBottom(response2.data);
-                    }); //FB.api 2
-                  */
-                  //2013-03-16 banz-ghb end   delete candidate
                   $("#samples").show();// 2013-03-02 banz-ghb hide samples when logged out
 
                   //2013-03-18 banz-ghb start start scroll
@@ -322,7 +311,7 @@ $app_name = idx($app_info, 'name', '');
                   //update shared activity by xfbml
                   //2013-03-18 banz-ghb end   start scroll
                 } //if end
-                /*return false;*/
+                return false;
               }
             ); //FB.api 1
             return false; /* stop scroll code*/
