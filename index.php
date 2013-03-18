@@ -310,19 +310,17 @@ $app_name = idx($app_info, 'name', '');
                   //2013-03-16 banz-ghb end   delete candidate
                   $("#samples").show();// 2013-03-02 banz-ghb hide samples when logged out
 
-                  //2013-03-18 banz-ghb start stop scroll
+                  //2013-03-18 banz-ghb start start scroll
                   //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
-                  /*
                   $('html,body').animate(
                     //2013-03-17 banz-ghb remove most-recent-activity
-                    {scrollTop: $("#id-shared-activity").offset().top - navigation-height-value},
+                    {scrollTop: $("#id-shared-activity").offset().top - navigationheightvalue},
                     {duration: 500, step: function(top_offset){
                       FB.Canvas.scrollTo(0, top_offset);
                     }
                   });
-                  */
                   //update shared activity by xfbml
-                  //2013-03-18 banz-ghb end   stop scroll
+                  //2013-03-18 banz-ghb end   start scroll
                 } //if end
                 return false;
               }
