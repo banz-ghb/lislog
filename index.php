@@ -324,6 +324,7 @@ $app_name = idx($app_info, 'name', '');
                   //update shared activity by xfbml
                   //2013-03-18 banz-ghb end   stop scroll
                 } //if end
+                return false;
               }
             ); //FB.api 1
           });  //bind function 10 end
