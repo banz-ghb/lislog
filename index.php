@@ -97,6 +97,8 @@ $app_name = idx($app_info, 'name', '');
     <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
 
     <script type="text/javascript"><!--
+      // 2013-03-18 declare global var
+      navigationheightvalue = 40; //need to syncronize #navigation height
       //////////////////////////////////////////////////////////////
       // Utility
       //////////////////////////////////////////////////////////////
@@ -169,9 +171,9 @@ $app_name = idx($app_info, 'name', '');
           //alert(test);
           //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
           $('html,body').animate(
-            {scrollTop: $("#get-started").offset().top},
+            {scrollTop: $("#get-started").offset().top - navigationheightvalue},
             {duration: 1000, step: function(top_offset){
-              FB.Canvas.scrollTo(0, top_offset + 30);
+              FB.Canvas.scrollTo(0, top_offset);
             }
           });
           return false;
@@ -190,9 +192,9 @@ $app_name = idx($app_info, 'name', '');
         //2013-03-17 banz-ghb remove most-recent-activity
         $("#menu-shared-activity").click(function(){ //menu function 1-3 start
           $('html,body').animate(
-            {scrollTop: $("#id-shared-activity").offset().top},
+            {scrollTop: $("#id-shared-activity").offset().top - navigationheightvalue},
             {duration: 1000, step: function(top_offset){
-              FB.Canvas.scrollTo(0, top_offset + 30);
+              FB.Canvas.scrollTo(0, top_offset);
             }
           });
           return false;
@@ -282,13 +284,13 @@ $app_name = idx($app_info, 'name', '');
           a.click(function() { //bind function 10 start
             var var_radio_program_button_url =
               'https://lislog.herokuapp.com/radio/jp/co/tbs/'+$(this).attr("id").replace("publishAction_","")+'.html';
-            //2013-03-13 banz-ghb start change listen action
-            //FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
-              FB.api('me/music.listens','POST',{radio_station:var_radio_program_button_url},//FB.api 1
-            //2013-03-13 banz-ghb end   change listen action
+            //2013-03-18 banz-ghb start change listen action
+              FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
+            //FB.api('me/music.listens','POST',{radio_station:var_radio_program_button_url},//FB.api 1
+            //2013-03-18 banz-ghb end   change listen action
               function (response) {
                 //2013-03-17 banz-ghb remove most-recent-activity
-                $("#id-shared-activity").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
+                $("#id-shared-activity-div").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
                 if (response != null) { //if start
                   logResponse(response);
                   //2013-03-16 banz-ghb start delete candidate
@@ -304,16 +306,19 @@ $app_name = idx($app_info, 'name', '');
                   //2013-03-16 banz-ghb end   delete candidate
                   $("#samples").show();// 2013-03-02 banz-ghb hide samples when logged out
 
-                  //2013-03-09 banz-ghb start scroll
+                  //2013-03-18 banz-ghb start stop scroll
                   //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
+                  /*
                   $('html,body').animate(
                     //2013-03-17 banz-ghb remove most-recent-activity
-                    {scrollTop: $("#id-shared-activity").offset().top},
+                    {scrollTop: $("#id-shared-activity").offset().top - navigation-height-value},
                     {duration: 500, step: function(top_offset){
-                      FB.Canvas.scrollTo(0, top_offset + 30);
+                      FB.Canvas.scrollTo(0, top_offset);
                     }
                   });
-                  //2013-03-09 banz-ghb end   scroll
+                  */
+                  //update shared activity by xfbml
+                  //2013-03-18 banz-ghb end   stop scroll
                 } //if end
               }
             ); //FB.api 1
@@ -342,7 +347,8 @@ $app_name = idx($app_info, 'name', '');
           li.append(div);
           div.attr("class",         "fb-facepile");
           div.attr("data-href",     var_radio_program_button_url_1);
-          div.attr("data-action",   "music.listens");
+          div.attr("data-action",   "lislogapp:tune_in");//2013-03-18
+        //div.attr("data-action",   "music.listens");
           div.attr("data-max-rows", "1");
           div.attr("data-width",    "270"); //adjust layout
           // 2013-03-17 banz-ghb end   add facepile
@@ -400,7 +406,7 @@ $app_name = idx($app_info, 'name', '');
 
       <!-- 2013-03-03 banz-ghb start no extended permission when logging in  data-scope="user_likes,user_photos,publish_actions" -->
       <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
-      <div id="fb-login" class="fb-login-button" data-show-faces="true"></div>
+      <div id="fb-login" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions" data-show-faces="true"></div>
       <div id="fb-auth" >アプリを承認する</div>
       <!--div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"--><!--/div-->
       <!-- 2013-03-03 banz-ghb end   no extended permission when logging in-->
@@ -507,10 +513,10 @@ $app_name = idx($app_info, 'name', '');
             $("#fb-auth").hide();
             $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
-            //2013-03-13 banz-ghb start change listen action
-            //FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 31
-              FB.api('/me/music.listens',    'GET',{limit:4}, //FB.api 31
-            //2013-03-13 banz-ghb end   change listen action
+            //2013-03-18 banz-ghb start change listen action
+              FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 31
+            //FB.api('/me/music.listens',    'GET',{limit:4}, //FB.api 31
+            //2013-03-18 banz-ghb end   change listen action
               function (response31) {
             	//2013-03-17 banz-ghb remove most-recent-activity
                 //updateMostRecentActivity(response31.data);
