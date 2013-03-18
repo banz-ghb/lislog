@@ -373,19 +373,13 @@ $app_name = idx($app_info, 'name', '');
   <header class="clearfix">
     <p id="picture"></p>
 
-      <div id="lislog-main"><!-- 2013-02-24 banz-ghb switch lislog-main -->
+      <div id="lislog-main">
         <h1><strong><?php echo he($app_name); ?>へようこそ</strong></h1>
-
-        <div id="share-app" class="clearfix">
-
-        </div>
-
-        <!-- 2013-03-17 banz-ghb move radioprogram-list -->
       </div>
 
     <!-- 2012-03-06 banz-ghb start change layout -->
     <div class="clearfix">
-      <p>Press button when you tune in:</p><br>
+      <p>お気に入りラジオを聴いたらリスなうボタンを押して下さい:</p><br>
       <ul id="radioprogram-list">
         <!-- start temporarilly removed -->
         <!-- end   temporarilly removed -->
