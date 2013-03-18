@@ -291,6 +291,10 @@ $app_name = idx($app_info, 'name', '');
               function (response) {
                 //2013-03-17 banz-ghb remove most-recent-activity
                 $("#id-shared-activity-div").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
+                // 2013-03-18 banz-ghb start realtime update
+                var container = document.getElementById('id-shared-activity');
+                FB.XFBML.parse(container);
+                // 2013-03-18 banz-ghb end   realtime update
                 if (response != null) { //if start
                   logResponse(response);
                   //2013-03-16 banz-ghb start delete candidate
@@ -424,7 +428,11 @@ $app_name = idx($app_info, 'name', '');
     <!-- 2013-03-17 banz-ghb start move samples -->
     <section id="id-shared-activity" class="clearfix">
       <!-- adjust layout -- data-width="300" data-height="300" -->
-      <div id="id-shared-activity-div" class="fb-shared-activity" ></div>
+      <!-- 2013-03-18 banz-ghb start realtime update -->
+      <!-- FB.XFBML.parse(); -->
+      <fb:shared-activity id="id-shared-activity-div"></fb:shared-activity>
+      <!--div id="id-shared-activity-div" class="fb-shared-activity" --><!--/div-->
+      <!-- 2013-03-18 banz-ghb end   realtime update -->
     </section>
     <!-- 2013-03-17 banz-ghb end   move samples -->
 
