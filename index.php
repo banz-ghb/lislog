@@ -119,7 +119,10 @@ $app_name = idx($app_info, 'name', '');
           FB.ui(
             {
               method  : 'apprequests',
-              message : $(this).attr('data-message')
+              message : $(this).attr('data-message'),
+              // 2013-03-20 banz-ghb start add filter
+              //filters : 'all,app_non_users'
+              // 2013-03-20 banz-ghb end   add filter
             },
             function (response) {
               // If response is null the user canceled the dialog
@@ -434,7 +437,9 @@ $app_name = idx($app_info, 'name', '');
         <!--h3--><!--Send Request--><!--/h3-->
         <ul class="things">
           <li>
-            <a href="#" class="button" id="sendRequest" data-message="Test this awesome app">友達を招待</a>
+            <a href="#" class="button" id="sendRequest"
+               data-message="招待したい友達を選択して「送信」を押してください(リクエストは選択した友達だけに送信されます).">友達を招待
+            </a>
           </li>
         <li>
             <!-- 2013-03-20 banz-ghb deploy like button -->
