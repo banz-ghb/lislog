@@ -269,7 +269,7 @@ $app_name = idx($app_info, 'name', '');
                 FB.XFBML.parse(container);
                 // 2013-03-18 banz-ghb end   realtime update
                 //2013-03-20 banz-ghb start show samples
-                
+
                 //if (response != null) { //if start
                   //logResponse(response);
                   //$("#samples").show();// 2013-03-20 banz-ghb show samples
@@ -286,7 +286,7 @@ $app_name = idx($app_info, 'name', '');
                   //update shared activity by xfbml
                   //2013-03-18 banz-ghb end   start scroll
                 //} //if end
-                
+
                 //2013-03-20 banz-ghb end   show samples
                 return false;
               }
@@ -377,7 +377,7 @@ $app_name = idx($app_info, 'name', '');
 
     <!-- 2013-03-03 banz-ghb start change location of get-started -->
     <section id="get-started">
-      <p>Guide</p>
+      <p>ガイド<!-- Guide --></p>
       <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">リスログの使い方<!--Learn How to use lislog--></a>
     </section>
     <!-- 2013-03-03 banz-ghb end   change location of get-started -->
@@ -422,19 +422,21 @@ $app_name = idx($app_info, 'name', '');
         <ul class="things">
           <li>
             <a href="#" id="id-qa">
-              <span class="apprequests">QA</span>
+              <span class="apprequests">Q&amp;A</span>
             </a>
           </li>
-          <li>
-            <a href="#" id="id-privacy-policy">
-              <span class="apprequests">プライバシーポリシー</span>
-            </a>
-          </li>
-          </ul>
+          <li><a href="#" id="id-privacy-policy"><span class="apprequests">プライバシーポリシー</span></a></li>
+          <li><a href="#" id="id-terms-of-service"><span class="apprequests">サービス利用規約</span></a></li>
+          <li><a href="#" id="id-user-support"><span class="apprequests">ユーザーサポート</span></a></li>
+        </ul>
       </div>
       <div class="list">
         <h3>Send Request</h3>
         <ul class="things">
+          <li>
+            <!-- 2013-03-20 banz-ghb deploy like button -->
+            <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+          </li>
           <li>
             <a href="#" class="facebook-button apprequests" id="sendRequest" data-message="Test this awesome app">
               <span class="apprequests">友達を招待<!-- Send Requests--></span>
