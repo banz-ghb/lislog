@@ -521,9 +521,14 @@ header .tagline {
 /* 2013-03-20 banz-ghb start disable comment of like box */
 /* = disable comment of like box
 --------------------------------------------- */
+.fb-like-overflow {
+	overflow: auto;
+}
+/*
 .fb_edge_widget_with_comment span.fb_edge_comment_widget {
 	display: none !important;
 }
+*/
 /* 2013-03-20 banz-ghb end   disable comment of like box */
 
 /* ------------------------------------------ */

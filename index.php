@@ -444,7 +444,7 @@ $app_name = idx($app_info, 'name', '');
         </ul>
       </div>
       <!-- 2013-03-20 banz-ghb deploy like button -->
-      <div class="fb-like" class="fb_edge_widget_with_comment" data-send="false" data-layout="button_count" data-width="225" data-show-faces="false"></div>
+      <div class="fb-like" class="fb-like-overflow" data-send="false" data-layout="button_count" data-width="225" data-show-faces="false"></div>
     </section>
     <!-- 2013-03-17 banz-ghb end   move samples -->
 
