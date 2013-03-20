@@ -310,6 +310,14 @@ header .tagline {
   border-top: 1px solid #fff;
 }
 
+/* 2013-03-20 banz-ghb start specify height of shared-acitity plugin */
+/*
+#id-shared-activity-div {
+  data-height: 1000px;
+}
+*/
+/* 2013-03-20 banz-ghb end   specify height of shared-acitity plugin */
+
 /* ------------------------------------------ */
 /* 2013-03-17 banz-ghb end   adjust layout of id-shared-activity */
 
