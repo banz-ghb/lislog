@@ -165,6 +165,10 @@ $app_name = idx($app_info, 'name', '');
                   perms:     'user_likes,user_photos,publish_actions'}
                 ,function (response){
                    logResponse(response);
+                   if (response && response.perms) {
+                     function_eventStateChangeOnLislog(response);
+                     //top.location.href = 'https://lislog.herokuapp.com';
+                   }
                  }
           );
          });
