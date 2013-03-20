@@ -156,14 +156,28 @@ $app_name = idx($app_info, 'name', '');
                                     ,"バナナマンのバナナムーンGOLD"
                                     ,"エレ片のコント太郎"
                                    ];
+        // 2013-03-20 banz-ghb start add detail of radio programs
+        var radio_programs_detail = [ "TBSラジオ 月曜25時～"
+                                     ,"TBSラジオ 火曜25時～"
+                                     ,"TBSラジオ 水曜25時～"
+                                     ,"TBSラジオ 木曜25時～"
+                                     ,"TBSラジオ 金曜25時～"
+                                     ,"TBSラジオ 土曜25時～"
+                                    ];
+        // 2013-03-20 banz-ghb end   add detail of radio programs
 
         // 2013-03-03 banz-ghb start #7 generate lislog buttons dynamically
         $('#radioprogram-list li').remove();
         // 2013-03-03 banz-ghb end   #7 generate lislog buttons dynamically
 
         for (var i = 0; i < radio_programs_id.length; i++){ //loop 1 start
-          addPublishActionButtonOnLiElement(radio_programs_id[i], radio_programs_title[i]);
-        } //loop 1 end
+          // 2013-03-20 banz-ghb start add detail of radio programs
+          addPublishActionButtonOnLiElement(radio_programs_id[i]
+                                           ,radio_programs_title[i]
+                                           ,radio_programs_detail[i]
+                                           );
+          // 2013-03-20 banz-ghb end   add detail of radio programs
+          } //loop 1 end
 
         //lislog-main           ->                   menu-lislog-main
         //*most-recent-activity ->id-shared-activity menu-most-recent-activity
@@ -240,7 +254,9 @@ $app_name = idx($app_info, 'name', '');
 
       // 2013-03-16 banz-ghb delete candidate instead of facepile
 
-      function addPublishActionButtonOnLiElement(var_radio_program_id, var_radio_program_title) {
+      function addPublishActionButtonOnLiElement(var_radio_program_id
+    	                                        ,var_radio_program_title
+    	                                        ,radio_programs_detail) {
           // 2013-03-17 banz-ghb start add facepile
           var var_radio_program_button_name = 'publishAction_'+var_radio_program_id; //radio_programs_id[i]
           //clickバインドないと合わせること
@@ -300,6 +316,13 @@ $app_name = idx($app_info, 'name', '');
           var span = $('<span/>').text(var_radio_program_title); //radio_programs_title[i]
           a.append(span);
           span.attr("class", "plus");
+
+          // 2013-03-20 banz-ghb start add detail of radio programs
+          var p_detail = $('<p/>');
+          li.append(p_detail);
+          p_detail.text(radio_programs_detail);
+          // 2013-03-20 banz-ghb end   add detail of radio programs
+
           // TODO implement facepile
           /*
           li.append(div);
@@ -444,7 +467,8 @@ $app_name = idx($app_info, 'name', '');
         </ul>
       </div>
       <!-- 2013-03-20 banz-ghb deploy like button -->
-      <div class="fb-like" class="fb-like-overflow" data-send="false" data-layout="button_count" data-width="225" data-show-faces="false"></div>
+      <!--div class="fb-like-box" data-href="https://www.facebook.com/lislog" data-width="292" data-show-faces="true" data-stream="false" data-header="false"--><!--/div-->
+      <!--div class="fb-like" class="fb-like-overflow" data-send="false" data-layout="button_count" data-width="225" data-show-faces="false"--><!--/div-->
     </section>
     <!-- 2013-03-17 banz-ghb end   move samples -->
 
