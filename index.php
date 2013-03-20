@@ -256,7 +256,7 @@ $app_name = idx($app_info, 'name', '');
 
       function addPublishActionButtonOnLiElement(var_radio_program_id
     	                                        ,var_radio_program_title
-    	                                        ,radio_programs_detail) {
+    	                                        ,var_radio_programs_detail) {
           // 2013-03-17 banz-ghb start add facepile
           var var_radio_program_button_name = 'publishAction_'+var_radio_program_id; //radio_programs_id[i]
           //clickバインドないと合わせること
@@ -318,9 +318,12 @@ $app_name = idx($app_info, 'name', '');
           span.attr("class", "plus");
 
           // 2013-03-20 banz-ghb start add detail of radio programs
+          var p_title = $('<p/>');
+          li.append(p_title);
+          p_title.text(var_radio_program_title);
           var p_detail = $('<p/>');
           li.append(p_detail);
-          p_detail.text(radio_programs_detail);
+          p_detail.text(var_radio_programs_detail);
           // 2013-03-20 banz-ghb end   add detail of radio programs
 
           // TODO implement facepile
