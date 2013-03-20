@@ -268,22 +268,26 @@ $app_name = idx($app_info, 'name', '');
                 var container = document.getElementById('id-shared-activity');
                 FB.XFBML.parse(container);
                 // 2013-03-18 banz-ghb end   realtime update
-                if (response != null) { //if start
-                  logResponse(response);
-                  $("#samples").show();// 2013-03-02 banz-ghb hide samples when logged out
+                //2013-03-20 banz-ghb start show samples
+                
+                //if (response != null) { //if start
+                  //logResponse(response);
+                  //$("#samples").show();// 2013-03-20 banz-ghb show samples
 
                   //2013-03-18 banz-ghb start start scroll
                   //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
-                /*$('html,body').animate(
+                //$('html,body').animate(
                     //2013-03-17 banz-ghb remove most-recent-activity
-                    {scrollTop: $("#id-shared-activity").offset().top - navigationheightvalue},
-                    {duration: 500, step: function(top_offset){
-                      FB.Canvas.scrollTo(0, top_offset);
-                    }
-                  });*/
+                    //{scrollTop: $("#id-shared-activity").offset().top - navigationheightvalue},
+                    //{duration: 500, step: function(top_offset){
+                      //FB.Canvas.scrollTo(0, top_offset);
+                    //}
+                  //});
                   //update shared activity by xfbml
                   //2013-03-18 banz-ghb end   start scroll
-                } //if end
+                //} //if end
+                
+                //2013-03-20 banz-ghb end   show samples
                 return false;
               }
             ); //FB.api 1
@@ -517,7 +521,7 @@ $app_name = idx($app_info, 'name', '');
           } //if end
           ////2013-03-17 banz-ghb remove most-recent-activity
           //$("#most-recent-activity").hide();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
-          $("#samples").hide();// 2013-03-02 banz-ghb hide samples when logged out
+          //$("#samples").hide();// 2013-03-20 banz-ghb show samples
         } //end response3
 
         FB.getLoginStatus(function_eventStateChangeOnLislog);
