@@ -200,6 +200,15 @@ $app_name = idx($app_info, 'name', '');
           return false;
         }); //menu function 1-3 end
         // 2013-03-17 banz-ghb end   add other navigations
+        $("#menu-guides").click(function(){ //menu function 1-4 start
+            $('html,body').animate(
+              {scrollTop: $("#guides").offset().top - navigationheightvalue},
+              {duration: 1000, step: function(top_offset){
+                FB.Canvas.scrollTo(0, top_offset);
+              }
+            });
+            return false;
+        }); //menu function 1-4 end
 
       }); //define function start1-2 end
       //////////////////////////////////////////////////////////////
@@ -325,7 +334,8 @@ $app_name = idx($app_info, 'name', '');
         <ul>
           <li><a id="menu-lislog-main" class="first"  > トップ</a></li>
           <li><a id="menu-get-started"    > | ガイド</a></li>
-          <li><a id="menu-shared-activity"> | アクティビティログ</a></li>
+          <li><a id="menu-shared-activity"> | ログ</a></li>
+          <li><a id="menu-guides"> | その他</a></li>
           </ul>
       </div>
     </div>
