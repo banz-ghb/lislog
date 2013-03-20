@@ -280,6 +280,43 @@ $app_name = idx($app_info, 'name', '');
             //FB.api('me/music.listens','POST',{radio_station:var_radio_program_button_url},//FB.api 1
             //2013-03-18 banz-ghb end   change listen action
               function (response) {
+                // 2013-03-20 banz-ghb start add tune in date
+                FB.api('/'+response.id,'GET'//FB.api 1-1
+                 ,function (response1_1) {
+                    logResponse(response1_1.data.radio_program.url);
+                    //var str = "ABCDEFGHIJKLMN";
+                    //var regexp = /.*([a-zA-Z][a-zA-Z]*)\.html/;
+
+                    var str = response1_1.data.radio_program.url;
+                    str1 = str.replace(/\.html/,"");
+                    str2 = str1.replace(/^.*\//,"");
+                    //alert(str1);
+                    //alert(str2);
+
+                    var targetId = '#'+str2+'-date';
+                    //alert(targetId);
+                    alert(response1_1.publish_time)
+                    // "publish_time": "2013-03-20T06:57:44+0000" response1_1.publish_time
+                    $(targetId).text(response1_1.publish_time)/*'test'*/;
+
+                    //var match_result = str.match(regexp); // ["ABCD", "A", "BC"]
+                    //var exec_result  = regexp.exec(str);  // ["ABCD", "A", "BC"]
+                    //alert(exec_result);
+                    /*
+                    var str = "ABCDEFGHIJKLMN";
+                    var regexp = /([A-N])([A-N]{2})[A-N]/;
+
+                    var match_result = str.match(regexp); // ["ABCD", "A", "BC"]
+                    var exec_result  = regexp.exec(str);  // ["ABCD", "A", "BC"]
+                    */
+                  });//FB.api 1-1
+                //logResponse(response);
+                //alert(response.id/*data.radio_program.url*/);
+                //var targetId = $(this).attr("id").replace("publishAction_","")+'-date';
+                //alert(targetId);
+                //$(targetId).text = 'test';
+                // 2013-03-20 banz-ghb start add tune in date
+
                 //2013-03-17 banz-ghb remove most-recent-activity
                 $("#id-shared-activity-div").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
                 // 2013-03-18 banz-ghb start realtime update
@@ -312,9 +349,17 @@ $app_name = idx($app_info, 'name', '');
             return false; /* stop scroll code*/
           });  //bind function 10 end
           //configure a span element
-          var span = $('<span/>').text(var_radio_program_title); //radio_programs_title[i]
+          // 2013-03-20 banz-ghb change keyword
+          var span = $('<span/>').text("リスなう"/*var_radio_program_title*/); //radio_programs_title[i]
           a.append(span);
           span.attr("class", "plus");
+
+          // 2013-03-20 banz-ghb start add tune in date
+          var a_date = $('<a/>');
+          li.append(a_date);
+          a_date.attr("id", var_radio_program_id+'-date');
+          a_date.text("");
+          // 2013-03-20 banz-ghb end   add tune in date
 
           // 2013-03-20 banz-ghb start add detail of radio programs
           var p_title = $('<p/>');
