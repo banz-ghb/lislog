@@ -172,7 +172,14 @@ $app_name = idx($app_info, 'name', '');
                        $("#fb-auth").hide();
                        $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
                        $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
+                       $("#id-shared-activity").show();
                        $('#picture').attr("style", "background-image: url(https://graph.facebook.com/"+response.selected_profiles+"/picture?type=normal)");
+                   } else {
+                       $("#fb-login").hide();
+                       $("#fb-auth").show();
+                       $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
+                       $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
+                       $("#id-shared-activity").hide();
                    }
                 }
           );
@@ -489,33 +496,6 @@ $app_name = idx($app_info, 'name', '');
     <!-- 2013-03-03 banz-ghb end   change location of get-started -->
 
     <!-- 2013-03-17 banz-ghb start move samples -->
-    <section id="id-shared-activity" class="clearfix">
-      <!-- adjust layout -- data-width="300" data-height="300" -->
-      <!-- 2013-03-18 banz-ghb start realtime update -->
-      <!-- FB.XFBML.parse(); -->
-      <fb:shared-activity id="id-shared-activity-div"></fb:shared-activity>
-      <!--div id="id-shared-activity-div" class="fb-shared-activity" --><!--/div-->
-      <!-- 2013-03-18 banz-ghb end   realtime update -->
-    </section>
-    <!-- 2013-03-17 banz-ghb end   move samples -->
-
-    <section id="guides" class="clearfix">
-      <!--h1--><!--タイムライン--><!--Check Your Facebook Timeline--><!--/h1-->
-      <ul>
-        <li>
-          <!-- response.username -->
-          <!-- https://www.facebook.com/akinori.kohno.5/allactivity?privacy_source=activity_log&log_filter=app_554694347877002 -->
-          <!-- https://www.facebook.com/${RESPONSE.USERNAME}/allactivity?privacy_source=activity_log&log_filter=app_${APPID} -->
-          <!-- a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="icon apps-on-facebook"--><!-- Timeline --><!-- /a -->
-          <!-- for PC     https://www.facebook.com/me/app_lislogapp -->
-          <!-- for Mobile https://www.facebook.com/me -->
-          <a href="https://www.facebook.com/me" target="_top" class="icon apps-on-facebook">Facebook タイムライン<!--Timeline--></a>
-          <!--p--><!--View the activity logs of lislog in your facebook timeline.--><!--/p-->
-        </li>
-      </ul>
-    </section>
-
-    <!-- 2013-03-17 banz-ghb start move samples -->
     <section id="samples" class="clearfix">
       <h1>リスログについて</h1>
 
@@ -549,6 +529,33 @@ $app_name = idx($app_info, 'name', '');
       <!-- 2013-03-20 banz-ghb deploy like button -->
       <!--div class="fb-like-box" data-href="https://www.facebook.com/lislog" data-width="292" data-show-faces="true" data-stream="false" data-header="false"--><!--/div-->
       <!--div class="fb-like" class="fb-like-overflow" data-send="false" data-layout="button_count" data-width="225" data-show-faces="false"--><!--/div-->
+    </section>
+    <!-- 2013-03-17 banz-ghb end   move samples -->
+
+    <section id="guides" class="clearfix">
+      <!--h1--><!--タイムライン--><!--Check Your Facebook Timeline--><!--/h1-->
+      <ul>
+        <li>
+          <!-- response.username -->
+          <!-- https://www.facebook.com/akinori.kohno.5/allactivity?privacy_source=activity_log&log_filter=app_554694347877002 -->
+          <!-- https://www.facebook.com/${RESPONSE.USERNAME}/allactivity?privacy_source=activity_log&log_filter=app_${APPID} -->
+          <!-- a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="icon apps-on-facebook"--><!-- Timeline --><!-- /a -->
+          <!-- for PC     https://www.facebook.com/me/app_lislogapp -->
+          <!-- for Mobile https://www.facebook.com/me -->
+          <a href="https://www.facebook.com/me" target="_top" class="icon apps-on-facebook">Facebook タイムライン<!--Timeline--></a>
+          <!--p--><!--View the activity logs of lislog in your facebook timeline.--><!--/p-->
+        </li>
+      </ul>
+    </section>
+
+    <!-- 2013-03-17 banz-ghb start move samples -->
+    <section id="id-shared-activity" class="clearfix">
+      <!-- adjust layout -- data-width="300" data-height="300" -->
+      <!-- 2013-03-18 banz-ghb start realtime update -->
+      <!-- FB.XFBML.parse(); -->
+      <fb:shared-activity id="id-shared-activity-div"></fb:shared-activity>
+      <!--div id="id-shared-activity-div" class="fb-shared-activity" --><!--/div-->
+      <!-- 2013-03-18 banz-ghb end   realtime update -->
     </section>
     <!-- 2013-03-17 banz-ghb end   move samples -->
 
@@ -591,6 +598,7 @@ $app_name = idx($app_info, 'name', '');
             $("#fb-auth").hide();
             $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
+            $("#id-shared-activity").show(); // 2013-03-20 auth
             //2013-03-18 banz-ghb start change listen action
             //FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 31
             //FB.api('/me/music.listens',    'GET',{limit:4}, //FB.api 31
@@ -612,6 +620,7 @@ $app_name = idx($app_info, 'name', '');
             $("#fb-auth").show();
             $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
+            $("#id-shared-activity").hide(); // 2013-03-20 auth
           } else {
             logResponse(response3);//alert("not login");
 
@@ -619,6 +628,7 @@ $app_name = idx($app_info, 'name', '');
             $("#fb-auth").hide();
             $("#picture").hide();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").hide();// 2013-02-24 banz-ghb switch lislog-main
+            $("#id-shared-activity").hide(); // 2013-03-20 auth
             alert('login callback 1');
             // 2013-03-13 banz-ghb start add FB.login
             //FB.login(function(response){
