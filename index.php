@@ -429,8 +429,8 @@ $app_name = idx($app_info, 'name', '');
             </a>
           </li>
           <li><a href="#" id="id-privacy-policy"><span class="apprequests">プライバシーポリシー</span></a></li>
-          <li><a href="#" id="id-terms-of-service"><span class="apprequests">サービス利用規約</span></a></li>
-          <li><a href="#" id="id-user-support"><span class="apprequests">ユーザーサポート</span></a></li>
+          <li><a href="#" id="id-terms-of-service"><span class="apprequests">利用規約</span></a></li>
+          <li><a href="#" id="id-user-support"><span class="apprequests">お問い合せ</span></a></li>
         </ul>
       </div>
       <div class="list">
@@ -438,15 +438,13 @@ $app_name = idx($app_info, 'name', '');
         <ul class="things">
           <li>
             <a href="#" class="button" id="sendRequest"
-               data-message="招待したい友達を選択して「送信」を押してください(リクエストは選択した友達だけに送信されます).">友達を招待
+               data-message="招待したい友達を選択して「送信」を押してください.">友達を招待
             </a>
-          </li>
-        <li>
-            <!-- 2013-03-20 banz-ghb deploy like button -->
-            <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
           </li>
         </ul>
       </div>
+      <!-- 2013-03-20 banz-ghb deploy like button -->
+      <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
     </section>
     <!-- 2013-03-17 banz-ghb end   move samples -->
 
