@@ -272,7 +272,6 @@ $app_name = idx($app_info, 'name', '');
           a.attr("href", "#");
           a.attr("class", "facebook-button");
           a.attr("id", var_radio_program_button_name);
-          a.attr("data-url", "<?php echo AppInfo::getUrl(); ?>");
           a.click(function() { //bind function 10 start
             var var_radio_program_button_url =
               'https://lislog.herokuapp.com/radio/jp/co/tbs/'+$(this).attr("id").replace("publishAction_","")+'.html';
