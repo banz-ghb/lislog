@@ -583,18 +583,18 @@ $app_name = idx($app_info, 'name', '');
             $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
             //2013-03-18 banz-ghb start change listen action
-              FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 31
+            //FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 31
             //FB.api('/me/music.listens',    'GET',{limit:4}, //FB.api 31
             //2013-03-18 banz-ghb end   change listen action
-              function (response31) {
-            	//2013-03-17 banz-ghb remove most-recent-activity
+            //function (response31) {
+                //2013-03-17 banz-ghb remove most-recent-activity
                 //updateMostRecentActivity(response31.data);
                 //addRowToBottom(response31.data); 2013-03-20 banz-ghb disable recent activityies
                 // 2013-03-16 banz-ghb start delete candidate instead of facepile
                 //getAppUsingFriends();// 2013-03-17 banz-ghb disable to show app_using_friends
                 // 2013-03-16 banz-ghb end   delete candidate instead of facepile
-              }
-            ); //FB.api 31
+            //}
+            //); //FB.api 31
             // 2013-02-24 banz-ghb start update profile picture
             $('#picture').attr("style", "background-image: url(https://graph.facebook.com/"+response3.authResponse.userID+"/picture?type=normal)");
             // 2013-02-24 banz-ghb end   update profile picture
