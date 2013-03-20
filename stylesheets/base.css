@@ -522,7 +522,7 @@ header .tagline {
 /* = disable comment of like box
 --------------------------------------------- */
 .fb-like-overflow {
-	overflow: auto;
+	overflow: scroll;
 }
 /*
 .fb_edge_widget_with_comment span.fb_edge_comment_widget {
