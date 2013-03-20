@@ -221,6 +221,8 @@ $app_name = idx($app_info, 'name', '');
       // 2013-03-17 banz-ghb remove most-recent-activity
 
       //http://d.hatena.ne.jp/okahiro_p/20120525/1337918243
+      // 2013-03-20 banz-ghb start disable recent activityies
+      /*
       function addRowToBottom(array_activities) {
         $('#recent-activities li').remove();
 
@@ -230,6 +232,8 @@ $app_name = idx($app_info, 'name', '');
           $('#recent-activities').append(li);
         }
       }
+      */
+      // 2013-03-20 banz-ghb start disable recent activityies
 
       // 2013-03-16 banz-ghb delete candidate instead of facepile
 
@@ -379,14 +383,14 @@ $app_name = idx($app_info, 'name', '');
       <!-- adjust layout -- data-width="300" data-height="300" -->
       <!-- 2013-03-18 banz-ghb start realtime update -->
       <!-- FB.XFBML.parse(); -->
-      <fb:shared-activity id="id-shared-activity-div" data-width="270"></fb:shared-activity>
+      <fb:shared-activity id="id-shared-activity-div"></fb:shared-activity>
       <!--div id="id-shared-activity-div" class="fb-shared-activity" --><!--/div-->
       <!-- 2013-03-18 banz-ghb end   realtime update -->
     </section>
     <!-- 2013-03-17 banz-ghb end   move samples -->
 
     <section id="guides" class="clearfix">
-      <h1>Check Your Facebook Timeline</h1>
+      <!--h1--><!--タイムライン--><!--Check Your Facebook Timeline--><!--/h1-->
       <ul>
         <li>
           <!-- response.username -->
@@ -395,35 +399,41 @@ $app_name = idx($app_info, 'name', '');
           <!-- a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="icon apps-on-facebook"--><!-- Timeline --><!-- /a -->
           <!-- for PC     https://www.facebook.com/me/app_lislogapp -->
           <!-- for Mobile https://www.facebook.com/me -->
-          <a href="https://www.facebook.com/me" target="_top" class="icon apps-on-facebook">Timeline</a>
-          <p>View the activity logs of lislog in your facebook timeline.</p>
+          <a href="https://www.facebook.com/me" target="_top" class="icon apps-on-facebook">Facebook タイムライン<!--Timeline--></a>
+          <!--p--><!--View the activity logs of lislog in your facebook timeline.--><!--/p-->
         </li>
       </ul>
     </section>
 
     <!-- 2013-03-17 banz-ghb start move samples -->
-    <section id="samples" class="clearfix"><a id="samples-a"></a>
-      <h1>Social Graph</h1>
+    <section id="samples" class="clearfix">
+      <h1>リスログについて</h1>
 
-      <div class="list">
-        <h3>Recent activities</h3>
-        <ul id="recent-activities" class="things">
-          <li>
-            <a>
-              <span>empty</span>
-            </a>
-          </li>
-        </ul>
-      </div>
+      <!-- 2013-03-20 banz-ghb disable recent activityies -->
 
       <!-- 2013-03-17 banz-ghb disable to show app_using_friends -->
 
+      <div class="list">
+        <h3>リスログについて</h3>
+        <ul class="things">
+          <li>
+            <a href="#" id="id-qa">
+              <span class="apprequests">QA</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="id-privacy-policy">
+              <span class="apprequests">プライバシーポリシー</span>
+            </a>
+          </li>
+          </ul>
+      </div>
       <div class="list">
         <h3>Send Request</h3>
         <ul class="things">
           <li>
             <a href="#" class="facebook-button apprequests" id="sendRequest" data-message="Test this awesome app">
-              <span class="apprequests">Send Requests</span>
+              <span class="apprequests">友達を招待<!-- Send Requests--></span>
             </a>
           </li>
         </ul>
@@ -477,7 +487,7 @@ $app_name = idx($app_info, 'name', '');
               function (response31) {
             	//2013-03-17 banz-ghb remove most-recent-activity
                 //updateMostRecentActivity(response31.data);
-                addRowToBottom(response31.data);
+                //addRowToBottom(response31.data); 2013-03-20 banz-ghb disable recent activityies
                 // 2013-03-16 banz-ghb start delete candidate instead of facepile
                 //getAppUsingFriends();// 2013-03-17 banz-ghb disable to show app_using_friends
                 // 2013-03-16 banz-ghb end   delete candidate instead of facepile
