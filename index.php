@@ -200,9 +200,9 @@ $app_name = idx($app_info, 'name', '');
           return false;
         }); //menu function 1-3 end
         // 2013-03-17 banz-ghb end   add other navigations
-        $("#menu-guides").click(function(){ //menu function 1-4 start
+        $("#menu-samples").click(function(){ //menu function 1-4 start
             $('html,body').animate(
-              {scrollTop: $("#guides").offset().top - navigationheightvalue},
+              {scrollTop: $("#samples").offset().top - navigationheightvalue},
               {duration: 1000, step: function(top_offset){
                 FB.Canvas.scrollTo(0, top_offset);
               }
@@ -343,7 +343,7 @@ $app_name = idx($app_info, 'name', '');
           <li><a id="menu-lislog-main" class="first"  > トップ</a></li>
           <li><a id="menu-get-started"    > | ガイド</a></li>
           <li><a id="menu-shared-activity"> | ログ</a></li>
-          <li><a id="menu-guides"> | その他</a></li>
+          <li><a id="menu-samples"> | その他</a></li>
           </ul>
       </div>
     </div>
@@ -418,7 +418,7 @@ $app_name = idx($app_info, 'name', '');
       <!-- 2013-03-17 banz-ghb disable to show app_using_friends -->
 
       <div class="list">
-        <h3>リスログについて</h3>
+        <!--h3--><!--リスログについて--><!--/h3-->
         <ul class="things">
           <li>
             <a href="#" id="id-qa">
@@ -431,16 +431,14 @@ $app_name = idx($app_info, 'name', '');
         </ul>
       </div>
       <div class="list">
-        <h3>Send Request</h3>
+        <!--h3--><!--Send Request--><!--/h3-->
         <ul class="things">
           <li>
+            <a href="#" class="button" id="sendRequest" data-message="Test this awesome app">友達を招待</a>
+          </li>
+        <li>
             <!-- 2013-03-20 banz-ghb deploy like button -->
             <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
-          </li>
-          <li>
-            <a href="#" class="facebook-button apprequests" id="sendRequest" data-message="Test this awesome app">
-              <span class="apprequests">友達を招待<!-- Send Requests--></span>
-            </a>
           </li>
         </ul>
       </div>
