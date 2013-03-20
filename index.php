@@ -118,10 +118,10 @@ $app_name = idx($app_info, 'name', '');
         $('#sendRequest').click(function() {
           FB.ui(
             {
-              method  : 'apprequests',
-              message : $(this).attr('data-message'),
+              method  : 'apprequests'
+              ,message : $(this).attr('data-message')
               // 2013-03-20 banz-ghb start add filter
-              //filters : 'all,app_non_users'
+              //,filters : 'all,app_non_users'
               // 2013-03-20 banz-ghb end   add filter
             },
             function (response) {
