@@ -133,19 +133,40 @@ $app_name = idx($app_info, 'name', '');
           );
         });
 
+        //2013-03-20 banz-ghb start modify login button for mobile
+        $('#fb-login').click(function() {
+          FB.login(function(response) {
+              // handle the response
+          }, {scope: 'user_likes,user_photos,publish_actions'});
+        });
+
+        //Under normal circumstances you should attach this FB.login() call to a Javascript onClick event as the call results in a popup window being opened, which will be blocked by most browsers.
+        //https://developers.facebook.com/docs/howtos/login/getting-started/#step4
+        //function login() {
+        //  FB.login(function(response) {
+        //    if (response.authResponse) {
+        //      // connected
+        //    } else {
+        //      // cancelled
+        //    }
+        //  });
+        //}
+        //2013-03-20 banz-ghb end   modify login button for mobile
+
         $('#fb-auth').click(function() {
+          /*
           FB.login(function(response) {
               // handle the response
            }, {scope: 'user_likes,user_photos,publish_actions'});
-           /*
-           FB.ui({method:    'permissions.request',
+          */
+          FB.ui({method:    'permissions.request',
                   client_id: <?php echo AppInfo::appID(); ?>,
                   display:   'touch',
                   perms:     'user_likes,user_photos,publish_actions'}
-            ,function (response){
-              logResponse(response);
-           });
-           */
+                ,function (response){
+                   logResponse(response);
+                 }
+          );
          });
 
         var radio_programs_id = ["baka", "bakusho", "fumou", "megane", "banana", "elekata"];
@@ -428,6 +449,16 @@ $app_name = idx($app_info, 'name', '');
         <h1><strong><?php echo he($app_name); ?>へようこそ</strong></h1>
       </div>
 
+    <!-- 2013-03-03 banz-ghb start no extended permission when logging in  data-scope="user_likes,user_photos,publish_actions" -->
+    <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
+    <!-- 2013-03-20 banz-ghb start modify login button for mobile -->
+    <!--div id="fb-login" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions" data-show-faces="true"--><!--/div-->
+    <div id="fb-login">Facebookでログイン</div>
+    <!-- 2013-03-20 banz-ghb end   modify login button for mobile -->
+    <div id="fb-auth" >アプリを承認する</div>
+    <!--div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"--><!--/div-->
+    <!-- 2013-03-03 banz-ghb end   no extended permission when logging in-->
+
     <!-- 2012-03-06 banz-ghb start change layout -->
     <div class="clearfix">
       <p>お気に入りラジオを聴いたらリスなうボタンを押して下さい:<!--Press button when you tune in--></p><br>
@@ -437,14 +468,7 @@ $app_name = idx($app_info, 'name', '');
       </ul>
     </div>
     <!-- 2012-03-06 banz-ghb end   change layout -->
-
-      <!-- 2013-03-03 banz-ghb start no extended permission when logging in  data-scope="user_likes,user_photos,publish_actions" -->
-      <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
-      <div id="fb-login" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions" data-show-faces="true"></div>
-      <div id="fb-auth" >アプリを承認する</div>
-      <!--div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"--><!--/div-->
-      <!-- 2013-03-03 banz-ghb end   no extended permission when logging in-->
-    </header>
+  </header>
 
     <!-- 2013-03-17 banz-ghb remove most-recent-activity -->
 
