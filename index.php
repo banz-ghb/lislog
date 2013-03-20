@@ -166,10 +166,15 @@ $app_name = idx($app_info, 'name', '');
                 ,function (response){
                    logResponse(response);
                    if (response && response.perms) {
-                     function_eventStateChangeOnLislog(response);
+                     //function_eventStateChangeOnLislog(response);
                      //top.location.href = 'https://lislog.herokuapp.com';
+                       $("#fb-login").hide();
+                       $("#fb-auth").hide();
+                       $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
+                       $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
+                       $('#picture').attr("style", "background-image: url(https://graph.facebook.com/"+response.selected_profiles+"/picture?type=normal)");
                    }
-                 }
+                }
           );
          });
 
