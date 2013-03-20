@@ -369,7 +369,7 @@ $app_name = idx($app_info, 'name', '');
       <!-- adjust layout -- data-width="300" data-height="300" -->
       <!-- 2013-03-18 banz-ghb start realtime update -->
       <!-- FB.XFBML.parse(); -->
-      <fb:shared-activity id="id-shared-activity-div"></fb:shared-activity>
+      <fb:shared-activity id="id-shared-activity-div" data-width="270"></fb:shared-activity>
       <!--div id="id-shared-activity-div" class="fb-shared-activity" --><!--/div-->
       <!-- 2013-03-18 banz-ghb end   realtime update -->
     </section>
