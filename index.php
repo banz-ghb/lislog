@@ -471,16 +471,20 @@ $app_name = idx($app_info, 'name', '');
     <!--div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"--><!--/div-->
     <!-- 2013-03-03 banz-ghb end   no extended permission when logging in-->
 
-    <!-- 2012-03-06 banz-ghb start change layout -->
+    <!-- 2012-03-21 banz-ghb start move radioprogram-list -->
     <div class="clearfix">
       <p>お気に入りラジオを聴いたらリスなうボタンを押して下さい:<!--Press button when you tune in--></p><br>
+    </div>
+  </header>
+
+    <!-- 2012-03-06 banz-ghb start move radioprogram-list -->
+    <section id="section-radioprogram-list" class="clearfix">
       <ul id="radioprogram-list">
         <!-- start temporarilly removed -->
         <!-- end   temporarilly removed -->
       </ul>
-    </div>
-    <!-- 2012-03-06 banz-ghb end   change layout -->
-  </header>
+    </section>
+    <!-- 2012-03-06 banz-ghb end   move radioprogram-list -->
 
     <!-- 2013-03-17 banz-ghb remove most-recent-activity -->
 
