@@ -449,7 +449,7 @@ $app_name = idx($app_info, 'name', '');
           <li><a id="menu-lislog-main" class="first"  > トップ</a></li>
           <li><a id="menu-get-started"    > | ガイド</a></li>
           <li><a id="menu-shared-activity"> | ログ</a></li>
-          <li><a id="menu-samples"> | その他</a></li>
+          <!-- menu-samples -->
           </ul>
       </div>
     </div>
