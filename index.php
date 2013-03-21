@@ -154,35 +154,38 @@ $app_name = idx($app_info, 'name', '');
         //2013-03-20 banz-ghb end   modify login button for mobile
 
         $('#fb-auth').click(function() {
-          /*
+
           FB.login(function(response) {
               // handle the response
            }, {scope: 'user_likes,user_photos,publish_actions'});
-          */
-          FB.ui({method:    'permissions.request',
-                  client_id: <?php echo AppInfo::appID(); ?>,
-                  display:   'touch',
-                  perms:     'user_likes,user_photos,publish_actions'}
-                ,function (response){
-                   logResponse(response);
-                   if (response && response.perms) {
-                     //function_eventStateChangeOnLislog(response);
-                     //top.location.href = 'https://lislog.herokuapp.com';
-                       $("#fb-login").hide();
-                       $("#fb-auth").hide();
-                       $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
-                       $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
-                       $("#id-shared-activity").show();
-                       $('#picture').attr("style", "background-image: url(https://graph.facebook.com/"+response.selected_profiles+"/picture?type=normal)");
-                   } else {
-                       $("#fb-login").hide();
-                       $("#fb-auth").show();
-                       $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
-                       $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
-                       $("#id-shared-activity").hide();
-                   }
-                }
-          );
+
+//          2500
+//          An active access token must be used to query information about the current user.
+//          FB.ui({method:    'permissions.request',
+//                  client_id: <?php echo AppInfo::appID(); ?>,
+//                  display:   'touch',
+//                  perms:     'user_likes,user_photos,publish_actions'}
+//                ,function (response){
+//                   logResponse(response);
+//                   if (response && response.perms) {
+//                     //function_eventStateChangeOnLislog(response);
+//                     //top.location.href = 'https://lislog.herokuapp.com';
+//                       $("#fb-login").hide();
+//                       $("#fb-auth").hide();
+//                       $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
+//                       $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
+//                     //$("#id-shared-activity").show();
+//                       $('#picture').attr("style", "background-image: url(https://graph.facebook.com/"+response.selected_profiles+"/picture?type=normal)");
+//                   } else {
+//                       $("#fb-login").hide();
+//                       $("#fb-auth").show();
+//                       $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
+//                       $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
+//                     //$("#id-shared-activity").hide();
+//                   }
+//                }
+ //         );
+
          });
 
         var radio_programs_id = ["baka", "bakusho", "fumou", "megane", "banana", "elekata"];
@@ -339,14 +342,7 @@ $app_name = idx($app_info, 'name', '');
                     //var match_result = str.match(regexp); // ["ABCD", "A", "BC"]
                     //var exec_result  = regexp.exec(str);  // ["ABCD", "A", "BC"]
                     //alert(exec_result);
-                    /*
-                    var str = "ABCDEFGHIJKLMN";
-                    var regexp = /([A-N])([A-N]{2})[A-N]/;
-
-                    var match_result = str.match(regexp); // ["ABCD", "A", "BC"]
-                    var exec_result  = regexp.exec(str);  // ["ABCD", "A", "BC"]
-                    */
-                  });//FB.api 1-1
+                });//FB.api 1-1
                 //logResponse(response);
                 //alert(response.id/*data.radio_program.url*/);
                 //var targetId = $(this).attr("id").replace("publishAction_","")+'-date';
@@ -355,7 +351,7 @@ $app_name = idx($app_info, 'name', '');
                 // 2013-03-20 banz-ghb start add tune in date
 
                 //2013-03-17 banz-ghb remove most-recent-activity
-                $("#id-shared-activity-div").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
+                //$("#id-shared-activity-div").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
                 // 2013-03-18 banz-ghb start realtime update
                 var container = document.getElementById('id-shared-activity');
                 FB.XFBML.parse(container);
@@ -598,7 +594,7 @@ $app_name = idx($app_info, 'name', '');
             $("#fb-auth").hide();
             $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
-            $("#id-shared-activity").show(); // 2013-03-20 auth
+            //$("#id-shared-activity").show(); // 2013-03-20 auth
             //2013-03-18 banz-ghb start change listen action
             //FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 31
             //FB.api('/me/music.listens',    'GET',{limit:4}, //FB.api 31
@@ -620,7 +616,7 @@ $app_name = idx($app_info, 'name', '');
             $("#fb-auth").show();
             $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
-            $("#id-shared-activity").hide(); // 2013-03-20 auth
+          //$("#id-shared-activity").hide(); // 2013-03-20 auth
           } else {
             logResponse(response3);//alert("not login");
 
@@ -628,7 +624,7 @@ $app_name = idx($app_info, 'name', '');
             $("#fb-auth").hide();
             $("#picture").hide();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").hide();// 2013-02-24 banz-ghb switch lislog-main
-            $("#id-shared-activity").hide(); // 2013-03-20 auth
+          //$("#id-shared-activity").hide(); // 2013-03-20 auth
             alert('login callback 1');
             // 2013-03-13 banz-ghb start add FB.login
             //FB.login(function(response){
