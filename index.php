@@ -118,11 +118,8 @@ $app_name = idx($app_info, 'name', '');
         $('#sendRequest').click(function() {
           FB.ui(
             {
-              method  : 'apprequests'
+               method  : 'apprequests'
               ,message : $(this).attr('data-message')
-              // 2013-03-20 banz-ghb start add filter
-              //,filters : 'all,app_non_users'
-              // 2013-03-20 banz-ghb end   add filter
             },
             function (response) {
               // If response is null the user canceled the dialog
@@ -133,7 +130,6 @@ $app_name = idx($app_info, 'name', '');
           );
         });
 
-        //2013-03-20 banz-ghb start modify login button for mobile
         $('#fb-login').click(function() {
           FB.login(function(response) {
               // handle the response
@@ -151,7 +147,6 @@ $app_name = idx($app_info, 'name', '');
         //    }
         //  });
         //}
-        //2013-03-20 banz-ghb end   modify login button for mobile
 
         $('#fb-auth').click(function() {
 
@@ -196,7 +191,6 @@ $app_name = idx($app_info, 'name', '');
                                     ,"バナナマンのバナナムーンGOLD"
                                     ,"エレ片のコント太郎"
                                    ];
-        // 2013-03-20 banz-ghb start add detail of radio programs
         var radio_programs_detail = [ "TBSラジオ 月曜25時～"
                                      ,"TBSラジオ 火曜25時～"
                                      ,"TBSラジオ 水曜25時～"
@@ -204,19 +198,14 @@ $app_name = idx($app_info, 'name', '');
                                      ,"TBSラジオ 金曜25時～"
                                      ,"TBSラジオ 土曜25時～"
                                     ];
-        // 2013-03-20 banz-ghb end   add detail of radio programs
 
-        // 2013-03-03 banz-ghb start #7 generate lislog buttons dynamically
         $('#radioprogram-list li').remove();
-        // 2013-03-03 banz-ghb end   #7 generate lislog buttons dynamically
 
         for (var i = 0; i < radio_programs_id.length; i++){ //loop 1 start
-          // 2013-03-20 banz-ghb start add detail of radio programs
           addPublishActionButtonOnLiElement(radio_programs_id[i]
                                            ,radio_programs_title[i]
                                            ,radio_programs_detail[i]
                                            );
-          // 2013-03-20 banz-ghb end   add detail of radio programs
           } //loop 1 end
 
         //lislog-main           ->                   menu-lislog-main
@@ -224,8 +213,6 @@ $app_name = idx($app_info, 'name', '');
         //*samples              ->about-us
         //*get-started          ->          menu-get-started
         $("#menu-get-started").click(function(){ //menu function 1 start
-        //function testclick(){
-          //alert(test);
           //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
           $('html,body').animate(
             {scrollTop: $("#get-started").offset().top - navigationheightvalue},
@@ -234,9 +221,7 @@ $app_name = idx($app_info, 'name', '');
             }
           });
           return false;
-          //alert("debug2: "+top_offset);
         }); //menu function 1 end
-        // 2013-03-17 banz-ghb start add other navigations
         $("#menu-lislog-main").click(function(){ //menu function 1-2 start
           $('html,body').animate(
             {scrollTop: 0},
@@ -246,7 +231,6 @@ $app_name = idx($app_info, 'name', '');
           });
           return false;
         }); //menu function 1-2 end
-        //2013-03-17 banz-ghb remove most-recent-activity
         $("#menu-shared-activity").click(function(){ //menu function 1-3 start
           $('html,body').animate(
             {scrollTop: $("#id-shared-activity").offset().top - navigationheightvalue},
@@ -256,7 +240,6 @@ $app_name = idx($app_info, 'name', '');
           });
           return false;
         }); //menu function 1-3 end
-        // 2013-03-17 banz-ghb end   add other navigations
         $("#menu-samples").click(function(){ //menu function 1-4 start
             $('html,body').animate(
               {scrollTop: $("#samples").offset().top - navigationheightvalue},
@@ -275,25 +258,6 @@ $app_name = idx($app_info, 'name', '');
       //////////////////////////////////////////////////////////////
       //View functions
       //////////////////////////////////////////////////////////////
-      // 2013-03-17 banz-ghb remove most-recent-activity
-
-      //http://d.hatena.ne.jp/okahiro_p/20120525/1337918243
-      // 2013-03-20 banz-ghb start disable recent activityies
-      /*
-      function addRowToBottom(array_activities) {
-        $('#recent-activities li').remove();
-
-        //array_activities[i].publish_time
-        for(i = 0; i < array_activities.length; i++) {
-          var li = $('<li/>').text(array_activities[i].publish_time); //.appendTo(tr);
-          $('#recent-activities').append(li);
-        }
-      }
-      */
-      // 2013-03-20 banz-ghb start disable recent activityies
-
-      // 2013-03-16 banz-ghb delete candidate instead of facepile
-
       function addPublishActionButtonOnLiElement(var_radio_program_id
     	                                        ,var_radio_program_title
     	                                        ,var_radio_programs_detail) {
@@ -315,110 +279,46 @@ $app_name = idx($app_info, 'name', '');
           a.click(function() { //bind function 10 start
             var var_radio_program_button_url =
               'https://lislog.herokuapp.com/radio/jp/co/tbs/'+$(this).attr("id").replace("publishAction_","")+'.html';
-            //2013-03-18 banz-ghb start change listen action
               FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
             //FB.api('me/music.listens','POST',{radio_station:var_radio_program_button_url},//FB.api 1
-            //2013-03-18 banz-ghb end   change listen action
               function (response) {
-                // 2013-03-20 banz-ghb start add tune in date
                 FB.api('/'+response.id,'GET'//FB.api 1-1
                  ,function (response1_1) {
                     logResponse(response1_1.data.radio_program.url);
-                    //var str = "ABCDEFGHIJKLMN";
-                    //var regexp = /.*([a-zA-Z][a-zA-Z]*)\.html/;
 
                     var str = response1_1.data.radio_program.url;
                     str1 = str.replace(/\.html/,"");
                     str2 = str1.replace(/^.*\//,"");
-                    //alert(str1);
-                    //alert(str2);
 
                     var targetId = '#'+str2+'-date';
-                    //alert(targetId);
                     alert(response1_1.publish_time)
                     // "publish_time": "2013-03-20T06:57:44+0000" response1_1.publish_time
                     $(targetId).text(response1_1.publish_time)/*'test'*/;
-
-                    //var match_result = str.match(regexp); // ["ABCD", "A", "BC"]
-                    //var exec_result  = regexp.exec(str);  // ["ABCD", "A", "BC"]
-                    //alert(exec_result);
                 });//FB.api 1-1
-                //logResponse(response);
-                //alert(response.id/*data.radio_program.url*/);
-                //var targetId = $(this).attr("id").replace("publishAction_","")+'-date';
-                //alert(targetId);
-                //$(targetId).text = 'test';
-                // 2013-03-20 banz-ghb start add tune in date
-
-                //2013-03-17 banz-ghb remove most-recent-activity
-                //$("#id-shared-activity-div").show();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
-                // 2013-03-18 banz-ghb start realtime update
                 var container = document.getElementById('id-shared-activity');
                 FB.XFBML.parse(container);
-                // 2013-03-18 banz-ghb end   realtime update
-                //2013-03-20 banz-ghb start show samples
-
-                //if (response != null) { //if start
-                  //logResponse(response);
-                  //$("#samples").show();// 2013-03-20 banz-ghb show samples
-
-                  //2013-03-18 banz-ghb start start scroll
-                  //http://stackoverflow.com/questions/7193425/how-do-you-animate-fb-canvas-scrollto?answertab=active#tab-top
-                //$('html,body').animate(
-                    //2013-03-17 banz-ghb remove most-recent-activity
-                    //{scrollTop: $("#id-shared-activity").offset().top - navigationheightvalue},
-                    //{duration: 500, step: function(top_offset){
-                      //FB.Canvas.scrollTo(0, top_offset);
-                    //}
-                  //});
-                  //update shared activity by xfbml
-                  //2013-03-18 banz-ghb end   start scroll
-                //} //if end
-
-                //2013-03-20 banz-ghb end   show samples
                 return false;
               }
             ); //FB.api 1
             return false; /* stop scroll code*/
           });  //bind function 10 end
           //configure a span element
-          // 2013-03-20 banz-ghb change keyword
           var span = $('<span/>').text("リスなう"/*var_radio_program_title*/); //radio_programs_title[i]
           a.append(span);
           span.attr("class", "plus");
 
-          // 2013-03-20 banz-ghb start add tune in date
           var a_date = $('<a/>');
           li.append(a_date);
           a_date.attr("id", var_radio_program_id+'-date');
           a_date.text("");
-          // 2013-03-20 banz-ghb end   add tune in date
 
-          // 2013-03-20 banz-ghb start add detail of radio programs
           var p_title = $('<p/>');
           li.append(p_title);
           p_title.text(var_radio_program_title);
           var p_detail = $('<p/>');
           li.append(p_detail);
           p_detail.text(var_radio_programs_detail);
-          // 2013-03-20 banz-ghb end   add detail of radio programs
 
-          // TODO implement facepile
-          /*
-          li.append(div);
-          div ->attr  "class"         "fb-facepile"
-              ->attr  "data-href"     "https://lislog.herokuapp.com/radio/jp/co/tbs/baka.html"
-                                      ->var_radio_program_button_url
-              ->attr  "data-action"   "music.listens"
-              ->attr  "data-max-rows" "1"
-
-          <div class="fb-facepile"
-            data-href="https://lislog.herokuapp.com/radio/jp/co/tbs/baka.html"
-            data-action="music.listens"
-            data-max-rows="1">
-           </div>
-          */
-          // 2013-03-17 banz-ghb start add facepile
           var div = $('<div/>');
           li.append(div);
           div.attr("class",         "fb-facepile");
@@ -427,7 +327,6 @@ $app_name = idx($app_info, 'name', '');
         //div.attr("data-action",   "music.listens");
           div.attr("data-max-rows", "1");
           div.attr("data-width",    "270"); //adjust layout
-          // 2013-03-17 banz-ghb end   add facepile
 
       }
       //-->
@@ -461,15 +360,11 @@ $app_name = idx($app_info, 'name', '');
         <h1><strong><?php echo he($app_name); ?>へようこそ</strong></h1>
       </div>
 
-    <!-- 2013-03-03 banz-ghb start no extended permission when logging in  data-scope="user_likes,user_photos,publish_actions" -->
     <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
-    <!-- 2013-03-20 banz-ghb start modify login button for mobile -->
     <!--div id="fb-login" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions" data-show-faces="true"--><!--/div-->
     <div id="fb-login">Facebookでログイン</div>
-    <!-- 2013-03-20 banz-ghb end   modify login button for mobile -->
     <div id="fb-auth" >アプリを承認する</div>
     <!--div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"--><!--/div-->
-    <!-- 2013-03-03 banz-ghb end   no extended permission when logging in-->
 
     <!-- 2012-03-21 banz-ghb start move radioprogram-list -->
     <div class="clearfix">
@@ -486,23 +381,13 @@ $app_name = idx($app_info, 'name', '');
     </section>
     <!-- 2012-03-06 banz-ghb end   move radioprogram-list -->
 
-    <!-- 2013-03-17 banz-ghb remove most-recent-activity -->
-
-    <!-- 2013-03-03 banz-ghb start change location of get-started -->
     <section id="get-started">
       <p>ガイド<!-- Guide --></p>
       <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">リスログの使い方<!--Learn How to use lislog--></a>
     </section>
-    <!-- 2013-03-03 banz-ghb end   change location of get-started -->
 
-    <!-- 2013-03-17 banz-ghb start move samples -->
     <section id="samples" class="clearfix">
       <h1>リスログについて</h1>
-
-      <!-- 2013-03-20 banz-ghb disable recent activityies -->
-
-      <!-- 2013-03-17 banz-ghb disable to show app_using_friends -->
-
       <div class="list">
         <!--h3--><!--リスログについて--><!--/h3-->
         <ul class="things">
@@ -530,7 +415,6 @@ $app_name = idx($app_info, 'name', '');
       <!--div class="fb-like-box" data-href="https://www.facebook.com/lislog" data-width="292" data-show-faces="true" data-stream="false" data-header="false"--><!--/div-->
       <!--div class="fb-like" class="fb-like-overflow" data-send="false" data-layout="button_count" data-width="225" data-show-faces="false"--><!--/div-->
     </section>
-    <!-- 2013-03-17 banz-ghb end   move samples -->
 
     <section id="guides" class="clearfix">
       <!--h1--><!--タイムライン--><!--Check Your Facebook Timeline--><!--/h1-->
@@ -548,16 +432,12 @@ $app_name = idx($app_info, 'name', '');
       </ul>
     </section>
 
-    <!-- 2013-03-17 banz-ghb start move samples -->
     <section id="id-shared-activity" class="clearfix">
       <!-- adjust layout -- data-width="300" data-height="300" -->
-      <!-- 2013-03-18 banz-ghb start realtime update -->
       <!-- FB.XFBML.parse(); -->
       <fb:shared-activity id="id-shared-activity-div"></fb:shared-activity>
       <!--div id="id-shared-activity-div" class="fb-shared-activity" --><!--/div-->
-      <!-- 2013-03-18 banz-ghb end   realtime update -->
     </section>
-    <!-- 2013-03-17 banz-ghb end   move samples -->
 
     <!-- initialize facebook javascript sdk -->
     <div id="fb-root"></div>
@@ -565,9 +445,7 @@ $app_name = idx($app_info, 'name', '');
       window.fbAsyncInit = function() {
         FB.init({
           appId      : '<?php echo AppInfo::appID(); ?>', // App ID
-          // 2012-03-16 banz-ghb start get locales
           channelUrl : '//<?php echo $_SERVER["HTTP_HOST"]; ?>/channel_<?php he($client_locale);?>.html', // Channel File
-          // 2012-03-16 banz-ghb start get locales
           status     : true, // check login status
           cookie     : true, // enable cookies to allow the server to access the session
           xfbml      : true // parse XFBML
@@ -588,9 +466,7 @@ $app_name = idx($app_info, 'name', '');
             window.location = window.location; //pending
           // 2013-03-14 banz-ghb end   disable code for php
         });
-        // 2013-03-14 banz-ghb start disable code for php
 
-        // 2013-02-24 banz-ghb start add event subscribe event function
         function function_eventStateChangeOnLislog(response3){ //start response3
           if (response3.status == "connected") {
             logResponse(response3);//alert("login");
@@ -599,22 +475,15 @@ $app_name = idx($app_info, 'name', '');
             $("#picture").show();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").show();// 2013-02-24 banz-ghb switch lislog-main
             //$("#id-shared-activity").show(); // 2013-03-20 auth
-            //2013-03-18 banz-ghb start change listen action
             //FB.api('/me/lislogapp:tune_in','GET',{limit:4}, //FB.api 31
             //FB.api('/me/music.listens',    'GET',{limit:4}, //FB.api 31
-            //2013-03-18 banz-ghb end   change listen action
             //function (response31) {
-                //2013-03-17 banz-ghb remove most-recent-activity
                 //updateMostRecentActivity(response31.data);
                 //addRowToBottom(response31.data); 2013-03-20 banz-ghb disable recent activityies
-                // 2013-03-16 banz-ghb start delete candidate instead of facepile
                 //getAppUsingFriends();// 2013-03-17 banz-ghb disable to show app_using_friends
-                // 2013-03-16 banz-ghb end   delete candidate instead of facepile
             //}
             //); //FB.api 31
-            // 2013-02-24 banz-ghb start update profile picture
             $('#picture').attr("style", "background-image: url(https://graph.facebook.com/"+response3.authResponse.userID+"/picture?type=normal)");
-            // 2013-02-24 banz-ghb end   update profile picture
           } else if (response3.status == "not_authorized") {
             $("#fb-login").hide();
             $("#fb-auth").show();
@@ -629,21 +498,17 @@ $app_name = idx($app_info, 'name', '');
             $("#picture").hide();    // 2013-02-24 banz-ghb switch lislog-main
             $("#lislog-main").hide();// 2013-02-24 banz-ghb switch lislog-main
           //$("#id-shared-activity").hide(); // 2013-03-20 auth
-            alert('login callback 1');
-            // 2013-03-13 banz-ghb start add FB.login
+          //alert('login callback 1');
             //FB.login(function(response){
             //  alert('login callback');
             //}
-            // 2013-03-13 banz-ghb end   add FB.login
           } //if end
-          ////2013-03-17 banz-ghb remove most-recent-activity
           //$("#most-recent-activity").hide();// 2013-03-02 banz-ghb hide most-recent-activity when logged out
           //$("#samples").hide();// 2013-03-20 banz-ghb show samples
         } //end response3
 
         FB.getLoginStatus(function_eventStateChangeOnLislog);
         FB.Event.subscribe('auth.statusChange', function_eventStateChangeOnLislog);
-        // 2013-02-24 banz-ghb end   add event subscribe event function
 
         FB.Canvas.setAutoGrow();
       };
@@ -653,9 +518,7 @@ $app_name = idx($app_info, 'name', '');
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
-        //2012-03-16 banz-ghb start get locales
         js.src = "//connect.facebook.net/<?php echo he($client_locale);?>/all.js";
-        //2012-03-16 banz-ghb end   get locales
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
