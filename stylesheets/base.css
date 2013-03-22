@@ -161,7 +161,8 @@ header .tagline {
   display: -moz-inline-box;
   display: inline-block;
   font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
-  font-size: 11px;
+  /*font-size: 11px;*/
+  font-size:1.2em;
   font-weight: bold;
   line-height: 20px;
   margin: 0;

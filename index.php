@@ -289,6 +289,8 @@ $app_name = idx($app_info, 'name', '');
           div.attr("data-width",    "270"); //adjust layout
 
           //configure an a element
+          var br1 = $('<br>');
+          li.append(br1);
           var a = $('<a/>');
           li.append(a);
           a.attr("href", "#");
@@ -321,10 +323,12 @@ $app_name = idx($app_info, 'name', '');
             return false; /* stop scroll code*/
           });  //bind function 10 end
           //configure a span element
-          var span = $('<span/>').text("リスなう"/*var_radio_program_title*/); //radio_programs_title[i]
+          var span = $('<span/>').text("  リスなう  "/*var_radio_program_title*/); //radio_programs_title[i]
           a.append(span);
           span.attr("class", "plus");
 
+          var br2 = $('<br>');
+          li.append(br2);
           var a_date = $('<a/>');
           li.append(a_date);
           a_date.attr("id", var_radio_program_id+'-date');
