@@ -135,8 +135,10 @@ header .tagline {
   list-style: none;
   border-top: 1px solid #b3b3b3;; /* 2012-03-22 banz-ghb adjust layout */
   padding-top:  8px; /* 2012-03-22 banz-ghb adjust layout */
-  margin-right: 8px;/* 2012-03-22 banz-ghb adjust layout */
-  margin-left: 8px;
+  padding-bottom:  8px; /* 2012-03-22 banz-ghb adjust layout */
+  margin-right: /*auto*/8px;/* 2012-03-22 banz-ghb adjust layout */
+  margin-left: /*auto*/8px;
+  /*width 90%;*/
   /*margin-top: 10px;*/ /* 2012-03-05 banz-ghb set margin-top */
 }
 /* 2012-03-06 banz-ghb start change layout */
@@ -144,6 +146,14 @@ header .tagline {
 
 /* =buttons
 --------------------------------------------- */
+/*2013-03-23*/
+/*
+.facebook-button-li2 {
+  margin: 0 auto;
+  width: 200px;
+}
+*/
+/*2013-03-23*/
 
 .facebook-button:link, .facebook-button:visited {
   background-color: #eee;
@@ -172,7 +182,7 @@ header .tagline {
 
   padding: 7px 7px 7px 7px;
   text-align: center;
-  width: auto;
+  width: 200px;
 }
 
 .facebook-button span {

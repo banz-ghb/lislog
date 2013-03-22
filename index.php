@@ -291,8 +291,21 @@ $app_name = idx($app_info, 'name', '');
           //configure an a element
           var br1 = $('<br>');
           li.append(br1);
+          // 2013-03-23 start
+
+          /*var div2 = $('<div/>');
+          li.append(div2);
+          div2.text('test');
+          div2.attr("margin", "0 auto");
+          */
+          /*
+          var li2 = $('<li/>');
+          li2.attr("class", "facebook-button-li2");
+          $('#radioprogram-list').append(li2);
+          */
+          // 2013-03-23 end
           var a = $('<a/>');
-          li.append(a);
+          li.append(a);//li.append(a);// 2013-03-23
           a.attr("href", "#");
           a.attr("class", "facebook-button");
           a.attr("id", var_radio_program_button_name);
