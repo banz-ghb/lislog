@@ -169,14 +169,18 @@ header .tagline {
   outline: none;
   text-decoration: none;
   text-shadow: 0 1px 1px rgba(255, 255, 255, .33);
+
+  padding: 7px 7px 7px 7px;
+  text-align: center;
+  width: auto;
 }
 
 .facebook-button span {
   /* 2012-03-07 banz-ghb start hide picture */
   /* background: url("../images/sprites.png") no-repeat;*/
    vertical-align: middle;
-   padding: 0 7px 0 7px;/*padding: 0 7px 0 21px;*/
-   float: left;
+   /*padding: 0 7px 0 7px;*//*padding: 0 7px 0 21px;*/
+   /*float: left;*/
   /* 2012-03-07 banz-ghb end   hide picture */
 }
 
@@ -186,7 +190,7 @@ header .tagline {
 
 .facebook-button .plus {
   /* 2012-03-09 banz-ghb start fix width */
-  width: 150px;
+  /*width: auto*//*150px*/;
   /* 2012-03-09 banz-ghb end   fix width */
   /* 2012-03-07 banz-ghb start hide picture */
   /* background-position: 6px -17px; */
