@@ -112,13 +112,6 @@ header .tagline {
   /* 2013-02-23 banz-ghb end   horizontal to vertical */
 }
 
-#radioprogram-list p {
-  /* 2013-02-23 banz-ghb start horizontal to vertical */
-  /*float: left;*/
-  /* 2013-02-23 banz-ghb end   horizontal to vertical */
-  /*margin-left: 8px;*/
-}
-
 /* 2013-03-22 banz-ghb start change font color and size */
 .radioprogram-title-style {
   color: black;
@@ -159,10 +152,11 @@ header .tagline {
   -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
   box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
   color: #4f4f4f;
-  display: -moz-inline-box;
-  display: inline-block;
+  /*display: -moz-inline-box;*/
+  /*display: inline-block;*/
   font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
-  font-size: 11px;
+  /*font-size: 11px;*/
+  font-size:1.2em;
   font-weight: bold;
   line-height: 20px;
   margin: 0 auto;
@@ -173,14 +167,6 @@ header .tagline {
   /*text-align: center;*/
 }
 
-.facebook-button span {
-  /* 2012-03-07 banz-ghb start hide picture */
-  /* background: url("../images/sprites.png") no-repeat;*/
-   vertical-align: middle;
-   padding: 0 7px 0 7px;/*padding: 0 7px 0 21px;*/
-   /*float: left;*/ /* align center */
-   font-size:1.2em;/* align center */
-}
 
 .facebook-button .speech-bubble {
   background-position: 6px 3px;
