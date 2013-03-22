@@ -327,6 +327,9 @@ $app_name = idx($app_info, 'name', '');
           a.append(span);
           //span.attr("class", "plus");
 
+          var br2 = $('<br>');
+          li.append(br2);
+
           var a_date = $('<a/>');
           li.append(a_date);
           a_date.attr("id", var_radio_program_id+'-date');
