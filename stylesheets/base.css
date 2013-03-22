@@ -119,6 +119,13 @@ header .tagline {
   /*margin-left: 8px;*/
 }
 
+/* 2013-03-22 banz-ghb start change font color and size */
+.radioprogram-title-style {
+  color: black;
+  font-size:1.4em;
+}
+/* 2013-03-22 banz-ghb end   change font color and size */
+
 #radioprogram-list li {
   /* 2013-03-22 banz-ghb start change font color and size */
   color: #4f4f4f/*black*/;

@@ -274,6 +274,7 @@ $app_name = idx($app_info, 'name', '');
           var p_title = $('<p/>');
           li.append(p_title);
           p_title.text(var_radio_program_title);
+          p_title.attr("class", "radioprogram-title-style");// change font color and size
           var p_detail = $('<p/>');
           li.append(p_detail);
           p_detail.text(var_radio_programs_detail);
