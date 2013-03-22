@@ -353,24 +353,24 @@ $app_name = idx($app_info, 'name', '');
       </div>
     </div>
     <!-- 2013-03-09 banz-ghb end   header -->
-  <header class="clearfix">
-    <p id="picture"></p>
+    <header class="clearfix">
+      <p id="picture"></p>
 
-      <div id="lislog-main">
-        <h1><strong><?php echo he($app_name); ?>へようこそ</strong></h1>
+        <div id="lislog-main">
+          <h1><strong><?php echo he($app_name); ?>へようこそ</strong></h1>
+        </div>
+
+      <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
+      <!--div id="fb-login" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions" data-show-faces="true"--><!--/div-->
+      <div id="fb-login">Facebookでログイン</div>
+      <div id="fb-auth" >アプリを承認する</div>
+      <!--div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"--><!--/div-->
+
+      <!-- 2012-03-21 banz-ghb start move radioprogram-list -->
+      <div class="clearfix">
+        <p>お気に入りラジオを聴いたらリスなうボタンを押して下さい:<!--Press button when you tune in--></p><br>
       </div>
-
-    <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
-    <!--div id="fb-login" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions" data-show-faces="true"--><!--/div-->
-    <div id="fb-login">Facebookでログイン</div>
-    <div id="fb-auth" >アプリを承認する</div>
-    <!--div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"--><!--/div-->
-
-    <!-- 2012-03-21 banz-ghb start move radioprogram-list -->
-    <div class="clearfix">
-      <p>お気に入りラジオを聴いたらリスなうボタンを押して下さい:<!--Press button when you tune in--></p><br>
-    </div>
-  </header>
+    </header>
 
     <!-- 2012-03-06 banz-ghb start move radioprogram-list -->
     <section id="section-radioprogram-list" class="clearfix">

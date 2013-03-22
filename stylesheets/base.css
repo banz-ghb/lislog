@@ -83,6 +83,23 @@ header .tagline {
 }
 
 /* delete share-app */
+/* 2013-03-21 banz-ghb start section-radioprogram-list */
+/* =section-radioprogram-list
+--------------------------------------------- */
+#section-radioprogram-list {
+  border-left: 1px solid #b3b3b3;
+  border-right: 1px solid #b3b3b3;
+/*border-top: 1px solid #b3b3b3;*/
+/*font-size: 11px;*/
+  /* 2013-03-11 banz-ghb start set margin */
+  /*padding: 70px 18px 24px 18px;*/ /* top right bottom left */ /*top*/
+  /*padding: 24px 18px;*/
+  /*syle="margin-top:70px;"*/
+  /* 2013-03-11 banz-ghb end   set margin */
+}
+
+/* ------------------------------------------ */
+/* 2013-03-21 banz-ghb end   section-radioprogram-list */
 
 /* 2012-03-06 banz-ghb start change layout */
 #radioprogram-list {
