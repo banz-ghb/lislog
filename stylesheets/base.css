@@ -125,6 +125,9 @@ header .tagline {
   /* float: left; */
   /* 2013-02-23 banz-ghb end   horizontal to vertical */
   list-style: none;
+  border-top: 1px solid #b3b3b3;; /* 2012-03-22 banz-ghb adjust layout */
+  padding-top:  8px; /* 2012-03-22 banz-ghb adjust layout */
+/*margin-right: 8px;*//* 2012-03-22 banz-ghb adjust layout */
   margin-left: 8px;
   margin-top: 10px; /* 2012-03-05 banz-ghb set margin-top */
 }
