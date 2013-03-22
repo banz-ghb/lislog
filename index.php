@@ -292,7 +292,7 @@ $app_name = idx($app_info, 'name', '');
           var a = $('<a/>');
           li.append(a);
           a.attr("href", "#");
-          a.attr("class", "button" /*"facebook-button"*/);
+          a.attr("class", /*"button"*/ "facebook-button");
           a.attr("id", var_radio_program_button_name);
           a.click(function() { //bind function 10 start
             var var_radio_program_button_url =

@@ -131,7 +131,7 @@ header .tagline {
   color: #4f4f4f/*black*/;
   font-size:1.0em;
   /* 2013-03-22 banz-ghb end   change font color and size */
-  /* float: left; */
+  /* float: right; */
   list-style: none;
   border-top: 1px solid #b3b3b3;; /* 2012-03-22 banz-ghb adjust layout */
   padding-top:  8px; /* 2012-03-22 banz-ghb adjust layout */
@@ -165,7 +165,7 @@ header .tagline {
   font-size: 11px;
   font-weight: bold;
   line-height: 20px;
-  margin: 0;
+  margin: 0 auto;
   outline: none;
   text-decoration: none;
   text-shadow: 0 1px 1px rgba(255, 255, 255, .33);
