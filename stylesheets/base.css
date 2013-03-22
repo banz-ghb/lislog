@@ -112,10 +112,17 @@ header .tagline {
   /* 2013-02-23 banz-ghb end   horizontal to vertical */
 }
 
+#radioprogram-list p {
+  /* 2013-02-23 banz-ghb start horizontal to vertical */
+  /*float: left;*/
+  /* 2013-02-23 banz-ghb end   horizontal to vertical */
+  /*margin-left: 8px;*/
+}
+
 /* 2013-03-22 banz-ghb start change font color and size */
 .radioprogram-title-style {
   color: black;
-  font-size:1.2em;
+  font-size:1.4em;
 }
 /* 2013-03-22 banz-ghb end   change font color and size */
 
@@ -124,13 +131,12 @@ header .tagline {
   color: #4f4f4f/*black*/;
   font-size:1.0em;
   /* 2013-03-22 banz-ghb end   change font color and size */
-  /* float: right; */
+  /* float: left; */
   list-style: none;
   border-top: 1px solid #b3b3b3;; /* 2012-03-22 banz-ghb adjust layout */
   padding-top:  8px; /* 2012-03-22 banz-ghb adjust layout */
   margin-right: 8px;/* 2012-03-22 banz-ghb adjust layout */
   margin-left: 8px;
-  margin-bottom: 8px;
   /*margin-top: 10px;*/ /* 2012-03-05 banz-ghb set margin-top */
 }
 /* 2012-03-06 banz-ghb start change layout */
@@ -152,21 +158,26 @@ header .tagline {
   -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
   box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
   color: #4f4f4f;
-  /*display: -moz-inline-box;*/
-  /*display: inline-block;*/
+  display: -moz-inline-box;
+  display: inline-block;
   font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
-  /*font-size: 11px;*/
-  font-size:1.2em;
+  font-size: 11px;
   font-weight: bold;
   line-height: 20px;
-  margin: 0 auto;
+  margin: 0;
   outline: none;
   text-decoration: none;
   text-shadow: 0 1px 1px rgba(255, 255, 255, .33);
-  width : 70% /* align center */
-  /*text-align: center;*/
 }
 
+.facebook-button span {
+  /* 2012-03-07 banz-ghb start hide picture */
+  /* background: url("../images/sprites.png") no-repeat;*/
+   vertical-align: middle;
+   padding: 0 7px 0 7px;/*padding: 0 7px 0 21px;*/
+   float: left;
+  /* 2012-03-07 banz-ghb end   hide picture */
+}
 
 .facebook-button .speech-bubble {
   background-position: 6px 3px;
@@ -174,7 +185,7 @@ header .tagline {
 
 .facebook-button .plus {
   /* 2012-03-09 banz-ghb start fix width */
-  /*width: 150px;*/
+  width: 150px;
   /* 2012-03-09 banz-ghb end   fix width */
   /* 2012-03-07 banz-ghb start hide picture */
   /* background-position: 6px -17px; */
