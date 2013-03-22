@@ -292,7 +292,7 @@ $app_name = idx($app_info, 'name', '');
           var a = $('<a/>');
           li.append(a);
           a.attr("href", "#");
-          a.attr("class", "facebook-button");
+          a.attr("class", "button" /*"facebook-button"*/);
           a.attr("id", var_radio_program_button_name);
           a.click(function() { //bind function 10 start
             var var_radio_program_button_url =
@@ -323,7 +323,7 @@ $app_name = idx($app_info, 'name', '');
           //configure a span element
           var span = $('<span/>').text("リスなう"/*var_radio_program_title*/); //radio_programs_title[i]
           a.append(span);
-          span.attr("class", "plus");
+          //span.attr("class", "plus");
 
           var a_date = $('<a/>');
           li.append(a_date);
