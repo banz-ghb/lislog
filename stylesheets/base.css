@@ -120,10 +120,11 @@ header .tagline {
 }
 
 #radioprogram-list li {
-  /*float: left;*/
-  /* 2013-02-23 banz-ghb start horizontal to vertical */
+  /* 2013-03-22 banz-ghb start change font color and size */
+  color: #4f4f4f/*black*/;
+  font-size:1.0em;
+  /* 2013-03-22 banz-ghb end   change font color and size */
   /* float: left; */
-  /* 2013-02-23 banz-ghb end   horizontal to vertical */
   list-style: none;
   border-top: 1px solid #b3b3b3;; /* 2012-03-22 banz-ghb adjust layout */
   padding-top:  8px; /* 2012-03-22 banz-ghb adjust layout */
