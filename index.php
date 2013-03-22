@@ -259,8 +259,8 @@ $app_name = idx($app_info, 'name', '');
       //View functions
       //////////////////////////////////////////////////////////////
       function addPublishActionButtonOnLiElement(var_radio_program_id
-    	                                        ,var_radio_program_title
-    	                                        ,var_radio_programs_detail) {
+                                                ,var_radio_program_title
+                                                ,var_radio_programs_detail) {//start addPublishActionButtonOnLiElement
           // 2013-03-17 banz-ghb start add facepile
           var var_radio_program_button_name = 'publishAction_'+var_radio_program_id; //radio_programs_id[i]
           //clickバインドないと合わせること
@@ -270,6 +270,23 @@ $app_name = idx($app_info, 'name', '');
           //configure a li element
           var li = $('<li/>');
           $('#radioprogram-list').append(li);
+
+          var p_title = $('<p/>');
+          li.append(p_title);
+          p_title.text(var_radio_program_title);
+          var p_detail = $('<p/>');
+          li.append(p_detail);
+          p_detail.text(var_radio_programs_detail);
+
+          var div = $('<div/>');
+          li.append(div);
+          div.attr("class",         "fb-facepile");
+          div.attr("data-href",     var_radio_program_button_url_1);
+          div.attr("data-action",   "lislogapp:tune_in");//2013-03-18
+        //div.attr("data-action",   "music.listens");
+          div.attr("data-max-rows", "1");
+          div.attr("data-width",    "270"); //adjust layout
+
           //configure an a element
           var a = $('<a/>');
           li.append(a);
@@ -312,23 +329,7 @@ $app_name = idx($app_info, 'name', '');
           a_date.attr("id", var_radio_program_id+'-date');
           a_date.text("");
 
-          var p_title = $('<p/>');
-          li.append(p_title);
-          p_title.text(var_radio_program_title);
-          var p_detail = $('<p/>');
-          li.append(p_detail);
-          p_detail.text(var_radio_programs_detail);
-
-          var div = $('<div/>');
-          li.append(div);
-          div.attr("class",         "fb-facepile");
-          div.attr("data-href",     var_radio_program_button_url_1);
-          div.attr("data-action",   "lislogapp:tune_in");//2013-03-18
-        //div.attr("data-action",   "music.listens");
-          div.attr("data-max-rows", "1");
-          div.attr("data-width",    "270"); //adjust layout
-
-      }
+      } // end addPublishActionButtonOnLiElement
       //-->
       </script>
 
