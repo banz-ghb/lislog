@@ -460,12 +460,14 @@ $app_name = idx($app_info, 'name', '');
 
     <!-- 3/24 start -->
     <section id="id-i18n" class="clearfix">
-    <fb:intl desc="Asking whether user wants to give a book to someone">
-      Give <fb:name uid="4800348" useyou="false"/> a copy of "{book-title}"?
-        <fb:intl-token name="book-title">
-          Catcher In the Rye
-        </fb:intl-token>
-    </fb:intl>
+      <div>
+        <fb:intl desc="Asking whether user wants to give a book to someone">
+          Give a copy of "{book-title}"?
+          <fb:intl-token name="book-title">
+            Catcher In the Rye
+          </fb:intl-token>
+          </fb:intl>
+      </div>
     </section>
     <!-- 3/24 end -->
 
