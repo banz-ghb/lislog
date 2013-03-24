@@ -483,6 +483,11 @@ $app_name = idx($app_info, 'name', '');
           xfbml      : true // parse XFBML
         });
 
+        //03-24 start
+        var container = document.getElementById('id-i18n');
+        FB.XFBML.parse(container);
+        //03-24 end
+
         // Listen to the auth.login which will be called when the user logs in
         // using the Login button
 
