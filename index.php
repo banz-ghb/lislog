@@ -458,6 +458,17 @@ $app_name = idx($app_info, 'name', '');
       <!--div id="id-shared-activity-div" class="fb-shared-activity" --><!--/div-->
     </section>
 
+    <!-- 3/24 start -->
+    <section id="id-i18n" class="clearfix">
+    <fb:intl desc="Asking whether user wants to give a book to someone">
+      Give <fb:name uid="4800348" useyou="false"/> a copy of "{book-title}"?
+        <fb:intl-token name="book-title">
+          Catcher In the Rye
+        </fb:intl-token>
+    </fb:intl>
+    </section>
+    <!-- 3/24 end -->
+
     <!-- initialize facebook javascript sdk -->
     <div id="fb-root"></div>
     <script type="text/javascript">
