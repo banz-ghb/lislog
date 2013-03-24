@@ -460,7 +460,7 @@ $app_name = idx($app_info, 'name', '');
 
     <!-- 3/24 start -->
     <section id="id-i18n" class="clearfix">
-      <div>
+      <div id="id-i18n-div">
         <fb:intl desc="Asking whether user wants to give a book to someone">
           Give a copy of "{book-title}"?
           <fb:intl-token name="book-title">
@@ -484,7 +484,7 @@ $app_name = idx($app_info, 'name', '');
         });
 
         //03-24 start
-        var container = document.getElementById('id-i18n');
+        var container = document.getElementById('id-i18n-div');
         FB.XFBML.parse(container);
         //03-24 end
 
@@ -521,6 +521,10 @@ $app_name = idx($app_info, 'name', '');
             //}
             //); //FB.api 31
             $('#picture').attr("style", "background-image: url(https://graph.facebook.com/"+response3.authResponse.userID+"/picture?type=normal)");
+            //03-24 start
+            var container = document.getElementById('id-i18n-div');
+            FB.XFBML.parse(container);
+            //03-24 end
           } else if (response3.status == "not_authorized") {
             $("#fb-login").hide();
             $("#fb-auth").show();
