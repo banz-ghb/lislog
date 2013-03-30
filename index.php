@@ -315,7 +315,7 @@ $app_name = idx($app_info, 'name', '');
           a.click(function() { //bind function 10 start
             //2013-03-30 anz-ghb start add activity indicator
             $('#'+$(this).attr("id").replace("publishAction_","")+'-date').activity(
-              {outside: true/*segments: 12, steps: 3, width:2, space: 1, length: 3, color: '#030303', speed: 1.5*/});
+              {/*outside: true,segments: 12, steps: 3, width:2, space: 1, length: 3, color: '#030303', speed: 1.5*/});
             //var targetId1 = '#'+$(this).attr("id").replace("publishAction_","")+'-date';
             //$(targetId).activiry();
             //2013-03-30 anz-ghb end   add activity indicator
