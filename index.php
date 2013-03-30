@@ -95,6 +95,9 @@ $app_name = idx($app_info, 'name', '');
     <meta property="fb:app_id" content="<?php echo AppInfo::appID(); ?>" />
 
     <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
+    <!-- 2013-03-30 anz-ghb start add activity indicator -->
+    <script type="text/javascript" src="/javascript/jquery.activity-indicator-1.0.0.min.js"></script>
+    <!-- 2013-03-30 anz-ghb start add activity indicator -->
 
     <script type="text/javascript"><!--
       // 2013-03-18 declare global var
@@ -310,6 +313,12 @@ $app_name = idx($app_info, 'name', '');
           a.attr("class", "facebook-button");
           a.attr("id", var_radio_program_button_name);
           a.click(function() { //bind function 10 start
+            //2013-03-30 anz-ghb start add activity indicator
+            $('#'+$(this).attr("id").replace("publishAction_","")+'-date').activity(
+              {outside: true/*segments: 12, steps: 3, width:2, space: 1, length: 3, color: '#030303', speed: 1.5*/});
+            //var targetId1 = '#'+$(this).attr("id").replace("publishAction_","")+'-date';
+            //$(targetId).activiry();
+            //2013-03-30 anz-ghb end   add activity indicator
             var var_radio_program_button_url =
               'https://lislog.herokuapp.com/radio/jp/co/tbs/'+$(this).attr("id").replace("publishAction_","")+'.html';
               FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
@@ -317,7 +326,10 @@ $app_name = idx($app_info, 'name', '');
               function (response) {
                 FB.api('/'+response.id,'GET'//FB.api 1-1
                  ,function (response1_1) {
-                    logResponse(response1_1.data.radio_program.url);
+                    //2013-03-30 anz-ghb start add activity indicator
+                    //logResponse(response1_1.data.radio_program.url);
+                    //http://c-brains.jp/blog/wsg/13/02/14-163725.php
+                    //2013-03-30 anz-ghb end   add activity indicator
 
                     var str = response1_1.data.radio_program.url;
                     str1 = str.replace(/\.html/,"");
@@ -340,6 +352,9 @@ $app_name = idx($app_info, 'name', '');
                     //var var_local_time_format = var_local_time;
                     //var ary_local_time   = var_local_time_format.replace(/\D/g," ").split(" ");
 
+                    //2013-03-30 anz-ghb start add activity indicator
+                    $(targetId).activity(false);
+                    //2013-03-30 anz-ghb end   add activity indicator
                     $(targetId).text('最後に聴いた日: '
                                     +var_local_time.getFullYear() +'/'
                                     +var_local_time.getMonth()+'/'
