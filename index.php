@@ -314,8 +314,8 @@ $app_name = idx($app_info, 'name', '');
           a.attr("id", var_radio_program_button_name);
           a.click(function() { //bind function 10 start
             //2013-03-30 anz-ghb start add activity indicator
-            $('#'+$(this).attr("id").replace("publishAction_","")+'-date').activity(
-              {/*outside: true,segments: 12, steps: 3, width:2, space: 1, length: 3, color: '#030303', speed: 1.5*/});
+          //$('#'+$(this).attr("id").replace("publishAction_","")+'-date').activity(
+          //  {/*outside: true,segments: 12, steps: 3, width:2, space: 1, length: 3, color: '#030303', speed: 1.5*/});
             //var targetId1 = '#'+$(this).attr("id").replace("publishAction_","")+'-date';
             //$(targetId).activiry();
             //2013-03-30 anz-ghb end   add activity indicator
@@ -353,7 +353,7 @@ $app_name = idx($app_info, 'name', '');
                     //var ary_local_time   = var_local_time_format.replace(/\D/g," ").split(" ");
 
                     //2013-03-30 anz-ghb start add activity indicator
-                    $(targetId).activity(false);
+                  //$(targetId).activity(false);
                     //2013-03-30 anz-ghb end   add activity indicator
                     $(targetId).text('最後に聴いた日: '
                                     +var_local_time.getFullYear() +'/'
