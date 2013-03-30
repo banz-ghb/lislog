@@ -324,9 +324,33 @@ $app_name = idx($app_info, 'name', '');
                     str2 = str1.replace(/^.*\//,"");
 
                     var targetId = '#'+str2+'-date';
-                    alert(response1_1.publish_time)
-                    // "publish_time": "2013-03-20T06:57:44+0000" response1_1.publish_time
-                    $(targetId).text(response1_1.publish_time)/*'test'*/;
+                    // 2013-03-27 banz-ghb start show local time
+                    var var_utc_time   = response1_1.publish_time.replace(/\D/g," ");
+                    var ary_utc_time   = var_utc_time.split(" ");
+                    var var_utc_date = new Date(ary_utc_time[0]
+                                               ,ary_utc_time[1]
+                                               ,ary_utc_time[2]
+                                               ,ary_utc_time[3]
+                                               ,ary_utc_time[4]
+                                               ,ary_utc_time[5]);
+                    var var_utc_time_tmp = var_utc_date.getTime();
+                    var var_offset = new Date().getTimezoneOffset();
+                    var var_local_time = new Date();
+                    /*var var_local_time = */var_local_time.setTime(var_utc_time_tmp - (var_offset * 1000 * 60));
+                    //var var_local_time_format = var_local_time;
+                    //var ary_local_time   = var_local_time_format.replace(/\D/g," ").split(" ");
+
+                    $(targetId).text('最後に聴いた日: '
+                                    +var_local_time.getFullYear() +'/'
+                                    +var_local_time.getMonth()+'/'
+                                    +var_local_time.getDate()+' '
+                                    +var_local_time.getHours()+':'
+                                    +var_local_time.getMinutes()
+                                    );
+                    //alert(response1_1.publish_time)
+                    //// "publish_time": "2013-03-20T06:57:44+0000" response1_1.publish_time
+                    //$(targetId).text(response1_1.publish_time)/*'test'*/;
+                    // 2013-03-27 banz-ghb end   show local time
                 });//FB.api 1-1
                 var container = document.getElementById('id-shared-activity');
                 FB.XFBML.parse(container);
@@ -342,10 +366,10 @@ $app_name = idx($app_info, 'name', '');
 
           var br2 = $('<br>');
           li.append(br2);
-          var a_date = $('<a/>');
-          li.append(a_date);
-          a_date.attr("id", var_radio_program_id+'-date');
-          a_date.text("");
+          var p_date = $('<p/>');
+          li.append(p_date);
+          p_date.attr("id", var_radio_program_id+'-date');
+          p_date.text("");
 
       } // end addPublishActionButtonOnLiElement
       //-->
@@ -379,11 +403,7 @@ $app_name = idx($app_info, 'name', '');
           <h1><strong><?php echo he($app_name); ?>へようこそ</strong></h1>
         </div>
 
-      <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
-      <!--div id="fb-login" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions" data-show-faces="true"--><!--/div-->
-      <div id="fb-login">Facebookでログイン</div>
-      <div id="fb-auth" >アプリを承認する</div>
-      <!--div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"--><!--/div-->
+        <!-- 2013-03-26 banz-ghb start move -->
 
       <!-- 2012-03-21 banz-ghb start move radioprogram-list -->
       <div class="clearfix">
@@ -393,6 +413,14 @@ $app_name = idx($app_info, 'name', '');
 
     <!-- 2012-03-06 banz-ghb start move radioprogram-list -->
     <section id="section-radioprogram-list" class="clearfix">
+
+      <!-- 2013-03-26 banz-ghb start move -->
+      <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
+      <!--div id="fb-login" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions" data-show-faces="true"--><!--/div-->
+      <div ><a id="fb-login" href="#" class="button">Facebookでログイン</a></div>
+      <div id="fb-auth"  class="facebook-button">アプリを承認する</div>
+      <!--div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"--><!--/div-->
+      <!-- 2013-03-26 banz-ghb end   move -->
       <ul id="radioprogram-list">
         <!-- start temporarilly removed -->
         <!-- end   temporarilly removed -->
