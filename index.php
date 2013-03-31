@@ -96,7 +96,8 @@ $app_name = idx($app_info, 'name', '');
 
     <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
     <!-- 2013-03-30 anz-ghb start add activity indicator -->
-    <script type="text/javascript" src="/javascript/jquery.activity-indicator-1.0.0.min.js"></script>
+    <!--script type="text/javascript" src="/javascript/jquery.activity-indicator-1.0.0.min.js"--><!--/script-->
+    <script type="text/javascript" src="/javascript/jsgt_indicator003.js" charset="utf-8"></script>
     <!-- 2013-03-30 anz-ghb start add activity indicator -->
 
     <script type="text/javascript"><!--
@@ -313,12 +314,19 @@ $app_name = idx($app_info, 'name', '');
           a.attr("class", "facebook-button");
           a.attr("id", var_radio_program_button_name);
           a.click(function() { //bind function 10 start
-            //2013-03-30 anz-ghb start add activity indicator
+            //2013-03-31 banz-ghb start add activity indicator
+          //$('#'+$(this).attr("id").replace("publishAction_","")+'-date').text("最後に聴いた日: ");
+            $('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').text("最後に聴いた日: ");
+            $('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').attr("height", "12px");
+            $('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').attr("width", "auto");
+            $('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').append('<img src="images/indicator.white.gif">')
+          //$('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').indi_start();
+          //indi.indi_start();
           //$('#'+$(this).attr("id").replace("publishAction_","")+'-date').activity(
           //  {/*outside: true,segments: 12, steps: 3, width:2, space: 1, length: 3, color: '#030303', speed: 1.5*/});
             //var targetId1 = '#'+$(this).attr("id").replace("publishAction_","")+'-date';
             //$(targetId).activiry();
-            //2013-03-30 anz-ghb end   add activity indicator
+            //2013-03-31 banz-ghb end   add activity indicator
             var var_radio_program_button_url =
               'https://lislog.herokuapp.com/radio/jp/co/tbs/'+$(this).attr("id").replace("publishAction_","")+'.html';
               FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
@@ -352,10 +360,15 @@ $app_name = idx($app_info, 'name', '');
                     //var var_local_time_format = var_local_time;
                     //var ary_local_time   = var_local_time_format.replace(/\D/g," ").split(" ");
 
-                    //2013-03-30 anz-ghb start add activity indicator
+                    //2013-03-31 banz-ghb start add activity indicator
+                  //$('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').indi_stop();
+                    $('#'+str2+'-div-date').attr("height", "0px");
+                    $('#'+str2+'-div-date').attr("width", "0px");
+                    $('#'+str2+'-div-date'+' img').remove();
+                    //indi.indi_stop();
                   //$(targetId).activity(false);
-                    //2013-03-30 anz-ghb end   add activity indicator
-                    $(targetId).text('最後に聴いた日: '
+                    //2013-03-31 banz-ghb end   add activity indicator
+                    $('#'+str2+'-div-date'/*targetId*/).text('最後に聴いた日: '
                                     +var_local_time.getFullYear() +'/'
                                     +var_local_time.getMonth()+'/'
                                     +var_local_time.getDate()+' '
@@ -381,10 +394,33 @@ $app_name = idx($app_info, 'name', '');
 
           var br2 = $('<br>');
           li.append(br2);
+          //2013-03-31 banz-ghb start add indicator
+          //2013-03-30 banz-ghb start add indicator
+          //インジケータインスタンスを生成
+        //var indi = new jsgt_Indicator('./images/indicator.white.gif') ;
+          //インジケータを追加するDIVを指定
+        //window.onload = indi.indi_append(var_radio_program_id+'-div-date');
+
+          var div_date = $('<div/>');
+          li.append(div_date);
+          div_date.attr("id", var_radio_program_id+'-div-date');
+
+          $('#'+var_radio_program_id+'-div-date').attr("position", "relative");
+          $('#'+var_radio_program_id+'-div-date').attr("top", "0px");
+          $('#'+var_radio_program_id+'-div-date').attr("left", "0px");
+          $('#'+var_radio_program_id+'-div-date').attr("width", "0px");
+          $('#'+var_radio_program_id+'-div-date').attr("height", "0px");
+          $('#'+var_radio_program_id+'-div-date').attr("margin", "0px");
+          $('#'+var_radio_program_id+'-div-date').attr("padding", "0px");
+
+          //2013-03-30 banz-ghb end   add indicator
           var p_date = $('<p/>');
-          li.append(p_date);
+          //2013-03-30 banz-ghb start add indicator
+        //div_date.append(p_date);//li.append(p_date);
+          //2013-03-30 banz-ghb end   add indicator
           p_date.attr("id", var_radio_program_id+'-date');
-          p_date.text("");
+          /*p_date*/$('#'+var_radio_program_id+'-div-date').text("");
+          //2013-03-31 banz-ghb end   add indicator
 
       } // end addPublishActionButtonOnLiElement
       //-->
