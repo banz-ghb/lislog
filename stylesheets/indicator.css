@@ -8,29 +8,16 @@
   height: "0px";
   margin: "0px";
   padding: "0px";
-/*
-          $('#'+var_radio_program_id+'-div-date').attr("position", "relative");
-          $('#'+var_radio_program_id+'-div-date').attr("top", "0px");
-          $('#'+var_radio_program_id+'-div-date').attr("left", "0px");
-          $('#'+var_radio_program_id+'-div-date').attr("width", "0px");
-          $('#'+var_radio_program_id+'-div-date').attr("height", "0px");
-          $('#'+var_radio_program_id+'-div-date').attr("margin", "0px");
-          $('#'+var_radio_program_id+'-div-date').attr("padding", "0px");
-          */
 }
 
 .indicator-start {
   height: "12px";
   width: "auto";
-/*          $('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').attr("height", "12px");
-            $('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').attr("width", "auto");*/
 }
 
 .indicator-stop {
   height: "0px";
   width: "0px";
-/*                  $('#'+str2+'-div-date').attr("height", "0px");
-                    $('#'+str2+'-div-date').attr("width", "0px");*/
 }
 
 /* ------------------------------------------ */
