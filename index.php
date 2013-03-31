@@ -317,9 +317,14 @@ $app_name = idx($app_info, 'name', '');
             //2013-03-31 banz-ghb start add activity indicator
           //$('#'+$(this).attr("id").replace("publishAction_","")+'-date').text("最後に聴いた日: ");
             $('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').text("最後に聴いた日: ");
+          //$('#'+var_radio_program_id+'-div-date').attr("class", "indicator-start");
+            $('#'+var_radio_program_id+'-div-date').addClass("indicator-start");
+            $('#'+var_radio_program_id+'-div-date').removeClass("indicator-stop");
+            $('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').append('<img src="images/indicator.white.gif">')
+            /*
             $('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').attr("height", "12px");
             $('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').attr("width", "auto");
-            $('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').append('<img src="images/indicator.white.gif">')
+            */
             //$('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').indi_start();
           //indi.indi_start();
           //$('#'+$(this).attr("id").replace("publishAction_","")+'-date').activity(
@@ -362,8 +367,13 @@ $app_name = idx($app_info, 'name', '');
 
                     //2013-03-31 banz-ghb start add activity indicator
                   //$('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').indi_stop();
+                    /*
                     $('#'+str2+'-div-date').attr("height", "0px");
                     $('#'+str2+'-div-date').attr("width", "0px");
+                    */
+                  //$('#'+var_radio_program_id+'-div-date').attr("class", "indicator-stop");
+                    $('#'+var_radio_program_id+'-div-date').addClass("indicator-stop");
+                    $('#'+var_radio_program_id+'-div-date').removeClass("indicator-start");
                     $('#'+str2+'-div-date'+' img').remove();
                     //indi.indi_stop();
                   //$(targetId).activity(false);
@@ -403,8 +413,11 @@ $app_name = idx($app_info, 'name', '');
 
           var div_date = $('<div/>');
           li.append(div_date);
-          div_date.attr("id", var_radio_program_id+'-div-date');
 
+          div_date.attr("id", var_radio_program_id+'-div-date');
+          $('#'+var_radio_program_id+'-div-date').addClass("indicator-init");
+        //$('#'+var_radio_program_id+'-div-date').attr("class", "indicator-init");
+          /*
           $('#'+var_radio_program_id+'-div-date').attr("position", "relative");
           $('#'+var_radio_program_id+'-div-date').attr("top", "0px");
           $('#'+var_radio_program_id+'-div-date').attr("left", "0px");
@@ -412,6 +425,7 @@ $app_name = idx($app_info, 'name', '');
           $('#'+var_radio_program_id+'-div-date').attr("height", "0px");
           $('#'+var_radio_program_id+'-div-date').attr("margin", "0px");
           $('#'+var_radio_program_id+'-div-date').attr("padding", "0px");
+          */
 
           //2013-03-30 banz-ghb end   add indicator
           var p_date = $('<p/>');
