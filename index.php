@@ -320,7 +320,7 @@ $app_name = idx($app_info, 'name', '');
             $('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').attr("height", "12px");
             $('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').attr("width", "auto");
             $('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').append('<img src="images/indicator.white.gif">')
-          //$('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').indi_start();
+            //$('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').indi_start();
           //indi.indi_start();
           //$('#'+$(this).attr("id").replace("publishAction_","")+'-date').activity(
           //  {/*outside: true,segments: 12, steps: 3, width:2, space: 1, length: 3, color: '#030303', speed: 1.5*/});
