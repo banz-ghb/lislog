@@ -188,6 +188,21 @@ $app_name = idx($app_info, 'name', '');
          });
 
         var radio_programs_id = ["baka", "bakusho", "fumou", "megane", "banana", "elekata"];
+        var radio_programs_title = [ "Ijuin Shinya no baka chikara"
+                                     ,"Bakusho mondai Cowboy"
+                                     ,"Yamazato Fumou na giron"
+                                     ,"Ogi Yahagi Megane biiki"
+                                     ,"Bananaman Banana moon GOLD"
+                                     ,"Elekata Konto Taro"
+                                    ];
+         var radio_programs_detail = [ "TBS radio Mon 25am start"
+                                      ,"TBS radio Tue 25am start"
+                                      ,"TBS radio Wed 25am start"
+                                      ,"TBS radio Thu 25am start"
+                                      ,"TBS radio Fri 25am start"
+                                      ,"TBS radio Sat 25am start"
+                                     ];
+        /*
         var radio_programs_title = [ "伊集院光　深夜の馬鹿力"
                                     ,"爆笑問題カーボーイ"
                                     ,"山里亮太の不毛な議論"
@@ -202,6 +217,7 @@ $app_name = idx($app_info, 'name', '');
                                      ,"TBSラジオ 金曜25時～"
                                      ,"TBSラジオ 土曜25時～"
                                     ];
+        */
 
         $('#radioprogram-list li').remove();
 
@@ -314,7 +330,7 @@ $app_name = idx($app_info, 'name', '');
           a.attr("class", "facebook-button");
           a.attr("id", var_radio_program_button_name);
           a.click(function() { //bind function 10 start
-            $('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').text("最後に聴いた日: ");
+            $('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').text("Last time you tuned in: "/*"最後に聴いた日: "*/);
             $('#'+var_radio_program_id+'-div-date').addClass("indicator-start");
             $('#'+var_radio_program_id+'-div-date').removeClass("indicator-stop");
             $('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').append('<img src="images/indicator.white.gif">')
@@ -353,7 +369,7 @@ $app_name = idx($app_info, 'name', '');
                     $('#'+var_radio_program_id+'-div-date').addClass("indicator-stop");
                     $('#'+var_radio_program_id+'-div-date').removeClass("indicator-start");
                     $('#'+str2+'-div-date'+' img').remove();
-                    $('#'+str2+'-div-date'/*targetId*/).text('最後に聴いた日: '
+                    $('#'+str2+'-div-date'/*targetId*/).text("Last time you tuned in: "//'最後に聴いた日: '
                                     +var_local_time.getFullYear() +'/'
                                     +var_local_time.getMonth()+'/'
                                     +var_local_time.getDate()+' '
@@ -373,7 +389,7 @@ $app_name = idx($app_info, 'name', '');
             return false; /* stop scroll code*/
           });  //bind function 10 end
           //configure a span element
-          var span = $('<span/>').text("リスなう"/*var_radio_program_title*/); //radio_programs_title[i]
+          var span = $('<span/>').text("Tune in"/*リスなう*/); //radio_programs_title[i]
           a.append(span);
           span.attr("class", "plus");
 
@@ -407,9 +423,9 @@ $app_name = idx($app_info, 'name', '');
     <div id="navigation"><!-- style="height:50px;border:1px solid blue;" -->
       <div id="navigation_top" class="clearfix">
         <ul>
-          <li><a id="menu-lislog-main" class="first"  > トップ</a></li>
-          <li><a id="menu-get-started"    > | ガイド</a></li>
-          <li><a id="menu-shared-activity"> | ログ</a></li>
+          <li><a id="menu-lislog-main" class="first"  > Top</a></li><!-- トップ -->
+          <li><a id="menu-get-started"    > | Guide</a></li><!-- ガイド -->
+          <li><a id="menu-shared-activity"> | Activity</a></li><!-- ログ -->
           <!-- menu-samples -->
           </ul>
       </div>
@@ -419,14 +435,14 @@ $app_name = idx($app_info, 'name', '');
       <p id="picture"></p>
 
         <div id="lislog-main">
-          <h1><strong><?php echo he($app_name); ?>へようこそ</strong></h1>
+          <h1><strong>Welcome to <?php echo he($app_name); ?><!--へようこそ--></strong></h1>
         </div>
 
         <!-- 2013-03-26 banz-ghb start move -->
 
       <!-- 2012-03-21 banz-ghb start move radioprogram-list -->
       <div class="clearfix">
-        <p>お気に入りラジオを聴いたらリスなうボタンを押して下さい:<!--Press button when you tune in--></p><br>
+        <p><!--お気に入りラジオを聴いたらリスなうボタンを押して下さい:-->Press button when you tune in</p><br>
       </div>
     </header>
 
@@ -436,8 +452,8 @@ $app_name = idx($app_info, 'name', '');
       <!-- 2013-03-26 banz-ghb start move -->
       <!-- Refer to https://developers.facebook.com/docs/reference/plugins/login/ -->
       <!--div id="fb-login" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions" data-show-faces="true"--><!--/div-->
-      <div ><a id="fb-login" href="#" class="button">Facebookでログイン</a></div>
-      <div id="fb-auth"  class="facebook-button">アプリを承認する</div>
+      <div ><a id="fb-login" href="#" class="button">Login with Facebook<!--Facebookでログイン--></a></div>
+      <div ><a id="fb-auth"  href="#" class="button">Authorize lislog<!--   アプリを承認する--></a   ></div>
       <!--div id="fb-auth" class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"--><!--/div-->
       <!-- 2013-03-26 banz-ghb end   move -->
       <ul id="radioprogram-list">
@@ -448,12 +464,12 @@ $app_name = idx($app_info, 'name', '');
     <!-- 2012-03-06 banz-ghb end   move radioprogram-list -->
 
     <section id="get-started">
-      <p>ガイド<!-- Guide --></p>
-      <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">リスログの使い方<!--Learn How to use lislog--></a>
+      <p>Guide<!-- ガイド --></p>
+      <a href="https://lislog.heroku.com/guide.html" target="_blank" class="button">Learn How to use lislog<!--リスログの使い方--></a>
     </section>
 
     <section id="samples" class="clearfix">
-      <h1>リスログについて</h1>
+      <h1>About us<!--リスログについて--></h1>
       <div class="list">
         <!--h3--><!--リスログについて--><!--/h3-->
         <ul class="things">
@@ -462,17 +478,16 @@ $app_name = idx($app_info, 'name', '');
               <span class="apprequests">Q&amp;A</span>
             </a>
           </li>
-          <li><a href="#" id="id-privacy-policy"><span class="apprequests">プライバシーポリシー</span></a></li>
-          <li><a href="#" id="id-terms-of-service"><span class="apprequests">利用規約</span></a></li>
-          <li><a href="#" id="id-user-support"><span class="apprequests">お問い合せ</span></a></li>
+          <li><a href="#" id="id-privacy-policy"><span class="apprequests"  >Privacy policy<!--プライバシーポリシー--></span></a></li>
+          <li><a href="#" id="id-terms-of-service"><span class="apprequests">Terms of service<!--利用規約--></span       ></a></li>
+          <li><a href="#" id="id-user-support"><span class="apprequests"    >User support<!--お問い合せ--></span      ></a></li>
         </ul>
       </div>
       <div class="list">
         <!--h3--><!--Send Request--><!--/h3-->
         <ul class="things">
           <li>
-            <a href="#" class="button" id="sendRequest"
-               data-message="招待したい友達を選択して「送信」を押してください.">友達を招待
+            <a href="#" class="button" id="sendRequest" data-message="Invite your friends"><!--"招待したい友達を選択して「送信」を押してください."-->Invite friends<!--友達を招待-->
             </a>
           </li>
         </ul>
@@ -492,7 +507,7 @@ $app_name = idx($app_info, 'name', '');
           <!-- a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="icon apps-on-facebook"--><!-- Timeline --><!-- /a -->
           <!-- for PC     https://www.facebook.com/me/app_lislogapp -->
           <!-- for Mobile https://www.facebook.com/me -->
-          <a href="https://www.facebook.com/me" target="_top" class="icon apps-on-facebook">Facebook タイムライン<!--Timeline--></a>
+          <a href="https://www.facebook.com/me" target="_top" class="icon apps-on-facebook">Facebook Timeline<!--タイムライン--></a>
           <!--p--><!--View the activity logs of lislog in your facebook timeline.--><!--/p-->
         </li>
       </ul>
@@ -504,19 +519,6 @@ $app_name = idx($app_info, 'name', '');
       <fb:shared-activity id="id-shared-activity-div"></fb:shared-activity>
       <!--div id="id-shared-activity-div" class="fb-shared-activity" --><!--/div-->
     </section>
-
-    <!-- 3/24 start -->
-    <section id="id-i18n" class="clearfix">
-      <div id="id-i18n-div">
-        <fb:intl desc="Asking whether user wants to give a book to someone">
-          Give a copy of "{book-title}"?
-          <fb:intl-token name="book-title">
-            Catcher In the Rye
-          </fb:intl-token>
-          </fb:intl>
-      </div>
-    </section>
-    <!-- 3/24 end -->
 
     <!-- initialize facebook javascript sdk -->
     <div id="fb-root"></div>
