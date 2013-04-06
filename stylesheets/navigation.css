@@ -20,35 +20,55 @@
   top: 20px; /* have to syncronize margin of body defined in base and mobile */
   left: 20px;/* have to syncronize margin of body defined in base and mobile */
   z-index: 10;
+  height: 40px;
 }
 
-#navigation_top {
-  /*width: auto;*/ /* var candidate */
-  margin: 0 /*auto*/;
-}
-
-#navigation ul {
-  /*width: auto;*/ /* var candidate */
+.navigation-div {
+  border-left: 1px solid #ffffff;
+  display: -moz-inline-box;
+  display: inline-block;
+  position: relative;
+  width: 33%;
+  height:100%;
+  margin: auto;
   float: left;
+  /*display: inline;*/
+  text-align: center;
+  vertical-align: middle;
+  font-family: "CorbelRegular";
+  font-size: 18px;
+  color: #ffffff;
 }
 
-#navigation li {
-  padding: 10 0;
-  color: #fff;
-  font-size:1.4em;
-  /*border-left: 1px solid #fff;*/
-  display: inline
+.navigation-first {
+  border: none;
+  display: -moz-inline-box;
+  display: inline-block;
+  position: relative;
+  width: 33%;
+  height:100%;
+  margin: auto;
+  float: left;
+  /*display: inline;*/
+  text-align: center;
+  vertical-align: middle;
+  font-family: "CorbelRegular";
+  font-size: 18px;
+  color: #ffffff;
 }
 
-/*
-.first {
-  border-left: 1px solid black;
+.navigation-first > p {
+    position:relative;
+    top:50%;
+    margin-top: -0.75em;
+    line-height:1.5em;
 }
-*/
 
-/*
-.last {
-  border-right: 1px solid red;
+.navigation-div > p {
+    position:relative;
+    top:50%;
+    margin-top: -0.75em;
+    line-height:1.5em;
 }
-*/
+
 /* 2013-03-09 banz-ghb end   add navigation-header.css */
