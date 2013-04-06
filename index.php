@@ -420,11 +420,15 @@ $app_name = idx($app_info, 'name', '');
   </head>
   <body>
     <!-- 2013-03-09 banz-ghb start header -->
-    <div id="navigation" class="clearfix"><!-- style="height:50px;border:1px solid blue;" -->
-          <div class="navigation-first" ><p id="menu-lislog-main"  >Top</p></div><!-- トップ -->
-          <div class="navigation-div" ><p id="menu-get-started"    >Guide</p></div><!-- ガイド -->
-          <div class="navigation-div"><p id="menu-shared-activity">Activity</p></div><!-- ログ -->
+    <div id="navigation"><!-- style="height:50px;border:1px solid blue;" -->
+      <div id="navigation_top" class="clearfix">
+        <ul>
+          <li><a id="menu-lislog-main" class="first"  > Top</a></li><!-- トップ -->
+          <li><a id="menu-get-started"    > | Guide</a></li><!-- ガイド -->
+          <li><a id="menu-shared-activity"> | Activity</a></li><!-- ログ -->
           <!-- menu-samples -->
+          </ul>
+      </div>
     </div>
     <!-- 2013-03-09 banz-ghb end   header -->
     <header class="clearfix">
