@@ -478,8 +478,8 @@ $app_name = idx($app_info, 'name', '');
               <span class="apprequests">Q&amp;A</span>
             </a>
           </li>
-          <li><a href="#" id="id-privacy-policy"><span class="apprequests"  >Privacy policy<!--プライバシーポリシー--></span></a></li>
-          <li><a href="#" id="id-terms-of-service"><span class="apprequests">Terms of service<!--利用規約--></span       ></a></li>
+          <li><a href="PrivacyPolicy.html" id="id-privacy-policy"><span class="apprequests"  >Privacy policy<!--プライバシーポリシー--></span></a></li>
+          <li><a href="TermsAndConditions.html" id="id-terms-of-service"><span class="apprequests">Terms of service<!--利用規約--></span       ></a></li>
           <li><a href="#" id="id-user-support"><span class="apprequests"    >User support<!--お問い合せ--></span      ></a></li>
         </ul>
       </div>
