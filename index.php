@@ -480,7 +480,7 @@ $app_name = idx($app_info, 'name', '');
           </li>
           <li><a href="PrivacyPolicy.html" id="id-privacy-policy"><span class="apprequests"  >Privacy policy<!--プライバシーポリシー--></span></a></li>
           <li><a href="TermsAndConditions.html" id="id-terms-of-service"><span class="apprequests">Terms of service<!--利用規約--></span       ></a></li>
-          <li><a href="#" id="id-user-support"><span class="apprequests"    >User support<!--お問い合せ--></span      ></a></li>
+          <li><a href="https://www.facebook.com/lislog" id="id-user-support"><span class="apprequests"    >User support<!--お問い合せ--></span      ></a></li>
           <li>
             <a href="#" class="button" id="sendRequest" data-message="Invite your friends"><!--"招待したい友達を選択して「送信」を押してください."-->Invite friends<!--友達を招待-->
             </a>
