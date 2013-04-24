@@ -344,7 +344,8 @@ $app_name = idx($app_info, 'name', '');
                     //logResponse(response1_1.data.radio_program.url);
                     //http://c-brains.jp/blog/wsg/13/02/14-163725.php
 
-                    var str = response1_1.data.radio_program.url;
+                  //var str = response1_1.data.radio_program.url;
+                    var str = response1_1.data.radio_station.url;
                     str1 = str.replace(/\.html/,"");
                     str2 = str1.replace(/^.*\//,"");
 
