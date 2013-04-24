@@ -251,15 +251,6 @@ $app_name = idx($app_info, 'name', '');
           });
           return false;
         }); //menu function 1-2 end
-        $("#menu-shared-activity").click(function(){ //menu function 1-3 start
-          $('html,body').animate(
-            {scrollTop: $("#id-shared-activity").offset().top - navigationheightvalue},
-            {duration: 1000, step: function(top_offset){
-              FB.Canvas.scrollTo(0, top_offset);
-            }
-          });
-          return false;
-        }); //menu function 1-3 end
         $("#menu-samples").click(function(){ //menu function 1-4 start
             $('html,body').animate(
               {scrollTop: $("#samples").offset().top - navigationheightvalue},
@@ -382,8 +373,6 @@ $app_name = idx($app_info, 'name', '');
                     //$(targetId).text(response1_1.publish_time)/*'test'*/;
                     // 2013-03-27 banz-ghb end   show local time
                 });//FB.api 1-1
-                var container = document.getElementById('id-shared-activity');
-                FB.XFBML.parse(container);
                 return false;
               }
             ); //FB.api 1
@@ -426,7 +415,6 @@ $app_name = idx($app_info, 'name', '');
         <ul>
           <li><a id="menu-lislog-main" class="first"  > Top</a></li><!-- トップ -->
           <li><a id="menu-get-started"    > | Guide</a></li><!-- ガイド -->
-          <li><a id="menu-shared-activity"> | Activity</a></li><!-- ログ -->
           <!-- menu-samples -->
           </ul>
       </div>
@@ -507,13 +495,6 @@ $app_name = idx($app_info, 'name', '');
           <!--p--><!--View the activity logs of lislog in your facebook timeline.--><!--/p-->
         </li>
       </ul>
-    </section>
-
-    <section id="id-shared-activity" class="clearfix">
-      <!-- adjust layout -- data-width="300" data-height="300" -->
-      <!-- FB.XFBML.parse(); -->
-      <fb:shared-activity id="id-shared-activity-div"></fb:shared-activity>
-      <!--div id="id-shared-activity-div" class="fb-shared-activity" --><!--/div-->
     </section>
 
     <!-- initialize facebook javascript sdk -->
