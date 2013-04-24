@@ -97,7 +97,7 @@ $app_name = idx($app_info, 'name', '');
     <script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
     <!-- 2013-03-30 anz-ghb start add activity indicator -->
     <!--script type="text/javascript" src="/javascript/jquery.activity-indicator-1.0.0.min.js"--><!--/script-->
-    <script type="text/javascript" src="/javascript/jsgt_indicator003.js" charset="utf-8"></script>
+    <!-- script type="text/javascript" src="/javascript/jsgt_indicator003.js" charset="utf-8"--><!--/script-->
     <!-- 2013-03-30 anz-ghb start add activity indicator -->
 
     <script type="text/javascript"><!--
