@@ -303,8 +303,8 @@ $app_name = idx($app_info, 'name', '');
           li.append(div);
           div.attr("class",         "fb-facepile");
           div.attr("data-href",     var_radio_program_button_url_1);
-          div.attr("data-action",   "lislogapp:tune_in");//2013-03-18
-        //div.attr("data-action",   "music.listens");
+        //div.attr("data-action",   "lislogapp:tune_in");//2013-03-18
+          div.attr("data-action",   "music.listens");
           div.attr("data-max-rows", "1");
           div.attr("data-width",    "270"); //adjust layout
 
@@ -336,8 +336,8 @@ $app_name = idx($app_info, 'name', '');
             $('#'+$(this).attr("id").replace("publishAction_","")+'-div-date').append('<img src="images/indicator.white.gif">')
             var var_radio_program_button_url =
               'https://lislog.herokuapp.com/radio/jp/co/tbs/'+$(this).attr("id").replace("publishAction_","")+'.html';
-              FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
-            //FB.api('me/music.listens','POST',{radio_station:var_radio_program_button_url},//FB.api 1
+            //FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
+              FB.api('me/music.listens','POST',{radio_station:var_radio_program_button_url},//FB.api 1
               function (response) {
                 FB.api('/'+response.id,'GET'//FB.api 1-1
                  ,function (response1_1) {
