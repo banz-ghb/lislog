@@ -376,6 +376,8 @@ $app_name = idx($app_info, 'name', '');
                     //$(targetId).text(response1_1.publish_time)/*'test'*/;
                     // 2013-03-27 banz-ghb end   show local time
                 });//FB.api 1-1
+                var container = document.getElementById('id-shared-activity');
+                FB.XFBML.parse(container);
                 return false;
               }
             ); //FB.api 1
@@ -498,6 +500,13 @@ $app_name = idx($app_info, 'name', '');
           <!--p--><!--View the activity logs of lislog in your facebook timeline.--><!--/p-->
         </li>
       </ul>
+    </section>
+
+    <section id="id-shared-activity" class="clearfix">
+      <!-- adjust layout -- data-width="300" data-height="300" -->
+      <!-- FB.XFBML.parse(); -->
+      <fb:shared-activity id="id-shared-activity-div"></fb:shared-activity>
+      <!--div id="id-shared-activity-div" class="fb-shared-activity" --><!--/div-->
     </section>
 
     <!-- initialize facebook javascript sdk -->
