@@ -294,8 +294,9 @@ $app_name = idx($app_info, 'name', '');
           li.append(div);
           div.attr("class",         "fb-facepile");
           div.attr("data-href",     var_radio_program_button_url_1);
-        //div.attr("data-action",   "lislogapp:tune_in");//2013-03-18
-          div.attr("data-action",   "music.listens");
+          //div.attr("data-action",   "lislogapp:tune_in");//2013-03-18
+          //div.attr("data-action",   "music.listens");
+          div.attr("data-action",   "og.likes");//2013-05-05
           div.attr("data-max-rows", "1");
           div.attr("data-width",    "270"); //adjust layout
 
@@ -328,7 +329,8 @@ $app_name = idx($app_info, 'name', '');
             var var_radio_program_button_url =
               'https://lislog.herokuapp.com/radio/jp/co/tbs/'+$(this).attr("id").replace("publishAction_","")+'.html';
             //FB.api('/me/lislogapp:tune_in','POST',{radio_program:var_radio_program_button_url},//FB.api 1
-              FB.api('me/music.listens','POST',{radio_station:var_radio_program_button_url},//FB.api 1
+            //FB.api('me/music.listens','POST',{radio_station:var_radio_program_button_url},//FB.api 1
+              FB.api('/me/og.likes','POST',{object:var_radio_program_button_url},//FB.api 1 2013/05/05
               function (response) {
                 FB.api('/'+response.id,'GET'//FB.api 1-1
                  ,function (response1_1) {
@@ -336,7 +338,8 @@ $app_name = idx($app_info, 'name', '');
                     //http://c-brains.jp/blog/wsg/13/02/14-163725.php
 
                   //var str = response1_1.data.radio_program.url;
-                    var str = response1_1.data.radio_station.url;
+                  //var str = response1_1.data.radio_station.url;
+                    var str = response1_1.data.object.url;
                     str1 = str.replace(/\.html/,"");
                     str2 = str1.replace(/^.*\//,"");
 
@@ -379,7 +382,7 @@ $app_name = idx($app_info, 'name', '');
             return false; /* stop scroll code*/
           });  //bind function 10 end
           //configure a span element
-          var span = $('<span/>').text("Listen"/*Tune in リスなう*/); //radio_programs_title[i]
+          var span = $('<span/>').text("Like"/*Tune in リスなう*/); //radio_programs_title[i]
           a.append(span);
           span.attr("class", "plus");
 
